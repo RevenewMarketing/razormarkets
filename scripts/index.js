@@ -57,7 +57,6 @@ disclaimer()
 
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('.navbar');
-  console.log('nav.style.backgroundColor', nav.style.backgroundColor)
 
   if (window.scrollY > 200) {
   

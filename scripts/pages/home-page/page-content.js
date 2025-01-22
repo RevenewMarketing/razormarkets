@@ -142,7 +142,7 @@ window.addEventListener('load', () => {
     {
       opacity: 1,
       y: 0,
-      duration: 1,
+      duration: 3,
       ease: 'power3.out',
       stagger: 0.05, // Delay between each letter
     }
