@@ -53,3 +53,19 @@ function disclaimer() {
 // Call functions
 backToTopButton()
 disclaimer()
+
+
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('.navbar');
+  console.log('nav.style.backgroundColor', nav.style.backgroundColor)
+
+  if (window.scrollY > 200) {
+  
+    // Add a solid background color
+    nav.style.backgroundColor = '#30313A'; // Solid color
+   
+  } else {
+    // Revert to the original transparent background
+    nav.style.backgroundColor = '#30313a91'; // Original color
+  }
+});

@@ -71,16 +71,17 @@ div {
 }
 
 .is-active {
-  background-color: #1f2229 !important;
+  /* background-color: #1f2229 !important; */
 }
 
-nav {
-  background-color: #30313a91 !important;
+.navbar {
+  background-color: #30313a91;
   /* display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 20px; */
-  height: 100px;
+  height: 75px;
+  transition: .6s ease;
 }
 
 .navbar-brand {
