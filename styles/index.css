@@ -65,6 +65,11 @@ div {
   padding: 0rem 0.75rem;
 }
 
+a.navbar-item-logo:hover {
+  background-color: #30313a00;
+  /* Darker background on hover */
+}
+
 .navbar-item-logo img {
   width: 160px;
   /* Adjust as needed */
