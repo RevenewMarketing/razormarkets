@@ -107,44 +107,54 @@ document.querySelector('.section-6 > .features').innerHTML = `
 
 
 window.addEventListener('load', () => {
-  // Target the heading element
-  const section1H1 = document.querySelector('.section-1 > h1');
-  
-  // Get the text content and split into an array of words
-  const words = section1H1.textContent.split(' '); // Split by spaces
-  section1H1.textContent = ''; // Clear the text content
-  
-  // Combine the first two words into a single line, and keep the rest
-  const firstLine = words.slice(0, 2).join(' '); // First two words
-  const remainingText = words.slice(2).join(' '); // Remaining words
-  
-  // Create spans for the first line
-  firstLine.split('').forEach(char => {
-    const span = document.createElement('span');
-    span.textContent = char === ' ' ? '\u00A0' : char; // Preserve spaces
-    section1H1.appendChild(span);
-  });
+  // Target all H1 headings
+  const allHeadings = document.querySelectorAll('h1');
 
-  // Add a line break
-  section1H1.appendChild(document.createElement('br'));
-  
-  // Create spans for the remaining text
-  remainingText.split('').forEach(char => {
-    const span = document.createElement('span');
-    span.textContent = char === ' ' ? '\u00A0' : char; // Preserve spaces
-    section1H1.appendChild(span);
-  });
+  // Iterate through each heading and apply the animation
+  allHeadings.forEach((heading) => {
+    // Get the text content and split into an array of words
+    const words = heading.textContent.split(' '); // Split by spaces
+    heading.textContent = ''; // Clear the text content
 
-  // Animate each span with GSAP
-  gsap.fromTo(
-    section1H1.querySelectorAll('span'), 
-    { opacity: 0, y: 20 }, // Starting state
-    {
-      opacity: 1,
-      y: 0,
-      duration: 3,
-      ease: 'power3.out',
-      stagger: 0.05, // Delay between each letter
-    }
-  );
+    // Combine the first two words into a single line, and keep the rest
+    const firstLine = words.slice(0, 2).join(' '); // First two words
+    const remainingText = words.slice(2).join(' '); // Remaining words
+
+    // Create spans for the first line
+    firstLine.split('').forEach(char => {
+      const span = document.createElement('span');
+      span.textContent = char === ' ' ? '\u00A0' : char; // Preserve spaces
+      heading.appendChild(span);
+    });
+
+    // Add a line break
+    heading.appendChild(document.createElement('br'));
+
+    // Create spans for the remaining text
+    remainingText.split('').forEach(char => {
+      const span = document.createElement('span');
+      span.textContent = char === ' ' ? '\u00A0' : char; // Preserve spaces
+      heading.appendChild(span);
+    });
+
+    // Animate each span with GSAP and ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo(
+      heading.querySelectorAll('span'),
+      { opacity: 0, y: 20 }, // Starting state
+      {
+        opacity: 1,
+        y: 0,
+        duration: 2, // Animation duration
+        ease: 'power3.out',
+        stagger: 0.05, // Delay between each letter
+        scrollTrigger: {
+          trigger: heading, // The heading element
+          start: 'top 90%', // Animation starts when heading is 80% in the viewport
+          toggleActions: 'play none none reverse', // Play when entering, reverse when leaving
+        },
+      }
+    );
+  });
 });
