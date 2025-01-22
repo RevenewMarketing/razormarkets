@@ -17,6 +17,7 @@
   max-width: 1440px;
   flex-direction: row;
   gap: 20px;
+  height: 80dvh;
 }
 
 .trade-section .content {
@@ -242,12 +243,17 @@ button {
   margin-bottom: 2rem;
   flex-direction: row;
   flex-wrap: wrap;
+
+}
+
+.feature-badge:hover {
+  transform: scale(1.05);
 }
 
 
 /* Each badge styling */
 .feature-badge {
-
+  transition: all 0.3s ease;
   padding: 10px 10px;
   border-radius: 20px;
   display: flex;
