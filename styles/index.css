@@ -797,3 +797,11 @@ section h2 {
 }
 
 
+.tradingview-widget-container {
+  display: flex;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 75dvh;
+  flex-direction: column;
+}
