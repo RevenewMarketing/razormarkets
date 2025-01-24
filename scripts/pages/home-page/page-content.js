@@ -1,6 +1,6 @@
 
 const section1 = {
-  heading: 'Trade Smarter Withdraw Faster',
+  heading: 'Make Wise Trades, Enjoy Quick Withdrawals!',
   subheading: 'Precision, speed, and trust—everything you need to dominate the markets. Razor Markets delivers a trading experience that’s sharp, reliable, and built for success.',
 }
 
@@ -111,15 +111,15 @@ window.addEventListener('load', () => {
   const allHeadings = document.querySelectorAll('h1');
 
   // Iterate through each heading and apply the animation
-  allHeadings.forEach((heading) => {
+  allHeadings.forEach((heading, i) => {
     // Get the text content and split into an array of words
     const words = heading.textContent.split(' '); // Split by spaces
     heading.textContent = ''; // Clear the text content
 
     // Combine the first two words into a single line, and keep the rest
-    const firstLine = words.slice(0, 2).join(' '); // First two words
-    const remainingText = words.slice(2).join(' '); // Remaining words
-
+    const firstLine = i === 0 ? words.slice(0, 3).join(' ') : words.slice(0, 2).join(' '); // First two words
+    const remainingText = i === 0 ? words.slice(3).join(' ') : words.slice(2).join(' '); // Remaining words
+    
     // Create spans for the first line
     firstLine.split('').forEach(char => {
       const span = document.createElement('span');
