@@ -101,7 +101,7 @@
 
 
 .section-6 .feature-card {
-  background: #1f1f1f;
+  background: hsla(0, 0%, 12%, 0.75);
   /* border: 2px solid transparent; */
   border-radius: 25px;
   padding: 20px;
@@ -123,7 +123,7 @@
   height: 345px;
   display: flex;
   border-radius: 27px;
-  background: linear-gradient(180deg, #1EE981 0%, #0E92CA 71.61%);
+  background: linear-gradient(180deg, hsla(149, 82%, 52%, 0.6) 0%, hsla(198, 87%, 42%, 0.6) 71.61%);
   flex-direction: column;
   align-items: center;
   padding: 2px;

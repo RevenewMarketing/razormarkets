@@ -9,14 +9,17 @@ const section3 = [
   {
     title: 'Fast Withdrawals',
     description: 'Quick and seamless withdrawals to keep you trading without interruptions, ensuring easy access to your funds.',
+    image: '../../../assets/home-page/fast-withdrawals.jpg'
   },
   {
     title: 'Advanced Tools',
     description: 'User-friendly platforms equipped with cutting-edge analytics to support informed and efficient trading decisions.',
+      image: '../../../assets/home-page/Advanced-tools.jpg'
   },
   {
     title: 'Tailored Accounts',
     description: 'A variety of flexible account options crafted to suit and complement your unique trading style and needs.',
+     image: '../../../assets/home-page/Tailored-accounts.jpg'
   },
   // Add more card objects as needed
 ]
@@ -71,13 +74,15 @@ const section1p = document.querySelector('.section-1 > p').textContent = section
 // Cards
 const section3CTAs = document.querySelector('.features').innerHTML = `
   ${section3.map(item => `
-       <div class="card-bg">
-    <div class="feature-card">
-      <h2>${item.title}</h2>
-      <p>${item.description}</p>
-      <button class="button is-info signup" class="button">Sign Up</button>
+    
+    <div class="feature-card" style="background-image: url(${item.image}); background-size: cover" >
+      <div class="overlay-section">
+        <h2>${item.title}</h2>
+        <p>${item.description}</p>
+        <button class="button is-info signup" class="button">Sign Up</button>
+      </div>
     </div>
-  </div>
+
   `).join('')}
 `;
 
