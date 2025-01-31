@@ -91,18 +91,18 @@ document.querySelector('.section-6 > h1').innerHTML = section6.heading;
 console.log('section6.heading', section6.heading)
 
 
-document.querySelector('.section-6 > .features').innerHTML = `
-  ${section6.cards.map(item => `
-    <div class="card-bg">
-      <div class="feature-card">
-        <img src="${item.icon}" alt="feature1">
-        <h2>${item.title}</h2>
-        <p>${item.description}</p>
-        <button class="button is-info signup" class="button">${item.buttonText}</button>
-      </div>
-    </div>
-  `).join('')}
-`;
+// document.querySelector('.section-6 > .features').innerHTML = `
+//   ${section6.cards.map(item => `
+//     <div class="card-bg">
+//       <div class="feature-card">
+//         <img src="${item.icon}" alt="feature1">
+//         <h2>${item.title}</h2>
+//         <p>${item.description}</p>
+//         <button class="button is-info signup" class="button">${item.buttonText}</button>
+//       </div>
+//     </div>
+//   `).join('')}
+// `;
 
 
 
