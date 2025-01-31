@@ -22,6 +22,10 @@
   
 }
 
+.flickity-page-dots .dot {
+  background: #f1f1f1 !important;
+}
+
 
 
 .carousel-cell.is-selected {
