@@ -953,3 +953,24 @@ section h2 {
     text-align: center;
   }
 }
+
+@media screen and (max-width: 1023px) {
+  .navbar-menu {
+    background-color: ;
+    box-shadow: 0 .5em 1em hsla(var(--bulma-scheme-h),var(--bulma-scheme-s),var(--bulma-scheme-invert-l),.1);
+    padding: .5rem 0;
+    background: rgba(0, 0, 0, 0.58) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.1px);
+    -webkit-backdrop-filter: blur(8.1px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    text-align: right;
+  }
+}
+
+/* hide login buttons on mobile */
+@media (max-width: 768px) {
+  .buttons {
+    display: none;
+  }
+}
