@@ -102,7 +102,7 @@
 
 .card-account-contents p {
   font-size: 12px !important;
-  color: #BFBFBF; /* Light gray text */
+  color: #fff; /* Light gray text */
   margin-bottom: 10px;
   font-weight: 400 !important;
   display: flex;
