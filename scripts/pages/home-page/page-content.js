@@ -87,7 +87,7 @@ const section3CTAs = document.querySelector('.features').innerHTML = `
 `;
 
 //section 4
-document.querySelector('.hero-image-text-content > h1').textContent = section4.heading;
+document.querySelector('.hero-image-text-content > h2').textContent = section4.heading;
 document.querySelector('.hero-image-text-content > p').textContent = section4.subheading
 
 

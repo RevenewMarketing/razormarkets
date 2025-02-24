@@ -30,7 +30,7 @@
 }
 
 .heroAbout h1 {
-  /* font-size: 5rem; */
+font-size: clamp(2rem, 4dvw, 5rem) !important;
   font-weight: bold;
   line-height: 1;
   /* margin: auto; */
@@ -367,6 +367,41 @@ button {
   justify-content: flex-start; /* Align cards to the start of the row */
 }
 
+@media (max-width: 768px) {
+
+  .feature-badge{
+
+    width: 100%;
+  }
+
+  .feature-badges{
+
+    margin-top: 20px;
+  }
+
+  .about-container {
+    flex-direction: column; /* Arrange cards in a single column for mobile */
+    align-items: center; /* Center cards horizontally */
+  }
+
+  .about-card {
+    width: auto !important; /* Full width for mobile */
+    margin-bottom: 20px; /* Space between cards */
+  }
+
+  .about-card-image {
+    width: 100%; /* Full width for mobile */
+    max-width: none; /* Remove max-width constraint */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 10px; /* Add bottom margin */
+  }
+
+  .about-card-content {
+    width: 100%; /* Full width for mobile */
+    padding: 15px; /* Adjust padding */
+  }
+}
+
 .about-card {
   background-color: rgba(10, 221, 255, 0.2);
   border-radius: 10px;
@@ -454,4 +489,5 @@ button {
   margin-bottom: 10px;
   margin-top: 10px;
 }
+
 

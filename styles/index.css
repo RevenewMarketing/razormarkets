@@ -131,9 +131,9 @@ section {
   margin-bottom: 50px;
 }
 
-section h1 {
+section h2 {
   /* font-size: 5rem; */
-  font-size: clamp(2rem, 4dvw, 5rem) !important;
+  font-size: 1.8125rem;
   font-weight: bold;
   text-align: center;
   line-height: 1.1;
@@ -250,7 +250,7 @@ button {
 }
 
 .hero h1 {
-  /* font-size: 5rem; */
+  font-size: clamp(2rem, 3dvw, 4rem) !important;
   font-weight: bold;
   line-height: 1;
   /* margin: auto; */
@@ -306,7 +306,6 @@ button {
   padding: 40px 20px;
   /* background-color: #171A20; */
   width: 80%;
-  height: 520px;
   margin: auto;
   flex-direction: row;
   flex-wrap: wrap;
@@ -321,7 +320,7 @@ button {
   padding: 0px;
   text-align: center;
   width: 300px;
-  height: 100%;
+  height: 440px;
   -webkit-transition: border 0.3s ease;
   /* WebKit prefix */
   display: flex;
@@ -419,10 +418,11 @@ button {
 }
 
 .feature-card h3 {
-  font-size: 18px;
+  font-size: 2rem;
   font-weight: bold;
   color: #FFFFFF;
   margin-bottom: 10px;
+  line-height: 1.1;
 }
 
 .feature-card p {
@@ -469,7 +469,7 @@ button {
   .hero-image-container {
     flex-direction: column;
     height: auto;
-    padding-top: 900px !important;
+    padding-top: 50px !important;
     padding-left: 20px;
     padding-right: 20px;
     max-width: 100%;
@@ -585,7 +585,7 @@ h1 {
 }
 
 section h2 {
-  font-size: 1.8125rem;
+  font-size: clamp(2rem, 3dvw, 4rem) !important;
   font-weight: bold;
   line-height: 1.3;
   margin: auto;
@@ -828,6 +828,13 @@ section h2 {
   /* WebKit prefix */
 }
 
+@media (max-width: 768px) {
+  .back-to-top {
+    right: 20px;
+  }
+}
+
+
 .svg-logo {
   /* filter: drop-shadow(0px 0px 15px #48f7884b) !important; */
 }
@@ -931,6 +938,18 @@ section h2 {
     opacity: 1;
   }
 }
+.white-text{
+  color:#ffffff
+}
 
+.precisionTrading{
 
--
+  text-align: left; font-size: xx-large !important;
+}
+
+/* center align precisionTrading in mobile view */
+@media (max-width: 768px) {
+  .precisionTrading {
+    text-align: center;
+  }
+}
