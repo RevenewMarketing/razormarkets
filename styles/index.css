@@ -139,6 +139,8 @@ section h2 {
   line-height: 1.1;
   margin-bottom: 20px;
   color: #FFFFFF;
+
+
 }
 
 .auth-buttons {
@@ -396,6 +398,11 @@ button {
 
 .section-3 h2 {
   margin-top: 0;
+    margin-top: 0;
+    font-size: 36px !important;
+    font-weight: bold;
+    line-height: 1.1;
+  
 }
 
 .feature-card img {

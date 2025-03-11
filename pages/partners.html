@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razor Markets</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="../styles/partners.css">
+    <link rel="stylesheet" href="../styles/backgroundCSS.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+</head>
+
+<body>
+    <div class="fourgound-loader"></div>
+    <div class="gradient-background__wrapper">
+        <div class="gradient-background">
+            <div class="gradient-background__shape gradient-background__shape--1"></div>
+            <div class="gradient-background__shape gradient-background__shape--2"></div>
+        </div>
+        <div class="gradient-background__noise"></div>
+    </div>
+
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item navbar-item-logo" href="#">
+                    <img src="../assets/svg/logo.svg" alt="Razor Markets Logo">
+                </a>
+
+                <!-- Corrected navbar-burger with three spans -->
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item " href="../index.html">
+                        Home
+                    </a>
+
+                    <a class="navbar-item " href="/pages/about.html">
+                        About
+                    </a>
+                    <a class="navbar-item " href="/pages/accountTypes.html">
+                        Account Types
+                    </a>
+                    <a class="navbar-item " href="/pages/deposits-and-withdrawals.html">
+                        Deposits & Withdrawals
+                    </a>
+                    <a class="navbar-item active " href="/pages/partners.html">
+                        Partners
+                    </a>
+                    <a class="navbar-item" href="/pages/contact.html">
+                        Contact
+                    </a>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <div class="auth-buttons">
+                                <a href="#signup"><button class="button is-info signup">Sign Up</button></a>
+                                <a href="#login"><button class="button is-success login">Login</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero section">
+            <h1>Partner with Razor Markets</h1>
+            <p> At Razor Markets, we believe in fostering strong, mutually beneficial partnerships. We're committed to
+                providing our partners with the tools, resources, and support they need to succeed. Join us and leverage
+                our cutting-edge technology, competitive offerings, and dedicated team to grow your business.
+            </p>
+            <div class="cta-buttons">
+                <button class="button is-success login" onclick="window.location.href='#featured-cards-section'">Learn
+                    More</button>
+                <button class="button is-info signup">Start Trading</button>
+            </div>
+
+        </section>
+        <!-- TradingView Widget BEGIN -->
+
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow"
+                    target="_blank">
+                    <span class="white-text">Track all markets on TradingView</span>
+                </a></div>
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+
+                    {
+
+                        "symbols": [
+
+                            {
+
+                                "proName": "FOREXCOM:SPXUSD",
+
+                                "title": "S&P 500 Index"
+
+                            },
+
+                            {
+
+                                "proName": "FOREXCOM:NSXUSD",
+
+                                "title": "US 100 Cash CFD"
+
+                            },
+
+                            {
+
+                                "proName": "FX_IDC:EURUSD",
+
+                                "title": "EUR to USD"
+
+                            },
+
+                            {
+
+                                "description": "USD to Zar",
+
+                                "proName": "FX:USDZAR"
+
+                            },
+
+                            {
+
+                                "description": "EUR/ USD",
+
+                                "proName": "FX:EURUSD"
+
+                            },
+
+                            {
+
+                                "description": "USD to JPY",
+
+                                "proName": "FX:USDJPY"
+
+                            }
+
+                        ],
+
+                            "showSymbolLogo": true,
+                                "isTransparent": false,
+                                    "displayMode": "adaptive",
+                                        "colorTheme": "dark",
+                                            "locale": "en"
+
+                    }
+                </script>
+        </div>
+
+        <!-- TradingView Widget END -->
+        <!-- Featured cards-->
+        <section class="section-7" id="learnmore">
+            <h2 class="about-h2">Why partner with Razor Markets</h2>
+            <div class="about-container">
+                <div class="about-card">
+                    <div class="about-card-image">
+                        <img src="../assets/about-page/24-7-support.jpg" alt="24/7 Dedicated Support Image">
+                    </div>
+                    <div class="about-card-content">
+                        <div>
+                            <h3 class="about-card-title">Top Commissions</h3>
+                            <p class="about-card-text">Unlock substantial earning potential with our industry-leading
+                                commission structures, designed to reward your client referrals generously.</p>
+                        </div>
+                        <div>
+                            <a href="#" class="about-card-button">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-image">
+                        <img src="../assets/about-page/intuitive-interface.jpg" alt="Intuitive Interface Image">
+                    </div>
+                    <div class="about-card-content">
+                        <div>
+                            <h3 class="about-card-title">Lucrative Rewards</h3>
+                            <p class="about-card-text">Benefit from our highly competitive commission plans, offering
+                                lucrative rewards for your successful client introductions and ongoing activity.</p>
+                        </div>
+                        <div>
+                            <a href="#" class="about-card-button">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-image">
+                        <img src="../assets/about-page/diverse-asset-selection.jpg" alt="Diverse Asset Selection Image">
+                    </div>
+                    <div class="about-card-content">
+                        <div>
+                            <h3 class="about-card-title">Competitive Rates </h3>
+                            <p class="about-card-text">Enjoy some of the most competitive commission rates in the
+                                market, ensuring you're fairly compensated for your valuable partnerships.</p>
+                        </div>
+                        <div>
+                            <a href="#" class="about-card-button">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-image">
+                        <img src="../assets/about-page/trusted-and-secure.jpg" alt="Trusted & Secure Image">
+                    </div>
+                    <div class="about-card-content">
+                        <div>
+                            <h3 class="about-card-title">Earn More</h3>
+                            <p class="about-card-text">Maximise your profitability by leveraging our commission model,
+                                which is designed to significantly boost your earnings.</p>
+                        </div>
+                        <div>
+                            <a href="#" class="about-card-button">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FORM Section -->
+        <section class="section">
+            <h2 class="about-h2">Please fill the form below</h2>
+            <div class="container form-container">
+
+                <div class="box ">
+
+                    <!-- Partners Form -->
+                    <div class="form-inputs">
+                        <div class="field">
+                            <label class="label">First Name <span style="color:rgb(253, 52, 52)">*</span></label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="First Name" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Surname</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Surname">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Phone</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Phone">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Email <span style="color:rgb(253, 52, 52)">*</span></label>
+                            <div class="control">
+                                <input class="input" type="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Country</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Country">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Number of clients</label>
+                            <div class="control">
+                                <input class="input" type="number" placeholder="Number of clients">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Social Media handle or website</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Social Media handle or website">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Years of experience</label>
+                            <div class="control">
+                                <input class="input" type="number" placeholder="Years of experience">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <button class="button is-info">Submit</button>
+                    </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="columns">
+
+                    <!-- Logo and Social Media Icons -->
+                    <div class="column is-3">
+                        <figure style="margin-bottom: 0" class="footer-logo">
+                            <img class="svg-logo" src="/assets/svg/logo-only.svg" alt="logo">
+                        </figure>
+
+                    </div>
+
+                    <!-- Quick Links Section -->
+                    <div class="column is-3">
+                        <p class="footer-section-title">Quick Links</p>
+                        <ul>
+                            <li><a href="#" style="pointer-events: none; color: rgba(128, 128, 128, 0.326)">Start
+                                    Trading</a></li>
+                            <li><a href="/pages/about.html">About Us</a></li>
+                            <li><a href="/pages/deposits-and-withdrawals.html">Deposits and Withdrawals</a></li>
+                            <li><a href="/pages/legalDocs.html">Legal Documents</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="column is-3">
+                        <ul>
+                            <li><a href="#" style="pointer-events: none; color: rgba(128, 128, 128, 0.326)">Blog</a>
+                            </li>
+                            <li><a href="/index.html#faq-section">FAQs</a></li>
+                            <li><a href="#">Account Types</a></li>
+                            <li><a href="#" style="pointer-events: none; color: rgba(128, 128, 128, 0.326)">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Information Section -->
+                    <div class="column is-3">
+                        <p class="footer-section-title">Get in touch</p>
+                        <p>support@razormarkets.com</p>
+                        <p>+27 00 000 0000</p>
+                        <p>+27 12 345 6789</p>
+                        <p>Physical Address: Johannesburg, Spaces Waterfall, Midrand,
+                            Ground & 1st Floor, 22 Magwa Crescent, Gateway West, Waterfall City,
+                            Midrand, Johannesburg, 2066</p>
+                    </div>
+                </div>
+
+                <!-- Disclaimer Section -->
+                <hr>
+                <div class="footer-end">
+                    <div class="social-icons">
+                        <span class="icon">
+                            <a href="#">
+                                <img src="/assets/svg/social-media/x.svg" alt="x twiter icon">
+                            </a>
+
+                        </span>
+                        <span class="icon">
+                            <a href="#">
+                                <img src="/assets/svg/social-media/linkedIn.svg" alt="linkedIn icon">
+                            </a>
+
+                        </span>
+                        <span class="icon">
+                            <a href="#">
+                                <img src="/assets/svg/social-media/facebook.svg" alt="facebook icon">
+                            </a>
+
+                        </span>
+                        <span class="icon">
+                            <a href="#">
+                                <img src="/assets/svg/social-media/instagram.svg" alt="instagram icon">
+                            </a>
+
+                        </span>
+                        <span class="icon">
+                            <a href="#">
+                                <img src="/assets/svg/social-media/telegram.svg" alt="telegram icon">
+                            </a>
+
+                        </span>
+                    </div>
+                    <p class="disclaimer"></p>
+                </div>
+            </div>
+
+        </footer>
+        <section class="section-8">
+            <a href="#">
+                <div class="back-to-top">
+                    <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        stroke="#bf3636">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <circle opacity="0.5" cx="12" cy="12" r="10" stroke="#4f8cba" stroke-width="1.5"></circle>
+                            <path d="M12 16L12 8M12 8L15 11M12 8L9 11" stroke="#4f8cba" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <script src="../scripts/tilt.js"></script>
+    <script src="../scripts/index.js"></script>
+    <script src="../scripts/pages/legal-docs/page-content.js"></script>
+    <script src="../scripts/pages/button-links.js"></script>
+</body>
+
+</html>
