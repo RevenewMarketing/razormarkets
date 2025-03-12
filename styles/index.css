@@ -120,6 +120,15 @@ nav a {
   /* Blue-ish color for hover and active */
 }
 
+@media screen and (max-width: 768px) {
+  .navbar-item.has-dropdown .navbar-dropdown {
+      display: none;
+  }
+  .navbar-item.has-dropdown.is-active .navbar-dropdown {
+      display: block;
+  }
+}
+
 
 section {
   max-width: 1440px;

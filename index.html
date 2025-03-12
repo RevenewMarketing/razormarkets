@@ -20,12 +20,7 @@
   <link rel="stylesheet" href="./styles/flikity.css">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
-
-
   <link rel="stylesheet" href="styles/scrollbar.css"> 
-
-
 
 </head>
 
@@ -39,55 +34,75 @@
     <div class="gradient-background__noise"></div>
   </div>
   <header>
-    <nav class="navbar" aria-label="main navigation">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item navbar-item-logo" href="#">
-          <img src="./assets/svg/logo.svg" alt="Razor Markets Logo">
-        </a>
-
-        <!-- Corrected navbar-burger with three spans -->
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+          <a class="navbar-item navbar-item-logo" href="#">
+              <img src="../assets/svg/logo.svg" alt="Razor Markets Logo">
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+          </a>
       </div>
-
       <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item active" href="#">
-            Home
-          </a>
-
-          <a class="navbar-item" href="/pages/about.html">
-            About
-          </a>
-          <a class="navbar-item" href="/pages/accountTypes.html">
-            Account Types
-          </a>
-          <a class="navbar-item " href="/pages/partners.html">
-            Partners
-          </a>
-          <a class = "navbar-item" href="/pages/deposits-and-withdrawals.html" >
-            Deposits & Withdrawals
-          </a>
-          <a class="navbar-item" href="/pages/contact.html">
-            Contact
-          </a>
-        </div>
-
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <div class="auth-buttons">
-                <button class="button is-info signup">Sign Up</button>
-                <button class="button is-success login">Login</button>
+          <div class="navbar-start">
+              <a class="navbar-item active" href="../index.html">Home</a>
+              <a class="navbar-item" href="/pages/about.html">About</a>
+  
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">Markets</a>
+                  <div class="navbar-dropdown">
+                      <a class="navbar-item" href="/pages/markets/forex.html">Forex</a>
+                      <a class="navbar-item" href="/pages/markets/indices.html">Indices</a>
+                      <a class="navbar-item" href="/pages/markets/commodities.html">Commodities</a>
+                      <a class="navbar-item" href="/pages/markets/shares.html">Shares</a>
+                  </div>
               </div>
+  
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">Trading</a>
+                  <div class="navbar-dropdown">
+                      <a class="navbar-item" href="/pages/deposits-and-withdrawals.html">Deposits & Withdrawals</a>
+                      <a class="navbar-item" href="/pages/accountTypes.html">Account Types</a>
+                  </div>
+              </div>
+  
+              <a class="navbar-item " href="/pages/partners.html">Partners</a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">Knowledge Hub</a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="/pages/knowledge/blogs.html">Blogs</a>
+                    <a class="navbar-item" href="/pages/knowledge/risk.html">Risk Management</a>
+                    <a class="navbar-item" href="/pages/knowledge/glossary.html">Trading Glossary</a>
+                </div>
             </div>
+  
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">Support</a>
+                  <div class="navbar-dropdown">
+                      <a class="navbar-item" href="/pages/support/faqs.html">FAQs</a>
+                      <a class="navbar-item" href="/pages/support/legal.html">Legal Documents</a>
+                      <a class="navbar-item" href="/pages/contact.html">Contact</a>
+                  </div>
+              </div>
+  
+              
+  
           </div>
-        </div>
+          <div class="navbar-end">
+              <div class="navbar-item">
+                  <div class="buttons">
+                      <div class="auth-buttons">
+                          <a href="#signup"><button class="button is-info signup">Sign Up</button></a>
+                          <a href="#login"><button class="button is-success login">Login</button></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-    </nav>
+  </nav>
   </header>
 
   <main>

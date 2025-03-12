@@ -42,6 +42,27 @@ function backToTopButton() {
 
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdownTriggers = document.querySelectorAll('.navbar-item.has-dropdown');
+
+  dropdownTriggers.forEach(function(trigger) {
+    trigger.addEventListener('click', function(event) {
+      // Prevent default click behavior if needed (e.g., if the trigger is a link)
+      // event.preventDefault();
+
+      // Toggle the 'is-active' class
+      this.classList.toggle('is-active');
+
+      //Close other opened dropdowns.
+      dropdownTriggers.forEach(function(otherTrigger){
+        if(otherTrigger !== trigger && otherTrigger.classList.contains('is-active')){
+          otherTrigger.classList.remove('is-active');
+        }
+      });
+    });
+  });
+});
+
 // Adds the disclaimer text to the disclaimer element on all pages
 function disclaimer() {
   const disclaimerEl = document.querySelector('.disclaimer');

@@ -317,7 +317,7 @@
   border-radius: 10px;
   border: 1px solid #2DD4BF;
   padding: 20px;
-  background: #26292E !important;
+  background: #26292E3D !important;
   max-width: 900px!important;
   margin: 0 auto;
 }
@@ -370,28 +370,25 @@
   border: none !important;
 }
 
-/* Box styling to match background and input fields */
-.box {
-    background-color: #2e2e2e;
+  /* Box styling to match background and input fields */
+  .box {
+    background-color: #2e2e2e00 !important;
     color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    background: #26292E !important;
     box-shadow: none !important;
     padding: 0px;
-}
-
-.box input,
-.box textarea {
-    background: #26292E !important;
+  }
+  
+  .box input, .box textarea {
+    background: #26292E00 !important;
     color: #ffffff !important;
     border: 1px solid #555555;
-}
-
-.box input::placeholder,
-.box textarea::placeholder {
-    color: #888888;
-}
+  }
+  .box input::placeholder,
+  .box textarea::placeholder {
+      color: #d4d2d2;
+  }
 
 
 
