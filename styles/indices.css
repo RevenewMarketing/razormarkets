@@ -1,4 +1,267 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
+#accountCardsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    justify-content: center;
+  }
+  
+  #accountCardsContainer p {
+    margin: 0;
+  }
+  
+  #card-bg {
+    width: 16.25rem;
+      height: fit-content;
+      display: flex;
+      border-radius: 36px;
+      background: linear-gradient(180deg, #1EE981 0%, #0E92CA 71.61%);
+      flex-direction: row;
+      align-items: center;
+      padding: 0.0625rem;
+      justify-content: center;
+      position: relative;
+      flex-wrap: wrap;
+  }
+  
+  .buttons {
+    width: 56%;
+    flex-wrap: nowrap !important;
+  }
+  
+  
+  
+  .feature-card-account-types {
+    background: #26292E;
+    border: 1px solid rgba(0, 209, 255, 0.5); /* Border with a soft blue glow */
+    border-radius: 35px;
+    padding: 20px;
+    text-align: left;
+    width: 300px; /* Adjust width to match the card dimensions */
+    height: auto;
+    transition: border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  }
+  
+  .feature-card-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .feature-card-header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    background-color: #fff; 
+  }
+  
+  .feature-card-header img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    filter: drop-shadow(0px 0px 15px #487DF799);
+  }
+  
+  .feature-card-header h2 {
+    font-size: 20px;
+    color: #FFFFFF;
+    margin: 0;
+  }
+  
+  
+  
+  .feature-card-header h3 {
+    font-size: 12px !important;
+    margin: 0;
+    font-weight: 400 !important;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+  }
+  
+  .feature-card-account-types:hover {
+    border-color: #00d1ff; /* Highlight color on hover */
+  }
+  
+  .feature-card-account-types h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+  
+  .card-account-contents {
+    position: relative;
+    margin-bottom: 25px;
+  }
+  
+  .card-account-contents p {
+    font-size: 12px !important;
+    color: #fff; /* Light gray text */
+    margin-bottom: 10px;
+    font-weight: 400 !important;
+    display: flex;
+  }
+  
+  .card-account-contents p strong {
+    width: 50%;
+    color: #fff;
+  } 
+  
+  .card-account-contents::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    background-color: #fff; 
+  }
+  
+  
+  
+  
+  
+  
+  .feature-card-account-types a {
+    margin: auto;
+  }
+  
+  
+  
+  /* Section 1 */
+  
+  .trade-section {
+    background-color: #171A20;
+    color: #ffffff;
+    /* padding: 4rem 1.5rem; */
+    padding: 3.75rem 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1440px;
+    flex-direction: row;
+  }
+  
+  .account-types-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 40%;
+  }
+  
+  @media (max-width: 750px) {
+    .trade-section {
+      flex-direction: column-reverse;
+    }
+  
+    .account-types-content {
+      max-width: 80%;
+    }
+  }
+  
+  
+  .account-types-content h1 {
+    text-align: left;
+    margin: 0 !important;
+    font-weight: bold;
+    width: 85%;
+    line-height: 1;
+  }
+  .account-types-content p {
+    margin-top: 1rem;
+    color: #b1b1b3;
+    margin-bottom: 15px;
+  }
+  
+  
+  
+  
+  .info-badges {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+    max-width: 23dvw;
+    height: 300px;
+    min-width: 300px;
+  }
+  
+  
+  
+  .info-badge {
+    background-color: #3c3c3f;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  .info-badge i {
+    margin-right: 0.5rem;
+  }
+  
+  .info-badges img {
+    max-width: 30dvw;
+    min-width: 345px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: floats 3s ease-in-out infinite;
+  }
+  
+  @keyframes floats {
+    0% {
+    
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        
+        transform: translate(-50%, -48%);
+    }
+    100% {
+    
+        transform:translate(-50%, -50%);
+    }
+  }
+  
+  .info-badges .badge1 {
+    top: -2rem;
+    left: 2rem;
+  }
+  .info-badges .badge2 {
+    top: 2rem;
+    left: 4rem;
+  }
+  .info-badges .badge3 {
+    top: 5rem;
+    left: 1rem;
+  }
+  .shield-icon {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: url('https://via.placeholder.com/150') no-repeat center center;
+    background-size: contain;
+  }
+
+  @import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
@@ -120,21 +383,6 @@ nav a {
   /* Blue-ish color for hover and active */
 }
 
-@media screen and (max-width: 768px) {
-  .navbar-item.has-dropdown .navbar-dropdown {
-      display: none;
-  }
-  .navbar-item.has-dropdown.is-active .navbar-dropdown {
-      display: block;
-  }
-}
-
-.navbar-link:not(.is-arrowless)::after {
-  border-color: hsl(193, 68.5%, 53.9%);
-  inset-inline-end: 1.125em;
-  margin-top: -.375em;
-}
-
 
 section {
   max-width: 1440px;
@@ -146,16 +394,14 @@ section {
   margin-bottom: 50px;
 }
 
-section h2 {
+section h1 {
   /* font-size: 5rem; */
-  font-size: 1.8125rem;
+  font-size: clamp(2rem, 4dvw, 5rem) !important;
   font-weight: bold;
   text-align: center;
   line-height: 1.1;
   margin-bottom: 20px;
   color: #FFFFFF;
-
-
 }
 
 .auth-buttons {
@@ -252,22 +498,22 @@ button {
 }
 
 /* Hero Section */
-.hero {
+.hero-indices{
   text-align: center;
-  padding: 60px 20px;
+  padding: 60px;
   align-items: center;
   max-width: 100dvw;
   width: 100%;
-  height: 80dvh;
+  height: 60dvh;
   display: flex;
   justify-content: center;
-  background-image: url("../assets/home-page/Razor-image-30.png");
+  background-image: url("../assets/indices/indices-banner.png");
   background-size: cover;
   background-position: center;
 }
 
-.hero h1 {
-  font-size: clamp(2rem, 3dvw, 4rem) !important;
+.hero-indices h1 {
+  /* font-size: 5rem; */
   font-weight: bold;
   line-height: 1;
   /* margin: auto; */
@@ -276,13 +522,13 @@ button {
   text-align: center;
 }
 
-.hero {
+.hero-indices {
   /* border: 2px solid; */
   /* border-image-source: linear-gradient(180deg, #1EE981 0%, #0E92CA 71.61%); */
   border-image-slice: 1;
 }
 
-.hero p {
+.hero-indices p {
   font-size: 16px;
   max-width: 600px;
   margin: 0 auto 30px;
@@ -323,6 +569,7 @@ button {
   padding: 40px 20px;
   /* background-color: #171A20; */
   width: 80%;
+  height: 520px;
   margin: auto;
   flex-direction: row;
   flex-wrap: wrap;
@@ -337,7 +584,7 @@ button {
   padding: 0px;
   text-align: center;
   width: 300px;
-  height: 440px;
+  height: 100%;
   -webkit-transition: border 0.3s ease;
   /* WebKit prefix */
   display: flex;
@@ -347,6 +594,8 @@ button {
   transition: .2s ease;
   transform: scale(1);
 }
+
+
 
 .section-3 .feature-card:hover {
   transform: scale(1.1);
@@ -413,11 +662,6 @@ button {
 
 .section-3 h2 {
   margin-top: 0;
-    margin-top: 0;
-    font-size: 36px !important;
-    font-weight: bold;
-    line-height: 1.1;
-  
 }
 
 .feature-card img {
@@ -440,11 +684,10 @@ button {
 }
 
 .feature-card h3 {
-  font-size: 2rem;
+  font-size: 18px;
   font-weight: bold;
   color: #FFFFFF;
   margin-bottom: 10px;
-  line-height: 1.1;
 }
 
 .feature-card p {
@@ -487,18 +730,6 @@ button {
   max-width: 80%;
 }
 
-@media (max-width: 768px) {
-  .hero-image-container {
-    flex-direction: column;
-    height: auto;
-    padding-top: 50px !important;
-    padding-left: 20px;
-    padding-right: 20px;
-    max-width: 100%;
-    margin: 10px;
-  }
-}
-
 .hero-image-text-content {
   flex: 1;
 }
@@ -532,9 +763,7 @@ button {
   .hero-image-text-content {
     width: 100% !important;
   }
- .pie-img {
-  min-width: 311px;
-  }
+
   .hero-image-container {
     flex-direction: column-reverse;
     align-items: center;
@@ -609,7 +838,7 @@ h1 {
 }
 
 section h2 {
-  font-size: clamp(2rem, 3dvw, 4rem) !important;
+  font-size: 1.8125rem;
   font-weight: bold;
   line-height: 1.3;
   margin: auto;
@@ -852,13 +1081,6 @@ section h2 {
   /* WebKit prefix */
 }
 
-@media (max-width: 768px) {
-  .back-to-top {
-    right: 20px;
-  }
-}
-
-
 .svg-logo {
   /* filter: drop-shadow(0px 0px 15px #48f7884b) !important; */
 }
@@ -962,39 +1184,265 @@ section h2 {
     opacity: 1;
   }
 }
-.white-text{
-  color:#ffffff
+
+#forexSection {
+  text-align: center;
+  padding-top: 50px;
+  max-width: 960px;
+  width: 60%;
+}
+@media (max-width: 750px) {
+  #forexSection {
+    padding-top: 20px;
+    width: 85%;
+  }
 }
 
-.precisionTrading{
-
-  text-align: left; font-size: xx-large !important;
+.forexSection__title {
+  font-size: 2.5em;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
 
-/* center align precisionTrading in mobile view */
-@media (max-width: 768px) {
-  .precisionTrading {
+.forexSection__description {
+  font-size: 1em;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.partnerLogoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Responsive grid */
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.partnerLogoItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.19);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.partnerLogoItem__image {
+  max-width: 100%;
+  height: auto;
+  display: block; /* To prevent extra space below image */
+  /* filter: grayscale(100%); Apply grayscale filter */
+}
+
+.tradingview-widget-container{
+  display: flex;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 75dvh;
+  flex-direction: column;
+  margin-top: -150px;
+}
+
+.forex-section {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.forex-section h2 {
+    color: #333;
+    margin-bottom: 10px;
     text-align: center;
-  }
 }
 
-@media screen and (max-width: 1023px) {
-  .navbar-menu {
-    background-color: ;
-    box-shadow: 0 .5em 1em hsla(var(--bulma-scheme-h),var(--bulma-scheme-s),var(--bulma-scheme-invert-l),.1);
-    padding: .5rem 0;
-    background: rgba(0, 0, 0, 0.58) !important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.1px);
-    -webkit-backdrop-filter: blur(8.1px);
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    text-align: right;
-  }
+.forex-section p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
 
-/* move the login buttons to the right on mobile */ 
-@media (max-width: 768px) {
-  .buttons {
-    justify-content: flex-end;
-  }
+.forex-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 15px;
 }
+
+.benefit-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    width: 130px;
+    text-align: center;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.benefit-card h3 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.benefit-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+.forex-actions {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.action-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+.forex-container {
+    display: flex;
+    flex-direction: row; /* Arrange cards in rows */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    gap: 20px; /* Spacing between cards */
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    justify-content: flex-start; /* Align cards to the start of the row */
+  }
+  
+  @media (max-width: 768px) {
+  
+    .feature-badge{
+  
+      width: 100%;
+    }
+  
+    .feature-badges{
+  
+      margin-top: 20px;
+    }
+  
+    .forex-container {
+      flex-direction: column; /* Arrange cards in a single column for mobile */
+      align-items: center; /* Center cards horizontally */
+    }
+  
+    .forex-card {
+      width: auto !important; /* Full width for mobile */
+      margin-bottom: 20px; /* Space between cards */
+    }
+  
+    .forex-card-image {
+      width: 100%; /* Full width for mobile */
+      max-width: none; /* Remove max-width constraint */
+      margin-right: 0; /* Remove right margin */
+      margin-bottom: 10px; /* Add bottom margin */
+    }
+  
+    .forex-card-content {
+      width: 100%; /* Full width for mobile */
+      padding: 15px; /* Adjust padding */
+    }
+  }
+  
+  .forex-card {
+    background-color: rgba(10, 221, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    width: calc(50% - 10px); /* **Set card width to ~50% for 2-column layout (minus gap)** */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+  }
+  
+  .forex-card-image {
+    width: 30%; /* Adjusted image width for better balance in smaller cards */
+    height: auto;
+    overflow: hidden;
+    max-width: 300px; /* Increased max-width for larger images */
+    margin-right: 20px; /* Adjusted margin to fit smaller cards */
+  }
+  
+  .forex-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .forex-card-content {
+    padding: 15px; /* Adjusted padding for smaller cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%; /* Adjusted content width to 50% */
+    text-align: left;
+  }
+  
+  .forex-card-title {
+    font-size: 1.4em; /* Slightly smaller title for smaller cards */
+    margin-bottom: 8px; /* Adjusted margin for smaller cards */
+    color: #fff;
+    text-align: left;
+    line-height: 1.2;
+  }
+  
+  .forex-card-text {
+    font-size: 0.9em; /* Slightly smaller text for smaller cards */
+    color: #eee;
+    line-height: 1.3; /* Adjusted line height for smaller text */
+    margin-bottom: 15px; /* Adjusted margin for smaller cards */
+    text-align: left;
+  }
+  
+  .forex-card-button {
+    background-color: rgba(34, 139, 230, 0.7);
+    color: #fff;
+    border: none;
+    padding: 8px 16px; /* Adjusted padding for smaller buttons */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em; /* Slightly smaller button text */
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 8px; /* Adjusted margin for smaller cards */
+  }
+  
+  .forex-card-button:hover {
+    background-color: rgba(41, 128, 185, 0.8);
+  }
+  
+  /* Adjust padding for content in all cards for smaller cards */
+  .forex-container .forex-card .forex-card-content {
+    padding-left: 15px; /* Adjusted left padding for smaller cards */
+    padding-right: 0;
+  }
+  

@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Razor Markets</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-    <link rel="stylesheet" href="../styles/deposits-and-withdrawals.css">
+    <link rel="stylesheet" href="../styles/forex.css">
     <link rel="stylesheet" href="../styles/backgroundCSS.css">
+    <link rel="stylesheet" href="../styles/index.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -45,10 +46,10 @@
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">Markets</a>
                         <div class="navbar-dropdown">
-                            <a class="navbar-item active" href="/pages/markets/forex.html">Forex</a>
-                            <a class="navbar-item" href="/pages/markets/indices.html">Indices</a>
-                            <a class="navbar-item" href="/pages/markets/commodities.html">Commodities</a>
-                            <a class="navbar-item" href="/pages/markets/shares.html">Shares</a>
+                            <a class="navbar-item" href="/pages/forex.html">Forex</a>
+                            <a class="navbar-item" href="/pages/indices.html">Indices</a>
+                            <a class="navbar-item" href="/pages/commodities.html">Commodities</a>
+                            <a class="navbar-item" href="/pages/shares.html">Shares</a>
                         </div>
                     </div>
 
@@ -99,9 +100,9 @@
     </header>
 
     <main>
-        <section class="hero section-1">
+        <section class="hero-forex">
             <!-- <img src="/assets/home-page/2.jpg" alt="hero-image"> -->
-            <h1>Forex Trading with Razor Markets</h1>
+            <h1>Forex Trading</h1>
             <p> Dive into the dynamic world of forex trading with Razor Markets. Access the world's largest and most
                 liquid financial market, trading major, minor, and exotic currency pairs. At Razor Markets, we provide
                 you with the tools and resources you need to capitalize on currency fluctuations.
@@ -192,45 +193,67 @@
 
 
         <div class="sectionDeposits">
-            <section class="section-3">
-                <div class="features">
 
-                </div>
-            </section>
 
-            <section id="partnerSection">
-                <h2 class="partnerSection__title">Our Payment Service Providers</h2>
-                <p class="partnerSection__description">Our Payment Service Providers offer secure, reliable transactions
-                    through trusted platforms. Using advanced encryption and fraud prevention, they support multiple
-                    payment
-                    methods, ensuring your financial information is protected. Trade with confidence!</p>
+            <section id="forexSection">
+                <h2 class="forexSection__title">Why trade forex with Razor Markets?</h2>
+                <p class="forexSection__description">We provide a superior trading environment built on ultra-low
+                    spreads, rapid execution, and access to advanced platforms.
+                    1 Our commitment to comprehensive market analysis and educational resources empowers traders of all
+                    levels to navigate the forex market confidently. Experience the Razor Markets advantage and unlock
+                    your trading potential.</p>
 
-                <div class="partnerLogoGrid">
-                    <div class="partnerLogoItem"><img class="partnerLogoItem__image"
-                            src="/assets/deposits-and-withdrawals/visa.png" alt="visa"></div>
-                    <div class="partnerLogoItem"><img class="partnerLogoItem__image"
-                            src="/assets/deposits-and-withdrawals/mastercard.png" alt="mastercard"></div>
-                    <div class="partnerLogoItem"><img class="partnerLogoItem__image"
-                            src="/assets/deposits-and-withdrawals/ozow.png" alt="ozow"></div>
-                    <div class="partnerLogoItem"><img class="partnerLogoItem__image"
-                            src="/assets/deposits-and-withdrawals/capitecpay.png" alt="capitecpay"></div>
-                    <div class="partnerLogoItem"><img class="partnerLogoItem__image"
-                            src="/assets/deposits-and-withdrawals/applepay.png" alt="applepay"></div>
-                    <div class="partnerLogoItem"><img class="partnerLogoItem__image"
-                            src="/assets/deposits-and-withdrawals/samsungpay.png" alt="samsungpay"></div>
-                    <div class="partnerLogoItem"><img class="partnerLogoItem__image"
-                            src="/assets/deposits-and-withdrawals/airtel.png" alt="airtel"></div>
-                    <div class="partnerLogoItem"><img class="partnerLogoItem__image"
-                            src="/assets/deposits-and-withdrawals/orange.png" alt="orange"></div>
-                    <div class="partnerLogoItem"><img class="partnerLogoItem__image"
-                            src="/assets/deposits-and-withdrawals/cryptopay.png" alt="cryptopay"></div>
-                    <div class="partnerLogoItem"><img class="partnerLogoItem__image"
-                            src="/assets/deposits-and-withdrawals/mobilemoney.png" alt="mobilemoney"></div>
+                <div class="forex-container">
+                    <div class="forex-card">
+                        <div class="forex-card-image">
+                            <img src="../assets/partners/top-commisions.jpg" alt="Top Commissions">
+                        </div>
+                        <div class="forex-card-content">
+                            <h3 class="forex-card-title">Tight Spreads</h3>
+                            <p class="forex-card-text">Benefit from spreads starting from 0.0 pips, significantly
+                                reducing your trading costs and maximising potential profits.</p>
+                        </div>
+                    </div>
+                    <div class="forex-card">
+                        <div class="forex-card-image">
+                            <img src="../assets/about-page/intuitive-interface.jpg" alt="Intuitive Interface">
+                        </div>
+                        <div class="forex-card-content">
+                            <h3 class="forex-card-title">Fast Execution</h3>
+                            <p class="forex-card-text">Experience swift and reliable trade execution, minimizing
+                                slippage and ensuring your orders are filled precisely when you need them.</p>
+                        </div>
+                    </div>
+                    <div class="forex-card">
+                        <div class="forex-card-image">
+                            <img src="../assets/about-page/diverse-asset-selection.jpg" alt="Diverse Asset Selection">
+                        </div>
+                        <div class="forex-card-content">
+                            <h3 class="forex-card-title">Advanced Platforms</h3>
+                            <p class="forex-card-text">Access a range of powerful platforms, including MetaTrader 4, and
+                                MetaTrader 5, each offering advanced tools and features to suit your
+                                trading style.</p>
+                        </div>
+                    </div>
+                    <div class="forex-card">
+                        <div class="forex-card-image">
+                            <img src="../assets/about-page/trusted-and-secure.jpg" alt="Trusted & Secure">
+                        </div>
+                        <div class="forex-card-content">
+                            <h3 class="forex-card-title">Market Analysis</h3>
+                            <p class="forex-card-text">Empower your trading decisions with in-depth market analysis and
+                                extensive educational resources, designed to keep you informed and ahead of market
+                                trends.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <button class="button is-info signup">Start Trading</button>
             </section>
+
         </div>
+
+
 
 
         <!-- Footer -->
