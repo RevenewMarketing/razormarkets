@@ -47,6 +47,7 @@ function createBlogPostElement(post) {
             <p>${post.preview}</p>
             <p>Author: ${post.author}</p>
             <p>Date: ${post.date}</p>
+            <p>Read More...</p>
         </div>
     `;
 
