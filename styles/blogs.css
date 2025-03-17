@@ -372,7 +372,8 @@
     gap: 20px; /* Spacing between cards */
     max-width: 1200px;
     margin: 0 auto;
-    justify-content: flex-start; /* Align cards to the start of the row */
+    justify-content: flex-start; 
+    padding: 100px;
   }
   
   @media (max-width: 768px) {
@@ -501,13 +502,43 @@
   /* style.css */
 
 .blog-post {
-    border: 1px solid #ddd;
+  border-radius: 20px;
+  border: 1px solid #D9D9D94D;
+  backdrop-filter: blur(20px);
+  background-color: rgba(10, 221, 255, 0.2);
     padding: 20px;
     margin-bottom: 20px;
 }
 .blog-post h2 {
     margin-top: 0;
+    text-align: left;
 }
   
+
+/* Single Post Page Style */
+
+
+@media screen and (max-width: 768px) {
+  .about-container {
+        padding-top: 100px;
+        padding-bottom: 50px;
+        padding-left: 20px;     
+        padding-right: 20px;
+        
+
+    }
+
+    .about-container h2 {
+      text-align: left;
+    }
+  
+}
+#blog-container {
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
   
   

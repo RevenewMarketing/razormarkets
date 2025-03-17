@@ -11,20 +11,28 @@ const post = blogPosts.find(blog => blog.id === postId);
 console.log(post);
 
 if (post) {
-    const postContainer = document.getElementById("single-post");
-    const titleElement = document.createElement("h2");
-    titleElement.textContent = post.title;
-    const contentElement = document.createElement("p");
-    contentElement.textContent = post.content;
-    const authorElement = document.createElement("p");
-    authorElement.textContent = `Author: ${post.author}`;
-    const dateElement = document.createElement("p");
-    dateElement.textContent = `Date: ${post.date}`;
+    const postContainer = document.getElementById(`single-post`);
 
-    postContainer.appendChild(titleElement);
-    postContainer.appendChild(contentElement);
-    postContainer.appendChild(authorElement);
-    postContainer.appendChild(dateElement);
+    const imgStyle = `
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        margin-bottom: 1rem;
+    `;
+
+    const titleStyle = `
+       text-align: left;
+    `;
+
+    postContainer.innerHTML = `
+        <img style="${imgStyle}" src="${post.featuredImage}" alt="${post.title}" />
+        <h2 style="${titleStyle}" >${post.title}</h2>
+        <p>${post.content}</p>
+        <p>Author: ${post.author}</p>
+        <p>Date: ${post.date}</p>
+    `;
+
+
 } else {
     document.getElementById("single-post").textContent = "Post not found.";
 }
