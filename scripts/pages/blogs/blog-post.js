@@ -20,6 +20,7 @@ if (post) {
         margin-bottom: 1rem;
     `;
 
+
     const titleStyle = `
        text-align: left;
     `;
