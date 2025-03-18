@@ -26,7 +26,7 @@
     border: none;
     text-align: left;
     outline: none;
-    font-size: 1rem;
+    font-size: 28px;
     font-weight: 500;
     display: flex;
     justify-content: space-between;
@@ -60,6 +60,7 @@
 .faq-answer p {
     line-height: 1.6;
     margin: 0;
+    font-size: 18px;
 }
 
 .faq-item:hover, .faq-item.active {
