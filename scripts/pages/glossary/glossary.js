@@ -1,0 +1,66 @@
+// const glossary = [
+//     { term: "Ask Price", definition: "The price at which a trader can buy a currency pair. It is the higher of the two prices in a quote." },
+//     { term: "Base Currency", definition: "The first currency in a currency pair, against which the value of the second currency is determined." },
+//     { term: "Bid Price", definition: "The price at which a trader can sell a currency pair. It is the lower of the two prices in a quote." },
+//     { term: "Broker", definition: "A company that provides traders with access to the Forex market by executing buy and sell orders." },
+//     { term: "Bull Market", definition: "A market condition where prices are rising or expected to rise." },
+//     { term: "Bear Market", definition: "A market condition where prices are falling or expected to fall." },
+//     { term: "Leverage", definition: "The ability to control a large position with a small amount of capital, expressed as a ratio (e.g., 1:100)." },
+//     { term: "Pip", definition: "The smallest price movement in Forex, usually the fourth decimal place in most currency pairs (0.0001)." },
+//     { term: "Spread", definition: "The difference between the bid and ask price of a currency pair, representing the broker’s commission." },
+//     { term: "Trend", definition: "The general direction in which a currency pair’s price is moving (upward, downward, or sideways)." }
+// ];
+
+const glossaryContainer = document.getElementById("glossary-list");
+const alphabetNav = document.querySelectorAll(".alphabet-nav");
+const groupedGlossary = {};
+
+glossary.forEach(({ term, definition }) => {
+    const firstLetter = term.charAt(0).toUpperCase();
+    if (!groupedGlossary[firstLetter]) {
+        groupedGlossary[firstLetter] = [];
+    }
+    groupedGlossary[firstLetter].push({ term, definition });
+});
+
+Object.keys(groupedGlossary).sort().forEach(letter => {
+    const section = document.createElement("div");
+    section.classList.add("glossary-section");
+    section.id = `section-${letter}`;
+    section.innerHTML = `<h3>${letter}</h3>`;
+
+    groupedGlossary[letter].forEach(({ term, definition }) => {
+        const item = document.createElement("div");
+        item.classList.add("glossary-item");
+        item.innerHTML = `<strong>${term}</strong><div class='definition' style='display: none;'>${definition}</div>`;
+      
+        item.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const definitionElement = item.querySelector(".definition");
+            definitionElement.style.display = definitionElement.style.display === "none" ? "block" : "none";
+        });
+        section.appendChild(item);
+    });
+
+    glossaryContainer.appendChild(section);
+});
+
+Object.keys(groupedGlossary).sort().forEach(letter => {
+    const link = document.createElement("a");
+    link.href = `#section-${letter}`;
+    link.textContent = letter;
+    alphabetNav[0].appendChild(link);
+    alphabetNav[1].appendChild(link.cloneNode(true));
+});
+
+//log the scroll position
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 460) {
+        document.querySelector(".scroll-alphabet").style.display = "flex";
+        document.querySelector(".inner-alphabet").style.opacity = "0";
+    }else if (window.scrollY < 460) {
+        document.querySelector(".scroll-alphabet").style.display = "none";
+        document.querySelector(".inner-alphabet").style.opacity = "1";
+    }
+});

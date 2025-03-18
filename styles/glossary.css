@@ -1,0 +1,72 @@
+.glossary-container {
+    margin: 0 auto;
+    backdrop-filter: blur(20px);
+    background-color: rgba(10, 221, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+.alphabet-nav {
+    text-align: center;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.scroll-alphabet {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width:100%;
+}
+
+.alphabet-nav a {
+    margin: 0 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-block;
+    background: #e0e0e0;
+}
+
+.alphabet-nav a:hover {
+    background: #c0c0c0;
+}
+
+.glossary-section {
+    margin-bottom: 20px;
+}
+
+.glossary-section h3 {
+    font-size: x-large;
+    border-bottom: 1px solid #ddd;
+}
+
+.glossary-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.glossary-item:hover {
+    background-color: #3b4de909;
+}
+
+.definition {
+    display: none;
+    padding-top: 5px;
+}
