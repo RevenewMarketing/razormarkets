@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Razor Markets</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-    <link rel="stylesheet" href="../styles/commodities.css">
+    <link rel="stylesheet" href="../styles/forex.css">
     <link rel="stylesheet" href="../styles/backgroundCSS.css">
+    <link rel="stylesheet" href="../styles/faqs.css">
     <link rel="stylesheet" href="../styles/index.css">
+    <script src="../scripts/pages/faqs/faqList.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -48,7 +50,7 @@
                         <div class="navbar-dropdown">
                             <a class="navbar-item" href="/pages/forex.html">Forex</a>
                             <a class="navbar-item" href="/pages/indices.html">Indices</a>
-                            <a class="navbar-item active" href="/pages/commodities.html">Commodities</a>
+                            <a class="navbar-item" href="/pages/commodities.html">Commodities</a>
                             <a class="navbar-item" href="/pages/shares.html">Shares</a>
                         </div>
                     </div>
@@ -100,17 +102,18 @@
     </header>
 
     <main>
-        <section class="hero-commodities">
+        <section class="hero-forex">
             <!-- <img src="/assets/home-page/2.jpg" alt="hero-image"> -->
-            <h1>Trade Commodities</h1>
-            <p> Explore the dynamic commodities market with Razor Markets. Trade precious metals like gold and silver,
-                energy products like crude oil and natural gas, and agricultural commodities like coffee and wheat.
-            </p>
-            <div class="cta-buttons">
+            <h1>Frequently Asked Questions</h1>
+            <!-- <p> Dive into the dynamic world of forex trading with Razor Markets. Access the world's largest and most
+                liquid financial market, trading major, minor, and exotic currency pairs. At Razor Markets, we provide
+                you with the tools and resources you need to capitalize on currency fluctuations.
+            </p> -->
+            <!-- <div class="cta-buttons">
                 <button class="button is-success login" onclick="window.location.href='#featured-cards-section'">Learn
                     More</button>
                 <button class="button is-info signup">Start Trading</button>
-            </div>
+            </div> -->
 
         </section>
         <!-- TradingView Widget BEGIN -->
@@ -189,75 +192,10 @@
         </div>
 
         <!-- TradingView Widget END -->
-
-
-        <div class="sectionDeposits">
-
-
-            <section id="commoditiesSection">
-                <h2 class="commoditiesSection__title">Why Trade Commodities: Energy, Metals, and Agriculture?</h2>
-                <p class="commoditiesSection__description">hese markets offer unique opportunities for diversification
-                    and profit. 1 Energy commodities, like oil and natural gas, are driven by global demand and
-                    geopolitical events. 2 Precious metals, such as gold and silver, serve as safe-haven assets and
-                    hedges against inflation. 3 Agricultural commodities, like wheat and corn, are influenced by weather
-                    patterns and global food supply. 4 Trading these sectors allows you to capitalize on real-world
-                    events and diversify your portfolio beyond traditional financial instruments.</p>
-
-                <div class="commodities-container">
-                    <div class="commodities-card">
-                        <div class="commodities-card-image">
-                            <img src="../assets/partners/top-commisions.jpg" alt="Top Commissions">
-                        </div>
-                        <div class="commodities-card-content">
-                            <h3 class="commodities-card-title">Market Diversification</h3>
-                            <p class="commodities-card-text">Gain exposure to a wide array of major indices, including
-                                the S&P 500, FTSE 100, and DAX 30, diversifying your portfolio.</p>
-                        </div>
-                    </div>
-                    <div class="commodities-card">
-                        <div class="commodities-card-image">
-                            <img src="../assets/about-page/intuitive-interface.jpg" alt="Intuitive Interface">
-                        </div>
-                        <div class="commodities-card-content">
-                            <h3 class="commodities-card-title">Spreads & Execution</h3>
-                            <p class="commodities-card-text">Experience swift and reliable trade execution, minimizing
-                                slippage and ensuring your orders are filled precisely when you need them.</p>
-                        </div>
-                    </div>
-                    <div class="commodities-card">
-                        <div class="commodities-card-image">
-                            <img src="../assets/about-page/diverse-asset-selection.jpg" alt="Diverse Asset Selection">
-                        </div>
-                        <div class="commodities-card-content">
-                            <h3 class="commodities-card-title">Advanced Tools</h3>
-                            <p class="commodities-card-text">Access a range of powerful platforms, including MetaTrader
-                                4, and
-                                MetaTrader 5, each offering advanced tools and features to suit your
-                                trading style.</p>
-                        </div>
-                    </div>
-                    <div class="commodities-card">
-                        <div class="commodities-card-image">
-                            <img src="../assets/about-page/trusted-and-secure.jpg" alt="Trusted & Secure">
-                        </div>
-                        <div class="commodities-card-content">
-                            <h3 class="commodities-card-title">Market Insights</h3>
-                            <p class="commodities-card-text">Empower your trading decisions with in-depth market
-                                analysis and
-                                extensive educational resources, designed to keep you informed and ahead of market
-                                trends.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="button is-info signup">Start Trading</button>
-            </section>
-
-        </div>
-
-
-
-
+        <section class="section-7">
+            <h2 class="faq-heading">FAQS</h2>
+            <div id="faq-container"></div>
+</section>
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
@@ -363,10 +301,9 @@
             </a>
         </section>
     </main>
-
+    <script src="../scripts/pages/faqs/faqFunction.js"></script>
     <script src="../scripts/tilt.js"></script>
     <script src="../scripts/index.js"></script>
-    <script src="../scripts/pages/forex/forex.js"></script>
     <script src="../scripts/pages/button-links.js"></script>
 </body>
 

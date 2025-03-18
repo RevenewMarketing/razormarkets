@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="../styles/partners.css">
     <link rel="stylesheet" href="../styles/backgroundCSS.css">
-    <link rel="stylesheet" href="../styles/index.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -78,7 +77,7 @@
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">Support</a>
                         <div class="navbar-dropdown">
-                            <a class="navbar-item" href="/pages/support/faqs.html">FAQs</a>
+                            <a class="navbar-item" href="/pages/faqs.html">FAQs</a>
                             <a class="navbar-item" href="/pages/legalDocs.html">Legal Documents</a>
                             <a class="navbar-item" href="/pages/contact.html">Contact</a>
                         </div>
@@ -113,6 +112,83 @@
                 <button class="button is-info signup">Start Trading</button>
             </div>
         </section>
+
+        <!-- TradingView Widget BEGIN -->
+
+    <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow"
+            target="_blank">
+            <span class="white-text">Track all markets on TradingView</span>
+          </a></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+          async>
+  
+            {
+  
+              "symbols": [
+  
+                {
+  
+                  "proName": "FOREXCOM:SPXUSD",
+  
+                  "title": "S&P 500 Index"
+  
+                },
+  
+                {
+  
+                  "proName": "FOREXCOM:NSXUSD",
+  
+                  "title": "US 100 Cash CFD"
+  
+                },
+  
+                {
+  
+                  "proName": "FX_IDC:EURUSD",
+  
+                  "title": "EUR to USD"
+  
+                },
+  
+                {
+  
+                  "description": "USD to Zar",
+  
+                  "proName": "FX:USDZAR"
+  
+                },
+  
+                {
+  
+                  "description": "EUR/ USD",
+  
+                  "proName": "FX:EURUSD"
+  
+                },
+  
+                {
+  
+                  "description": "USD to JPY",
+  
+                  "proName": "FX:USDJPY"
+  
+                }
+  
+              ],
+  
+                "showSymbolLogo": true,
+                  "isTransparent": false,
+                    "displayMode": "adaptive",
+                      "colorTheme": "dark",
+                        "locale": "en"
+  
+            }
+          </script>
+      </div>
+  
+      <!-- TradingView Widget END -->
 
         <!-- Featured cards-->
         <section class="section-7" id="learnmore">
