@@ -63,7 +63,7 @@
     height: fit-content;
     display: flex;
     border-radius: 36px;
-    background: linear-gradient(180deg, #1EE981 0%, #0E92CA 71.61%);
+    background: linear-gradient(180deg, #1EE981 0%, #0E92CA63 71.61%);
     flex-direction: row;
     align-items: center;
     padding: 0.0625rem;
@@ -80,7 +80,6 @@
 
 
 .feature-card-account-types {
-  background: #26292E;
   border: 1px solid rgba(0, 209, 255, 0.5); /* Border with a soft blue glow */
   border-radius: 35px;
   padding: 20px;
@@ -327,5 +326,12 @@
   top: 600dvh;
   flex-direction: column;
   margin-top: -150px;
+}
+
+.feature-card-header h2 {
+
+  font-size: 24px !important;
+  font-weight: bold;
+  line-height: 1.1;
 }
 
