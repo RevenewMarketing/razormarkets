@@ -383,6 +383,30 @@ transition: .2s ease;
 /* Blue-ish color for hover and active */
 }
 
+@media screen and (max-width: 768px) {
+  .navbar-item.has-dropdown .navbar-dropdown {
+      display: none;
+  }
+  .navbar-item.has-dropdown.is-active .navbar-dropdown {
+      display: block;
+  }
+  .buttons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .navbar-menu {
+    background-color: ;
+    box-shadow: 0 .5em 1em hsla(var(--bulma-scheme-h),var(--bulma-scheme-s),var(--bulma-scheme-invert-l),.1);
+    padding: .5rem 0;
+    background: rgba(0, 0, 0, 0.58) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.1px);
+    -webkit-backdrop-filter: blur(8.1px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    text-align: right;
+}
+
 
 section {
   max-width: 1440px;
