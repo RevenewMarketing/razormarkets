@@ -77,6 +77,14 @@
   flex-wrap: nowrap !important;
 }
 
+@media screen and (max-width: 768px) {
+
+  .buttons {
+    width: 100%;
+  }
+  
+}
+
 
 
 .feature-card-account-types {

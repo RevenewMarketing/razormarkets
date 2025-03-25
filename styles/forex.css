@@ -1196,7 +1196,12 @@ section h2 {
     padding-top: 20px;
     width: 85%;
   }
+  
+  .buttons {
+    width: 100%;
+  }
 }
+
 
 .forexSection__title {
   font-size: 2.5em;
