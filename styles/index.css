@@ -120,6 +120,20 @@ nav a {
   /* Blue-ish color for hover and active */
 }
 
+.navbar-dropdown{
+
+  background-color: #30313a79;
+}
+.navbar-item {
+  background: #00000000;
+}
+
+.navbar-dropdown a.navbar-item:not(.is-active,.is-selected) {
+  color: #FFFFFF;
+  background-color: #30313a79;
+}
+
+
 @media screen and (max-width: 768px) {
   .navbar-item.has-dropdown .navbar-dropdown {
       display: none;
@@ -979,7 +993,6 @@ section h2 {
 
 @media screen and (max-width: 1023px) {
   .navbar-menu {
-    background-color: ;
     box-shadow: 0 .5em 1em hsla(var(--bulma-scheme-h),var(--bulma-scheme-s),var(--bulma-scheme-invert-l),.1);
     padding: .5rem 0;
     background: rgba(0, 0, 0, 0.58) !important;
