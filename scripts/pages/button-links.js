@@ -11,13 +11,13 @@
         if (text === 'Sign Up') {
           button.onclick = () => {
             console.log('Sign Up button clicked');
-            window.location.href = 'https://my.razormarkets.co.za/register'; // Replace with your desired URL
+            window.location.href = 'https://crm.razormarkets.co.za/register'; // Replace with your desired URL
           };
         }
         else if (text === 'Login') {
           button.onclick = () => {
             console.log('Login button clicked');
-            window.location.href = 'https://my.razormarkets.co.za/login'; // Replace with your desired URL
+            window.location.href = 'https://crm.razormarkets.co.za/login'; // Replace with your desired URL
           };
         }
         // else if (text === 'Learn More') {
