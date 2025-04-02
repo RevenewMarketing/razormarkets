@@ -57,8 +57,8 @@ const accountCards = [
     icon: "../assets/accountTypes/Razor-Blade.svg"
   },
   {
-    name: "Razor Prime",
-    type: "Standard Account",
+    name: "Razor Surge ",
+    type: "100% Bonus Account ",
     platform: "MT4 & MT5",
     markets: "All instruments",
     minDeposit: "USD 10",
