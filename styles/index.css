@@ -275,7 +275,7 @@ button {
   height: 80dvh;
   display: flex;
   justify-content: center;
-  background-image: url("../assets/home-page/Razor-image-30.png");
+  background-image: url("../assets/home-page/Razor-image-30.webp");
   background-size: cover;
   background-position: center;
 }
