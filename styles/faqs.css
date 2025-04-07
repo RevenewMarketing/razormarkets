@@ -79,3 +79,9 @@
 .faq-heading {
     text-align: left !important;
 }
+
+.category-heading {
+    padding-top: 20px; /* Adds 20px padding below the heading */
+    padding-bottom: 20px; /* Adds 20px padding below the heading */
+    text-align: left;
+}
