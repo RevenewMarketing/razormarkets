@@ -106,7 +106,7 @@ function renderGeneralEnquiries() {
 // Check the current page and render FAQs accordingly
 if (currentPage.includes("index.html") || currentPage === "/") { // Adjust the condition based on your homepage URL
     renderGeneralEnquiries();
-} else if (currentPage.includes("faqs.html")) { // Adjust the condition based on your FAQs page URL
+} else if (currentPage.includes("faqs")) { // Adjust the condition based on your FAQs page URL
     renderAllFAQs();
 } else {
     // Handle other pages or a default case if needed
