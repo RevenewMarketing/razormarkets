@@ -117,12 +117,14 @@ nav a {
   border-bottom-left-radius: 25px;
   border-top-right-radius: 25px;
   transition: .2s ease;
+  background-color: #30313a00;
   /* Blue-ish color for hover and active */
 }
 
 .navbar-dropdown{
 
   background-color: #30313a79;
+  top: 128%;
 }
 .navbar-item {
   background: #00000000;
@@ -130,7 +132,7 @@ nav a {
 
 .navbar-dropdown a.navbar-item:not(.is-active,.is-selected) {
   color: #FFFFFF;
-  background-color: #30313a79;
+  background-color: #30313a00;
 }
 
 
