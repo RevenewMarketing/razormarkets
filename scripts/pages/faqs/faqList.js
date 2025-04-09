@@ -184,7 +184,6 @@ const faqs = [
               question: "How can I contact Razor Markets’ support team?",
               answer: `
                   <p>Email: Use the dedicated support email address : <a href="mailto:support@razormarkets.com">support@razormarkets.com</a></p>
-                  <p>Phone Support: Call the customer support hotline +27 12 345 6789</p>
               `
           },
           {
