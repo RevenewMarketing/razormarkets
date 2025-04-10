@@ -24,7 +24,7 @@
     height: 60dvh;
     display: flex;
     justify-content: center;
-    background-image: url("../assets/about-page/trade-securely.png");
+    background-image: url("../assets/risk/risk-banner.webp");
     background-size: cover;
     background-position: center;
   }

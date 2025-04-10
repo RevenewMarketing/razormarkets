@@ -518,7 +518,7 @@ button {
   height: 60dvh;
   display: flex;
   justify-content: center;
-  background-image: url("../assets/deposits-and-withdrawals/deposits.png");
+  background-image: url("../assets/deposits-and-withdrawals/deposits.webp");
   background-size: cover;
   background-position: center;
 }

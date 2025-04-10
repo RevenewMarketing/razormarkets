@@ -10,7 +10,7 @@
 
 .heroAccount {
   position: relative;
-  background-image: url("../assets/accountTypes/account-types-hero.png");
+  background-image: url("../assets/accountTypes/account-types-hero.webp");
   background-size: cover;
   background-position: center;
   display: flex;

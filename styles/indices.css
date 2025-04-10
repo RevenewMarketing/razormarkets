@@ -515,7 +515,7 @@ button {
   height: 60dvh;
   display: flex;
   justify-content: center;
-  background-image: url("../assets/indices/indices-banner.png");
+  background-image: url("../assets/indices/indices-banner.webp");
   background-size: cover;
   background-position: center;
 }
