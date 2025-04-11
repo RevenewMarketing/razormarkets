@@ -174,7 +174,6 @@
   margin-bottom: 10px;
   font-weight: 400 !important;
   display: flex;
-  overflow: scroll;
 }
 
 .card-account-contents p strong {
