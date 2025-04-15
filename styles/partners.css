@@ -1379,7 +1379,8 @@
     border-radius: 10px;
     border: 1px solid #2DD4BF;
     padding: 20px;
-    background: #26292E57 !important;
+    background-color: rgba(10, 221, 255, 0.2);
+    backdrop-filter: blur(20px);
     max-width: 900px !important;
     margin: 0 auto;
   }
@@ -1445,7 +1446,7 @@
   .box input, .box textarea {
     background: #26292E00 !important;
     color: #ffffff !important;
-    border: 1px solid #555555;
+    border: 1px solid #2DD4BF;
   }
   .box input::placeholder,
   .box textarea::placeholder {
@@ -1459,6 +1460,7 @@
   .button.is-info {
       background-color: #2DD4BF;
       border: none;
+      color: #fff;
   }
   
   .button.is-info:hover {
