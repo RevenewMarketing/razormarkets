@@ -105,9 +105,8 @@ h2 {
     display: flex;
     width: 30px;
     height: 30px;
-    padding-top: 1px;
-    padding-left: 9px;
-    padding-right: 10px;
+    justify-content: center;
+    align-items: center;
   }
 
 .alphabet-nav a:hover {

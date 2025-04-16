@@ -23,11 +23,12 @@ glossary.forEach(({ term, definition }) => {
     groupedGlossary[firstLetter].push({ term, definition });
 });
 
-Object.keys(groupedGlossary).sort().forEach(letter => {
+Object.keys(groupedGlossary).sort().forEach((letter, index) => {
     const section = document.createElement("div");
     section.classList.add("glossary-section");
-    section.id = `section-${letter}`;
+    section.id = `section-${index}`;
     section.innerHTML = `<h3>${letter}</h3>`;
+
 
     groupedGlossary[letter].forEach(({ term, definition }) => {
         const item = document.createElement("div");
@@ -45,12 +46,27 @@ Object.keys(groupedGlossary).sort().forEach(letter => {
     glossaryContainer.appendChild(section);
 });
 
-Object.keys(groupedGlossary).sort().forEach(letter => {
+function createNavLink(letter, index) {
     const link = document.createElement("a");
-    link.href = `#section-${letter}`;
     link.textContent = letter;
-    alphabetNav[0].appendChild(link);
-    alphabetNav[1].appendChild(link.cloneNode(true));
+
+    link.addEventListener("click", (e) => {
+        const section = document.getElementById(`section-${index}`);
+        window.scrollTo({
+            top: section.offsetTop + 400,
+            behavior: "smooth"
+        });
+    });
+
+    return link;
+}
+
+Object.keys(groupedGlossary).sort().forEach((letter, index) => {
+    const link1 = createNavLink(letter, index);
+    const link2 = createNavLink(letter, index); // brand new with listener
+
+    alphabetNav[0].appendChild(link1);
+    alphabetNav[1].appendChild(link2);
 });
 
 //log the scroll position
