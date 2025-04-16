@@ -58,7 +58,7 @@ Using a local server ensures that all relative paths and additional features wor
       npx http-server -p 8000
       ```
 
-3. **Access the Application**:
+3. **Access the Website**:
    - Open your browser and navigate to:
      ```
      http://localhost:8000

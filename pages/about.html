@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="stylesheet" href="../styles/about.css">
+  <link rel="stylesheet" href="../styles/backgroundCSS.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -15,44 +16,78 @@
 </head>
 
 <body>
+  <div class="fourgound-loader"></div>
+  <div class="gradient-background__wrapper">
+    <div class="gradient-background">
+      <div class="gradient-background__shape gradient-background__shape--1"></div>
+      <div class="gradient-background__shape gradient-background__shape--2"></div>
+    </div>
+    <div class="gradient-background__noise"></div>
+  </div>
   <header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item navbar-item-logo" href="/index.html">
+        <a class="navbar-item navbar-item-logo" href="#">
           <img src="../assets/svg/logo.svg" alt="Razor Markets Logo">
         </a>
-
-        <!-- Corrected navbar-burger with three spans -->
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
-
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item " href="../index.html">
-            Home
-          </a>
+          <a class="navbar-item" href="../index.html">Home</a>
+          <a class="navbar-item active" href="/pages/about.html">About</a>
 
-          <a class="navbar-item active" href="#">
-            About
-          </a>
-          <a class="navbar-item" href="/pages/accountTypes.html">
-            Account Types
-          </a>
-          <a class="navbar-item" href="/pages/contact.html">
-            Contact
-          </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Markets</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="/pages/forex.html">Forex</a>
+              <a class="navbar-item" href="/pages/indices.html">Indices</a>
+              <a class="navbar-item" href="/pages/metals.html">Metals</a>
+              <a class="navbar-item" href="/pages/energies.html">Energies</a>
+            </div>
+          </div>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Trading</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="/pages/deposits-and-withdrawals.html">Deposits & Withdrawals</a>
+              <a class="navbar-item" href="/pages/accountTypes.html">Account Types</a>
+            </div>
+          </div>
+
+          <a class="navbar-item " href="/pages/partners.html">Partners</a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Knowledge Hub</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="/pages/blogs.html">Blogs</a>
+              <a class="navbar-item" href="/pages/risk.html">Risk Management</a>
+              <a class="navbar-item" href="/pages/glossary.html">Trading Glossary</a>
+            </div>
+          </div>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Support</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="/pages/faqs.html">FAQs</a>
+              <a class="navbar-item" href="/pages/legalDocs.html">Legal Documents</a>
+              <a class="navbar-item" href="/pages/contact.html">Contact</a>
+            </div>
+          </div>
+
+
+
         </div>
-
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
               <div class="auth-buttons">
-                <button class="button is-info signup">Sign Up</button>
-                <button class="button is-success login">Login</button>
+                <a href="#signup"><button class="button is-info signup">Sign Up</button></a>
+                <a href="#login"><button class="button is-success login">Login</button></a>
               </div>
             </div>
           </div>
@@ -62,32 +97,95 @@
   </header>
 
   <main>
-    <section class="trade-section section-1">
-      <!-- Main Container -->
-      <div class="trade-container">
-        <!-- Left Content -->
-        <div class="content">
-          <h1>Trade Securely <br>with Razor Markets</h1>
-          <p>At Razor Markets, we believe in empowering traders with a platform that’s sharp, innovative, and focused on results. Our mission is to offer a fast, transparent, and supportive trading environment where you can thrive in the competitive world of CFDs. </p>
-          <div class="cta-buttons">
-            <button onclick="window.location.href='#learnmore'" class="button is-success">Learn More</button>
-            <button class="button is-info signup">Sign Up</button>
-          </div>
-        </div>
-    
-        <!-- Right Shield Icon and Badges SVG -->
-        <div data-tilt class="security-badge">
-          <img src="/assets/svg/securityBadge.svg" alt="security badge">
-        </div>
+    <section class="heroAbout section-1">
+      <!-- <img src="/assets/home-page/2.jpg" alt="hero-image"> -->
+      <h1>Trade Securely <br>with Razor Markets</h1>
+      <p>At Razor Markets, we believe in empowering traders with a platform that’s sharp, innovative, and focused on
+        results. Our mission is to offer a fast, transparent, and supportive trading environment where you can
+        thrive in the competitive world of CFDs. </p>
+      <div class="cta-buttons">
+        <button class="button is-success login" onclick="window.location.href='#featured-cards-section'">Learn
+          More</button>
+        <button class="button is-info signup" onclick="window.location.href='https://crm.razormarkets.co.za/register/'">Start Trading</button>
       </div>
     </section>
-    
+    <!-- TradingView Widget BEGIN -->
 
-    <section class="svg-section section-2">
-      <div class="wave-svg">
-        <img src="../assets/svg/Trading_waves_1.svg" alt="Wave SVG">
-      </div>
-    </section>
+    <div id="featured-cards-section" class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow"
+          target="_blank">
+          <span class="white-text">Track all markets on TradingView</span>
+        </a></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async>
+
+          {
+
+            "symbols": [
+
+              {
+
+                "proName": "FOREXCOM:SPXUSD",
+
+                "title": "S&P 500 Index"
+
+              },
+
+              {
+
+                "proName": "FOREXCOM:NSXUSD",
+
+                "title": "US 100 Cash CFD"
+
+              },
+
+              {
+
+                "proName": "FX_IDC:EURUSD",
+
+                "title": "EUR to USD"
+
+              },
+
+              {
+
+                "description": "USD to Zar",
+
+                "proName": "FX:USDZAR"
+
+              },
+
+              {
+
+                "description": "EUR/ USD",
+
+                "proName": "FX:EURUSD"
+
+              },
+
+              {
+
+                "description": "USD to JPY",
+
+                "proName": "FX:USDJPY"
+
+              }
+
+            ],
+
+              "showSymbolLogo": true,
+                "isTransparent": false,
+                  "displayMode": "adaptive",
+                    "colorTheme": "dark",
+                      "locale": "en"
+
+          }
+        </script>
+    </div>
+
+    <!-- TradingView Widget END -->
+
 
     <section class="feature-section">
       <!-- Feature Badges -->
@@ -116,54 +214,87 @@
       <!-- Call-to-Action Buttons -->
       <div class="cta-buttons">
         <button onclick="window.location.href='#learnmore'" class="button is-success  ">Learn More</button>
-        <button class="button is-info signup">Sign Up</button>
+        <button class="button is-info signup" onclick="window.location.href='https://crm.razormarkets.co.za/register/'">Sign Up</button>
       </div>
-    </section>
-
-    <section class="svg-section section-5">
-      <div class="wave-svg">
-        <img src="../assets/svg/Trading_waves_reversed_1.svg" alt="Wave SVG">
-      </div>
-
     </section>
 
     <!-- Featured cards-->
     <section class="section-7" id="learnmore">
-      <h1 class="title is-1">Why choose Razor Markets</h1>
-      <div class="features">
-        <div class="card-bg">
-          <div class="feature-card">
-            <img src="../assets/svg/screen-share.svg" alt="feature1">
-            <h2>Cutting-Edge Tools</h2>
-            <p>Trade smarter with innovative tools tailored for precision and efficiency, empowering your every move.</p>
-            <a href="#signup"> <button class="button is-info signup" class="button">Sign Up</button></a>
+      <h2 class="about-h2">Why choose Razor Markets</h2>
+      <div class="about-container">
+        <div class="about-card">
+          <div class="about-card-image">
+            <img src="../assets/about-page/24-7-support.jpg" alt="24/7 Dedicated Support Image">
+          </div>
+          <div class="about-card-content">
+            <div>
+              <h3 class="about-card-title">24/7 Dedicated Support</h3>
+              <p class="about-card-text">Our expert support team is available around the clock to assist you with any
+                questions or concerns you may have.</p>
+            </div>
+            <div>
+              <a href="https://crm.razormarkets.co.za/register/" class="about-card-button">Sign Up</a>
+            </div>
           </div>
         </div>
 
-        <div class="card-bg">
-          <div class="feature-card">
-            <img src="../assets/svg/market-stat.svg" alt="feature1">
-            <h2>Competitive Spreads & Fees</h2>
-            <p>Enjoy low-cost trading with competitive spreads and fees designed to maximize your gains.</p>
-            <a href="#signup"> <button class="button is-info signup" class="button">Sign Up</button></a>
+        <div class="about-card">
+          <div class="about-card-image">
+            <img src="../assets/about-page/intuitive-interface.jpg" alt="Intuitive Interface Image">
+          </div>
+          <div class="about-card-content">
+            <div>
+              <h3 class="about-card-title">Intuitive Interface</h3>
+              <p class="about-card-text">Navigate our platform effortlessly with our user-friendly interface, designed
+                for both beginners and seasoned traders.</p>
+            </div>
+            <div>
+              <a href="https://crm.razormarkets.co.za/register/" class="about-card-button">Sign Up</a>
+            </div>
           </div>
         </div>
-        <div class="card-bg">
-          <div class="feature-card">
-            <img src="../assets/svg/plus.svg" alt="feature1">
-            <h2>Trusted & Secure:</h2>
-            <p>Rely on a platform built for trust, ensuring your funds and data remain secure at all times.</p>
-            <a href="#signup"> <button class="button is-info signup" class="button">Sign Up</button></a>
+
+        <div class="about-card">
+          <div class="about-card-image">
+            <img src="../assets/about-page/diverse-asset-selection.jpg" alt="Diverse Asset Selection Image">
+          </div>
+          <div class="about-card-content">
+            <div>
+              <h3 class="about-card-title">Diverse Asset Selection </h3>
+              <p class="about-card-text">Explore a wide range of investment opportunities with our diverse selection of
+                assets, catering to various investment strategies.</p>
+            </div>
+            <div>
+              <a href="https://crm.razormarkets.co.za/register/" class="about-card-button">Sign Up</a>
+            </div>
           </div>
         </div>
+
+        <div class="about-card">
+          <div class="about-card-image">
+            <img src="../assets/about-page/trusted-and-secure.jpg" alt="Trusted & Secure Image">
+          </div>
+          <div class="about-card-content">
+            <div>
+              <h3 class="about-card-title">Trusted & Secure</h3>
+              <p class="about-card-text">Rely on a platform built for trust, ensuring your
+                funds and data remain secure at all times.</p>
+            </div>
+            <div>
+              <a href="https://crm.razormarkets.co.za/register/" class="about-card-button">Sign Up</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
-
+    <!-- 
+    </section>
     <section class="svg-section section-8">
       <div class="wave-svg">
         <img src="../assets/svg/Trading_waves_reversed_1.svg" alt="Wave SVG">
       </div>
-    </section>
+    </section> -->
   </main>
 
   <section class="section-8">
@@ -199,19 +330,23 @@
         <div class="column is-3">
           <p class="footer-section-title">Quick Links</p>
           <ul>
-            <li><a href="#" style="pointer-events: none; color: rgba(128, 128, 128, 0.326)">Start Trading</a></li>
+            <li><a href="#">Start Trading</a></li>
             <li><a href="/pages/about.html">About Us</a></li>
-            <li><a href="#" style="pointer-events: none; color: rgba(128, 128, 128, 0.326)">Deposits and Withdrawals</a></li>
+            <li><a href="/pages/deposits-and-withdrawals.html">Deposits and Withdrawals</a>
+            </li>
+            <li><a href="/pages/partners.html">Partners</a></li>
             <li><a href="/pages/legalDocs.html">Legal Documents</a></li>
           </ul>
         </div>
 
         <div class="column is-3">
           <ul>
-            <li><a href="#" style="pointer-events: none; color: rgba(128, 128, 128, 0.326)">Blog</a></li>
-            <li><a href="/index.html#faq-section">FAQs</a></li>
+            <li><a href="/pages/blogs.html">Blog</a></li>
+            <li><a href="/pages/risk.html">Risk Management</a></li>
+            <li><a href="/pages/glossary.html">Trading Glossary</a></li>
+            <li><a href="/pages/faqs.html">FAQs</a></li>
             <li><a href="/pages/accountTypes.html">Account Types</a></li>
-            <li><a href="#" style="pointer-events: none; color: rgba(128, 128, 128, 0.326)">Support</a></li>
+            <li><a href="/pages/contact.html">Support</a></li>
           </ul>
         </div>
 
@@ -221,8 +356,8 @@
           <p>support@razormarkets.com</p>
 
           <p>Physical Address: Johannesburg, Spaces Waterfall, Midrand,
-Ground & 1st Floor, 22 Magwa Crescent, Gateway West, Waterfall City,
-Midrand, Johannesburg, 2066</p>
+            Ground & 1st Floor, 22 Magwa Crescent, Gateway West, Waterfall City,
+            Midrand, Johannesburg, 2066</p>
         </div>
       </div>
 
@@ -232,25 +367,25 @@ Midrand, Johannesburg, 2066</p>
         <div class="social-icons">
           <span class="icon">
             <a href="#">
-              <img src="/assets/svg/social-media/x.svg" alt="x twiter icon" >
+              <img src="/assets/svg/social-media/x.svg" alt="x twiter icon">
             </a>
 
           </span>
           <span class="icon">
             <a href="#">
-              <img src="/assets/svg/social-media/linkedIn.svg" alt="linkedIn icon" >
+              <img src="/assets/svg/social-media/linkedIn.svg" alt="linkedIn icon">
             </a>
 
           </span>
           <span class="icon">
             <a href="#">
-             <img src="/assets/svg/social-media/facebook.svg" alt="facebook icon" >
+              <img src="/assets/svg/social-media/facebook.svg" alt="facebook icon">
             </a>
 
           </span>
           <span class="icon">
             <a href="#">
-              <img src="/assets/svg/social-media/instagram.svg" alt="instagram icon" >
+              <img src="/assets/svg/social-media/instagram.svg" alt="instagram icon">
             </a>
 
           </span>

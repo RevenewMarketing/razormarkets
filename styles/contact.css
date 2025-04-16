@@ -1,3 +1,56 @@
+/* Hero Section */
+.heroContact {
+  text-align: center;
+  padding: 60px 20px;
+  align-items: center;
+  max-width: 100dvw;
+  width: 100%;
+  height: 60dvh !important;
+  display: flex;
+  justify-content: center;
+  background-image: url("../assets/contact/razor-markets-customer-support.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.heroContact h1 {
+  font-size: clamp(2rem, 4dvw, 5rem) !important;
+  font-weight: bold;
+  line-height: 1;
+  /* margin: auto; */
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.heroContact {
+  /* border: 2px solid; */
+  /* border-image-source: linear-gradient(180deg, #1EE981 0%, #0E92CA 71.61%); */
+  border-image-slice: 1;
+}
+
+.heroContact p {
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #fff;
+  /* Light gray for text */
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.cta-buttons .btn {
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
 #accountCardsContainer {
   display: flex;
   flex-direction: row;
@@ -102,7 +155,7 @@
 
 .card-account-contents p {
   font-size: 12px !important;
-  color: #BFBFBF; /* Light gray text */
+  color: #fff; /* Light gray text */
   margin-bottom: 10px;
   font-weight: 400 !important;
   display: flex;
@@ -199,6 +252,13 @@
 
 }
 
+@media screen and (max-width: 768px) {
+  .buttons {
+    width: 100%;
+  }
+  
+}
+
 .info-badge {
   background-color: #3c3c3f;
   padding: 0.75rem 1.5rem;
@@ -264,7 +324,8 @@
   border-radius: 10px;
   border: 1px solid #2DD4BF;
   padding: 20px;
-  background: #26292E !important;
+  background-color: rgba(10, 221, 255, 0.2);
+  backdrop-filter: blur(20px);
   max-width: 900px!important;
   margin: 0 auto;
 }
@@ -317,28 +378,25 @@
   border: none !important;
 }
 
-/* Box styling to match background and input fields */
-.box {
-    background-color: #2e2e2e;
+  /* Box styling to match background and input fields */
+  .box {
+    background-color: #2e2e2e00 !important;
     color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    background: #26292E !important;
     box-shadow: none !important;
     padding: 0px;
-}
-
-.box input,
-.box textarea {
-    background: #26292E !important;
+  }
+  
+  .box input, .box textarea {
+    background: #26292E00 !important;
     color: #ffffff !important;
-    border: 1px solid #555555;
-}
-
-.box input::placeholder,
-.box textarea::placeholder {
-    color: #888888;
-}
+    border: 1px solid #2DD4BF;
+  }
+  .box input::placeholder,
+  .box textarea::placeholder {
+      color: #d4d2d2;
+  }
 
 
 
@@ -347,8 +405,19 @@
 .button.is-info {
     background-color: #2DD4BF;
     border: none;
+    color: #fff;
 }
 
 .button.is-info:hover {
     background-color: #23b6a2; /* Darken on hover */
+}
+
+.tradingview-widget-container{
+  display: flex;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 75dvh;
+  flex-direction: column;
+  margin-top: -150px;
 }

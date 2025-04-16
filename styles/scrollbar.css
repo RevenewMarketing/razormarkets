@@ -1,0 +1,27 @@
+/* custom scrollbar styles */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #404654;
+  transition: all 0.3s ease;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to right, #122f3a78 0%, #1fd176 51%, #1fd176 100%);
+  background-size: 200% auto;
+  border-radius: 0px;
+  transition: all 0.3s ease;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(to right, #122f3a 0%, #12fa5b 51%, #1FD176 100%);
+
+}
+

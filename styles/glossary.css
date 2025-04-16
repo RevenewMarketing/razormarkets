@@ -1,0 +1,141 @@
+/* Hero Section */
+.heroContact {
+    text-align: center;
+    padding: 60px 20px;
+    align-items: center;
+    max-width: 100dvw;
+    width: 100%;
+    height: 76dvh !important;
+    display: flex;
+    justify-content: center;
+    background-image: url("../assets/glossary/glossary-banner.webp");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .heroContact h1 {
+    font-size: clamp(2rem, 4dvw, 5rem) !important;
+    font-weight: bold;
+    line-height: 1;
+    /* margin: auto; */
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .heroContact {
+    /* border: 2px solid; */
+    /* border-image-source: linear-gradient(180deg, #1EE981 0%, #0E92CA 71.61%); */
+    border-image-slice: 1;
+  }
+  
+  .heroContact p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #fff;
+    /* Light gray for text */
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .cta-buttons .btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+
+
+
+.glossary-container {
+    margin: 0 auto;
+    backdrop-filter: blur(20px);
+    background-color: rgba(10, 221, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+.alphabet-nav {
+    text-align: center;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    padding: 20px !important;
+    border-radius: 15px !important;
+    border: 1px solid #D9D9D9B2;
+    backdrop-filter: blur(20px);
+    background-color: rgba(10, 221, 255, 0.2);
+}
+
+
+
+.scroll-alphabet {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.alphabet-nav a {
+    margin: 0 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 502.4px;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+.alphabet-nav a:hover {
+    background: #2DD4BF;
+}
+
+.glossary-section {
+    margin-bottom: 20px;
+}
+
+.glossary-section h3 {
+    font-size: x-large;
+    border-bottom: 1px solid #ddd;
+}
+
+.glossary-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.glossary-item:hover {
+    background-color: #3b4de909;
+}
+
+.definition {
+    display: none;
+    padding-top: 5px;
+}
+
+strong {
+    color: hsl(0deg 0% 100%);
+}

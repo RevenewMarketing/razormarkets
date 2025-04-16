@@ -1,69 +1,92 @@
 const accountCards = [
+  // {
+  //   name: "Razor Edge",
+  //   type: "Zero Spread Account",
+  //   platform: "MT 5",
+  //   markets: "Forex, Metals, Energies, Indices",
+  //   minDeposit: "R100",
+  //   spreads: "from 0 pips",
+  //   bonus: "No",
+  //   swapFees: "Yes",
+  //   leverage: "1:500",
+  //   miniTradeSize: "0.01",
+  //   stopOut: "30%",
+  //   accountBaseCurrencies: ["USD", "ZAR"],
+  //   withdrawals: "Instant",
+  //   orderExecution: "Market Execution",
+  //   buttonText: "Sign Up",
+  //   buttonLink: "https://crm.razormarkets.co.za/register/",
+  //   icon: "../assets/accountTypes/account-edge.svg",
+  //   order: 2,
+  // },
   {
-    name: "Razor Sharp",
-    type: "Standard Account",
-    platform: "MT4 & MT5",
-    markets: "All instruments",
-    minDeposit: "USD 10",
-    bonus: "Yes",
-    leverage: "Up to 1:500",
-    miniTradeSize: "1.3 pips",
-    commission: "No commission",
-    swapFees: "No",
-    marginCall: "50%",
-    stopOut: "30%",
-    accountBaseCurrencies: ["ZAR", "USD", "GBP", "EUR"],
-    orderExecution: "Market Execution",
-    buttonText: "Sign Up",
-    buttonLink: "https://my.razormarkets.com/register",
-    icon: "../assets/accountTypes/Razor-Blade.svg"
-  },
-  {
-    name: "Razor Blade",
-    type: "VIP Account",
-    platform: "MT4 & MT5",
-    markets: "All instruments",
-    minDeposit: "USD 10",
-    bonus: "Yes",
-    leverage: "Up to 1:500",
-    miniTradeSize: "1.3 pips",
-    commission: "No commission",
-    swapFees: "No",
-    marginCall: "50%",
-    stopOut: "30%",
-    accountBaseCurrencies: ["ZAR", "USD", "GBP", "EUR"],
-    orderExecution: "Market Execution",
-    buttonText: "Sign Up",
-    buttonLink: "https://my.razormarkets.com/register",
-    icon: "../assets/accountTypes/Razor-Blade.svg"
-  },
-  {
-    name: "Razor Edge",
+    name: "Razor Spark",
     type: "Micro Account",
-    platform: "MT4 & MT5",
-    markets: "All instruments",
-    minDeposit: "USD 10",
-    bonus: "Yes",
-    leverage: "Up to 1:500",
-    miniTradeSize: "1.3 pips",
-    commission: "No commission",
-    swapFees: "No",
-    marginCall: "50%",
+    platform: "MT 5",
+    markets: "Forex, Metals, Energies, Indices",
+    minDeposit: "R50",
+    spreads: "from 1 pip",
+    bonus: "No",
+    swapFees: "Yes",
+    leverage: "1:500",
+    miniTradeSize: "0.01",
     stopOut: "30%",
-    accountBaseCurrencies: ["ZAR", "USD", "GBP", "EUR"],
+    accountBaseCurrencies: ["USD", "ZAR"],
+    withdrawals: "Instant",
     orderExecution: "Market Execution",
     buttonText: "Sign Up",
-    buttonLink: "https://my.razormarkets.com/register",
-    icon: "../assets/accountTypes/Razor-Blade.svg"
+    buttonLink: "https://crm.razormarkets.co.za/register/",
+    icon: "../assets/accountTypes/account-spark.svg",
+    order: 3,
   },
-  // Add more account cards here
+  {
+    name: "Razor Classic",
+    type: "Standard Account",
+    platform: "MT 5",
+    markets: "Forex, Metals, Energies, Indices",
+    minDeposit: "R100",
+    spreads: "from 1 pip",
+    bonus: "No",
+    swapFees: "Yes",
+    leverage: "1:500",
+    miniTradeSize: "0.01",
+    stopOut: "30%",
+    accountBaseCurrencies: ["USD", "ZAR"],
+    withdrawals: "Instant",
+    orderExecution: "Market Execution",
+    buttonText: "Sign Up",
+    buttonLink: "https://crm.razormarkets.co.za/register/",
+    icon: "../assets/accountTypes/account-classic.svg",
+    order: 4,
+  },
+  {
+    name: "Razor Surge",
+    type: "100% Bonus Account",
+    platform: "MT 5",
+    markets: "Forex, Metals, Indices",
+    minDeposit: "R100",
+    spreads: "from 1 pip",
+    bonus: "Yes",
+    swapFees: "Yes",
+    leverage: "1:500",
+    miniTradeSize: "0.01",
+    stopOut: "30%",
+    accountBaseCurrencies: ["USD", "ZAR"],
+    withdrawals: "Instant",
+    orderExecution: "Market Execution",
+    buttonText: "Sign Up",
+    buttonLink: "https://crm.razormarkets.co.za/register/",
+    icon: "../assets/accountTypes/account-surge.svg",
+    order: 1,
+  }
 ];
-
-
 
 //=============== DO NOT EDIT BELOW THIS LINE ===============
 
 const container = document.getElementById("accountCardsContainer");
+
+// Sort the accountCards array by the order property
+accountCards.sort((a, b) => a.order - b.order);
 
 accountCards.forEach(card => {
   const cardHTML = `
@@ -77,23 +100,24 @@ accountCards.forEach(card => {
           </div>
         </div>
         <div class="card-account-contents">
-          <p><strong>Platform:</strong> ${card.platform}</p>
-          <p><strong>Markets:</strong> ${card.markets}</p>
-          <p><strong>Min. Deposit:</strong> ${card.minDeposit}</p>
-          <p><strong>Bonus:</strong> ${card.bonus}</p>
-          <p><strong>Leverage:</strong> ${card.leverage}</p>
-          <p><strong>Mini. Trade Size:</strong> ${card.miniTradeSize}</p>
-          <p><strong>Commission:</strong> ${card.commission}</p>
-          <p><strong>Swap Fees:</strong> ${card.swapFees}</p>
-          <p><strong>Margin Call:</strong> ${card.marginCall}</p>
-          <p><strong>Stop Out:</strong> ${card.stopOut}</p>
-          <p><strong>Account Base Currencies:</strong> ${card.accountBaseCurrencies.join(", ")}</p>
-          <p><strong>Order Execution:</strong> ${card.orderExecution}</p>
-          
+          <p><strong>Platform:</strong> <span>${card.platform}</span></p>
+          <p><strong>Markets:</strong> <span>${card.markets}</span></p>
+          <p><strong>Min Deposit:</strong> <span>${card.minDeposit}</span></p>
+          <p><strong>Spreads:</strong> <span>${card.spreads}</span></p>
+          <p><strong>Bonus:</strong> <span>${card.bonus}</span></p>
+          <p><strong>Swap Fees:</strong> <span>${card.swapFees}</span></p>
+          <p><strong>Leverage:</strong> <span>${card.leverage}</span></p>
+          <p><strong>Min Trade Size:</strong> <span>${card.miniTradeSize}</span></p>
+          <p><strong>Stop Out:</strong> <span>${card.stopOut}</span></p>
+          <p><strong>Base Currencies:</strong> <span>${card.accountBaseCurrencies.join(", ")}</span></p>
+          <p><strong>Withdrawals:</strong> <span>${card.withdrawals}</span></p>
+          <p><strong>Order Execution:</strong> <span>${card.orderExecution}</span></p>
         </div>
         <a href=${card.buttonLink} target="_blank"> <button class="button is-info signup">${card.buttonText}</button></a>
       </div>
     </div>
   `;
+
+
   container.innerHTML += cardHTML;
 });
