@@ -51,15 +51,33 @@ function createNavLink(letter, index) {
     link.textContent = letter;
 
     link.addEventListener("click", (e) => {
+        e.preventDefault();
+    
         const section = document.getElementById(`section-${index}`);
+        if (!section) return;
+    
+        const rect = section.getBoundingClientRect(); // position relative to viewport
+        //console.log('rect', rect)
+        const scrollY = window.scrollY || window.pageYOffset; // current scroll position
+        // console.log('scrollY', scrollY)
+        const adjust = 170; // this will reposition the element to the top of the viewport
+        // console.log('adjust', adjust)
+        const targetY = scrollY + rect.top ; // scroll so the element is at the top of the viewport
+        //console.log('targetY', targetY)
+        // console.log('targetY - adjust', (targetY - adjust).toFixed(0))
+        // console.log('Math.max(targetY - adjust, 0)', Math.max(targetY - adjust, 0))
+
         window.scrollTo({
-            top: section.offsetTop + 400,
+            top:(targetY - adjust).toFixed(0),
+      
+           
             behavior: "smooth"
         });
     });
 
     return link;
 }
+
 
 Object.keys(groupedGlossary).sort().forEach((letter, index) => {
     const link1 = createNavLink(letter, index);
