@@ -19,7 +19,7 @@ const section3 = [
   {
     title: 'Tailored Accounts',
     description: 'A variety of flexible account options crafted to suit and complement your unique trading style and needs.',
-     image: '../../../assets/home-page/tailored-accounts.webp'
+     image: '../../../assets/home-page/tailored-accounts-razor.webp'
   },
   // Add more card objects as needed
 ]
