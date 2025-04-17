@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const dropdownTriggers = document.querySelectorAll('.navbar-item.has-dropdown');
 
   dropdownTriggers.forEach(function(trigger) {
-    trigger.addEventListener('click', function(event) {
+    trigger.addEventListener('mouseover', function(event) {
       // Prevent default click behavior if needed (e.g., if the trigger is a link)
       // event.preventDefault();
 
