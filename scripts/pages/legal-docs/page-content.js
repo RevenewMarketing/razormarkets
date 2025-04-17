@@ -20,7 +20,7 @@ const cards = [
     link: `/assets/legalDocs/logalDocs-PSFs/Razor-AML-Policy-24.pdf`,
   },
   { 
-    title: "Read our Complaints Policy",
+    title: "Read our Conflict of Interest Policy",
     action: "Read",
     link: `/assets/legalDocs/logalDocs-PSFs/Razor-COI-Policy-24.pdf`,
   },
@@ -35,7 +35,7 @@ const cards = [
     link: `/assets/legalDocs/logalDocs-PSFs/Razor-Risky-Policy-24.pdf`,
   },
   { 
-    title: "Read our FAIS Disclosure",
+    title: "Read our Client Agreement Terms",
     action: "Read",
     link: `/assets/legalDocs/logalDocs-PSFs/Razor-Client-Agreement-24.pdf`,
   },

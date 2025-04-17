@@ -51,15 +51,68 @@ function createNavLink(letter, index) {
     link.textContent = letter;
 
     link.addEventListener("click", (e) => {
+        e.preventDefault();
+    
         const section = document.getElementById(`section-${index}`);
-        window.scrollTo({
-            top: section.offsetTop + 400,
-            behavior: "smooth"
-        });
+        if (!section) return;
+    
+        const rect = section.getBoundingClientRect(); // position relative to viewport
+        //console.log('rect', rect)
+        const scrollY = window.scrollY || window.pageYOffset; // current scroll position
+        // console.log('scrollY', scrollY)
+        const adjust = 170; // this will reposition the element to the top of the viewport
+        // console.log('adjust', adjust)
+        const targetY = scrollY + rect.top ; // scroll so the element is at the top of the viewport
+        //console.log('targetY', targetY)
+        // console.log('targetY - adjust', (targetY - adjust).toFixed(0))
+        // console.log('Math.max(targetY - adjust, 0)', Math.max(targetY - adjust, 0))
+
+        // window.scrollTo({
+        //     top:(targetY - adjust).toFixed(0),
+        //     behavior: "smooth"
+        // });
+
+        // scroll to section for both desktop and mobile
+        if (window.innerWidth < 332) {
+            console.log('332');
+            window.scrollTo({
+                top: Math.floor(targetY - (adjust + 150)),
+                behavior: "smooth"
+            });
+        } else
+        if (window.innerWidth < 432) {
+            console.log('432', 432);
+            window.scrollTo({
+                top: Math.floor(targetY - (adjust + 110)),
+                behavior: "smooth"
+            });
+        } else if (window.innerWidth < 581) {
+            console.log('581', 581);
+            window.scrollTo({
+                top: Math.floor(targetY - (adjust + 70)),
+                behavior: "smooth"
+            });
+        } else if (window.innerWidth < 1132) {
+            console.log('1132', 1132);
+            window.scrollTo({
+                top: Math.floor(targetY - (adjust + 30)),
+                behavior: "smooth"
+            });
+        } else {
+            console.log('Desktop >', 1132);
+            window.scrollTo({
+                top: Math.floor(targetY - adjust),
+                behavior: "smooth"
+            });
+        }
+        
+
+
     });
 
     return link;
 }
+
 
 Object.keys(groupedGlossary).sort().forEach((letter, index) => {
     const link1 = createNavLink(letter, index);

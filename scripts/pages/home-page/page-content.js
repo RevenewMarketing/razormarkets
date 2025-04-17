@@ -9,17 +9,17 @@ const section3 = [
   {
     title: 'Fast Withdrawals',
     description: 'Quick and seamless withdrawals to keep you trading without interruptions, ensuring easy access to your funds.',
-    image: '../../../assets/home-page/fast-withdrawals.jpg'
+    image: '../../../assets/home-page/fast-withdrawals.webp'
   },
   {
     title: 'Advanced Tools',
     description: 'User-friendly platforms equipped with cutting-edge analytics to support informed and efficient trading decisions.',
-      image: '../../../assets/home-page/Advanced-tools.jpg'
+      image: '../../../assets/home-page/Advanced-tools.webp'
   },
   {
     title: 'Tailored Accounts',
     description: 'A variety of flexible account options crafted to suit and complement your unique trading style and needs.',
-     image: '../../../assets/home-page/Tailored-accounts.jpg'
+     image: '../../../assets/home-page/tailored-accounts-razor.webp'
   },
   // Add more card objects as needed
 ]
