@@ -78,14 +78,21 @@ disclaimer()
 
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('.navbar');
+  const dropdown = document.querySelectorAll('.navbar-dropdown');
 
   if (window.scrollY > 200) {
   
     // Add a solid background color
     nav.style.backgroundColor = '#30313A'; // Solid color
+    dropdown.forEach(drop => {
+      drop.style.backgroundColor = '#30313A'; // Solid color for dropdown
+    });
    
   } else {
     // Revert to the original transparent background
     nav.style.backgroundColor = '#30313a91'; // Original color
+    dropdown.forEach(drop => {
+      drop.style.backgroundColor = '#30313a91'; // Transparent for dropdown
+    });
   }
 });
