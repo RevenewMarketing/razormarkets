@@ -73,13 +73,16 @@ ul li a:hover {
   gap: 15px;
 }
 
-.icon img {
-  width: 18px;
-  height: auto;
+.social-icons a, .social-icons span {
+  width: 20px;
+  height: 20px;
+}
+
+.social-icons .icon img {
   transition: transform 0.3s;
 }
 
-.icon img:hover {
+.social-icons .icon img:hover {
   transform: scale(1.2);
 }
 

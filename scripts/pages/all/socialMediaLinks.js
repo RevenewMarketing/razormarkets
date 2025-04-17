@@ -2,10 +2,19 @@ const socialLinks =
 [ 
   {
     href: "#",
+    img: "../../../assets/svg/social-media/facebook.svg",
+    alt: "facebook icon"
+  },
+  {
+    href: "#",
     img: "../../../assets/svg/social-media/instagram.svg",
     alt: "instagram icon"
   },
-
+  {
+    href: "#",
+    img: "../../../assets/svg/social-media/youtube.svg",
+    alt: "YouTube Link"
+  },
   {
     href: "https://x.com/RazorMarketsSA",
     img: "../../../assets/svg/social-media/x.svg",
@@ -16,16 +25,8 @@ const socialLinks =
     img: "../../../assets/svg/social-media/linkedIn.svg",
     alt: "linkedin icon"
   },
- {
-    href: "#",
-    img: "../../../assets/svg/social-media/facebook.svg",
-    alt: "facebook icon"
-  },
-  {
-    href: "#",
-    img: "../../../assets/svg/social-media/instagram.svg",
-    alt: "instagram icon"
-  },
+
+
 
 
 ]
@@ -36,14 +37,11 @@ if (container) {
   container.innerHTML = '';
 
   socialLinks.forEach(({ href, img, alt }) => {
-
-    console.log('img', img)
     return container.innerHTML += `
        <span class="icon">
-              <a href=${href}>
+              <a href=${href} title=${alt}>
                 <img src=${img} alt=${alt}>
               </a>
-  
         </span>
     `;
   });
