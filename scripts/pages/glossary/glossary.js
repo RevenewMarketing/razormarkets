@@ -67,12 +67,47 @@ function createNavLink(letter, index) {
         // console.log('targetY - adjust', (targetY - adjust).toFixed(0))
         // console.log('Math.max(targetY - adjust, 0)', Math.max(targetY - adjust, 0))
 
-        window.scrollTo({
-            top:(targetY - adjust).toFixed(0),
-      
-           
-            behavior: "smooth"
-        });
+        // window.scrollTo({
+        //     top:(targetY - adjust).toFixed(0),
+        //     behavior: "smooth"
+        // });
+
+        // scroll to section for both desktop and mobile
+        if (window.innerWidth < 332) {
+            console.log('332');
+            window.scrollTo({
+                top: Math.floor(targetY - (adjust + 150)),
+                behavior: "smooth"
+            });
+        } else
+        if (window.innerWidth < 432) {
+            console.log('432', 432);
+            window.scrollTo({
+                top: Math.floor(targetY - (adjust + 110)),
+                behavior: "smooth"
+            });
+        } else if (window.innerWidth < 581) {
+            console.log('581', 581);
+            window.scrollTo({
+                top: Math.floor(targetY - (adjust + 70)),
+                behavior: "smooth"
+            });
+        } else if (window.innerWidth < 1132) {
+            console.log('1132', 1132);
+            window.scrollTo({
+                top: Math.floor(targetY - (adjust + 30)),
+                behavior: "smooth"
+            });
+        } else {
+            console.log('Desktop >', 1132);
+            window.scrollTo({
+                top: Math.floor(targetY - adjust),
+                behavior: "smooth"
+            });
+        }
+        
+
+
     });
 
     return link;
