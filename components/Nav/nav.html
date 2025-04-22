@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+  <style>
+    @media screen and (max-width: 1023px) {
+      .navbar-menu {
+        background: rgba(0, 0, 0, 0.85) !important;
+        backdrop-filter: blur(8.1px);
+        -webkit-backdrop-filter: blur(8.1px);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 1rem;
+        text-align: right;
+      }
+
+      .navbar-menu a {
+        color: white !important;
+      }
+
+      .navbar-item.has-dropdown .navbar-dropdown {
+        display: none;
+      }
+
+      .navbar-item.has-dropdown.is-active .navbar-dropdown {
+        display: block;
+      }
+
+      .navbar-link::after {
+        content: ' ▼';
+        font-size: 0.7em;
+      }
+
+      .navbar-item.has-dropdown {
+        pointer-events: auto;
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      .navbar-item.has-dropdown:hover .navbar-dropdown {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <img src="../assets/svg/logo.svg" alt="Razor Markets Logo" />
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="../index.html">Home</a>
+        <a class="navbar-item" href="/pages/about.html">About</a>
+
+        <div class="navbar-item has-dropdown">
+          <a class="navbar-link">Markets</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/pages/forex.html">Forex</a>
+            <a class="navbar-item" href="/pages/indices.html">Indices</a>
+            <a class="navbar-item" href="/pages/metals.html">Metals</a>
+            <a class="navbar-item" href="/pages/energies.html">Energies</a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown">
+          <a class="navbar-link">Trading</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/pages/deposits-and-withdrawals.html">Deposits & Withdrawals</a>
+            <a class="navbar-item" href="/pages/accountTypes.html">Account Types</a>
+          </div>
+        </div>
+
+        <a class="navbar-item" href="/pages/partners.html">Partners</a>
+
+        <div class="navbar-item has-dropdown">
+          <a class="navbar-link">Knowledge Hub</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/pages/blogs.html">Blogs</a>
+            <a class="navbar-item" href="/pages/risk.html">Risk Management</a>
+            <a class="navbar-item" href="/pages/glossary.html">Trading Glossary</a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown">
+          <a class="navbar-link">Support</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/pages/faqs.html">FAQs</a>
+            <a class="navbar-item" href="/pages/legalDocs.html">Legal Documents</a>
+            <a class="navbar-item" href="/pages/contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a href="#signup"><button class="button is-info">Sign Up</button></a>
+            <a href="#login"><button class="button is-success">Login</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Burger toggle
+  document.querySelectorAll('.navbar-burger').forEach(burger => {
+    burger.addEventListener('click', () => {
+      const target = burger.dataset.target;
+      const menu = document.getElementById(target);
+
+      burger.classList.toggle('is-active');
+      menu.classList.toggle('is-active');
+    });
+  });
+
+  // Mobile dropdown toggle
+  function bindMobileDropdowns() {
+    const isMobile = window.innerWidth <= 1023;
+    const dropdowns = document.querySelectorAll('.navbar-item.has-dropdown');
+
+    dropdowns.forEach(dropdown => {
+      const link = dropdown.querySelector('.navbar-link');
+
+      // Remove previous listeners
+      link.replaceWith(link.cloneNode(true));
+    });
+
+    if (isMobile) {
+      document.querySelectorAll('.navbar-item.has-dropdown .navbar-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const parent = e.target.closest('.has-dropdown');
+          parent.classList.toggle('is-active');
+        });
+      });
+    }
+  }
+
+  // On load and resize
+  window.addEventListener('DOMContentLoaded', bindMobileDropdowns);
+  window.addEventListener('resize', bindMobileDropdowns);
+</script>
+</body>
+</html>
