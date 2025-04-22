@@ -1,17 +1,17 @@
 const socialLinks = 
 [ 
   {
-    href: "#",
+    href: "https://www.facebook.com/razormarkets",
     img: "../../../assets/svg/social-media/facebook.svg",
     alt: "facebook icon"
   },
   {
-    href: "#",
+    href: "https://www.instagram.com/razormarkets/",
     img: "../../../assets/svg/social-media/instagram.svg",
     alt: "instagram icon"
   },
   {
-    href: "#",
+    href: "http://www.youtube.com/@RazorMarkets",
     img: "../../../assets/svg/social-media/youtube.svg",
     alt: "YouTube Link"
   },
