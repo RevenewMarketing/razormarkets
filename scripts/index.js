@@ -20,48 +20,11 @@ function backToTopButton() {
 
   window.addEventListener('scroll', toggleBackToTopButton);
 
-
-  // Select all elements with the class 'navbar-burger'
-  const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-  // Check if there are any navbar burgers
-  if (navbarBurgers.length > 0) {
-    // Add a click event on each of them
-    navbarBurgers.forEach(burger => {
-      burger.addEventListener('click', () => {
-        // Get the target from the 'data-target' attribute
-        const target = burger.dataset.target;
-        const targetElement = document.getElementById(target);
-
-        // Toggle the 'is-active' class on both the navbar-burger and the navbar-menu
-        burger.classList.toggle('is-active');
-        targetElement.classList.toggle('is-active');
-      });
-    });
-  }
-
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  const dropdownTriggers = document.querySelectorAll('.navbar-item.has-dropdown');
 
-  dropdownTriggers.forEach(function(trigger) {
-    trigger.addEventListener('mouseover', function(event) {
-      // Prevent default click behavior if needed (e.g., if the trigger is a link)
-      // event.preventDefault();
 
-      // Toggle the 'is-active' class
-      this.classList.toggle('is-active');
 
-      //Close other opened dropdowns.
-      dropdownTriggers.forEach(function(otherTrigger){
-        if(otherTrigger !== trigger && otherTrigger.classList.contains('is-active')){
-          otherTrigger.classList.remove('is-active');
-        }
-      });
-    });
-  });
-});
 
 // Adds the disclaimer text to the disclaimer element on all pages
 function disclaimer() {
@@ -75,24 +38,3 @@ function disclaimer() {
 backToTopButton()
 disclaimer()
 
-
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('.navbar');
-  const dropdown = document.querySelectorAll('.navbar-dropdown');
-
-  if (window.scrollY > 200) {
-  
-    // Add a solid background color
-    nav.style.backgroundColor = '#30313A'; // Solid color
-    dropdown.forEach(drop => {
-      drop.style.backgroundColor = '#30313A'; // Solid color for dropdown
-    });
-   
-  } else {
-    // Revert to the original transparent background
-    nav.style.backgroundColor = '#30313a91'; // Original color
-    dropdown.forEach(drop => {
-      drop.style.backgroundColor = '#30313a91'; // Transparent for dropdown
-    });
-  }
-});

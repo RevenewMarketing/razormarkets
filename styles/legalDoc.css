@@ -738,6 +738,16 @@ animation: fade-out 1s ease-out both; */
     gap: 20px !important;
   }
 
+  .card-container-legal-docs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
 
 
   .card img {
@@ -1686,7 +1696,7 @@ section h2 {
   .tradingview-widget-container {
     top: 90dvh;
   }
-  
+
 }
 
 .fourgound-loader {
