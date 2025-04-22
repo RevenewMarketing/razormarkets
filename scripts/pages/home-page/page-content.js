@@ -92,7 +92,10 @@ document.querySelector('.hero-image-text-content > p').textContent = section4.su
 
 
 // section 6
-document.querySelector('.section-6 > h1').innerHTML = section6.heading;
+const section6HeadingElement = document.querySelector('.section-6 > h1');
+if (section6HeadingElement) {
+  section6HeadingElement.innerHTML = section6.heading;
+}
 console.log('section6.heading', section6.heading)
 
 

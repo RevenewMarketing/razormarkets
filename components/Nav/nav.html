@@ -117,7 +117,9 @@
 <script>
   // Burger toggle
   document.querySelectorAll('.navbar-burger').forEach(burger => {
+    
     burger.addEventListener('click', () => {
+      alert('burger clicked')
       const target = burger.dataset.target;
       const menu = document.getElementById(target);
 

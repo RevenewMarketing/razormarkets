@@ -22,26 +22,9 @@ function backToTopButton() {
 
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  const dropdownTriggers = document.querySelectorAll('.navbar-item.has-dropdown');
 
-  dropdownTriggers.forEach(function(trigger) {
-    trigger.addEventListener('mouseover', function(event) {
-      // Prevent default click behavior if needed (e.g., if the trigger is a link)
-      // event.preventDefault();
 
-      // Toggle the 'is-active' class
-      this.classList.toggle('is-active');
 
-      //Close other opened dropdowns.
-      dropdownTriggers.forEach(function(otherTrigger){
-        if(otherTrigger !== trigger && otherTrigger.classList.contains('is-active')){
-          otherTrigger.classList.remove('is-active');
-        }
-      });
-    });
-  });
-});
 
 // Adds the disclaimer text to the disclaimer element on all pages
 function disclaimer() {
@@ -55,24 +38,3 @@ function disclaimer() {
 backToTopButton()
 disclaimer()
 
-// changes nav background color on scroll
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('.navbar');
-  const dropdown = document.querySelectorAll('.navbar-dropdown');
-
-  if (window.scrollY > 200) {
-  
-    // Add a solid background color
-    nav.style.backgroundColor = '#30313A'; // Solid color
-    dropdown.forEach(drop => {
-      drop.style.backgroundColor = '#30313A'; // Solid color for dropdown
-    });
-   
-  } else {
-    // Revert to the original transparent background
-    nav.style.backgroundColor = '#30313a91'; // Original color
-    dropdown.forEach(drop => {
-      drop.style.backgroundColor = '#30313a91'; // Transparent for dropdown
-    });
-  }
-});

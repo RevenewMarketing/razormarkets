@@ -1,44 +1,37 @@
-    /* ---------- MOBILE STYLES ---------- */
-    @media screen and (max-width: 1023px) {
-      .navbar-menu {
-        background: rgba(0, 0, 0, 0.85) !important;
-        backdrop-filter: blur(8.1px);
-        -webkit-backdrop-filter: blur(8.1px);
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 1rem;
-        text-align: right;
-      }
+@media screen and (max-width: 1023px) {
+  .navbar-menu {
+    background: rgba(0, 30, 22, 0.85) !important;
+    backdrop-filter: blur(8.1px);
+    -webkit-backdrop-filter: blur(8.1px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    text-align: right;
+  }
 
-      /* Make all nav links white for mobile */
-      .navbar-menu a {
-        color: white !important;
-      }
+  .navbar-menu a {
+    color: white !important;
+  }
 
-      /* Hide nested dropdowns initially */
-      .navbar-item.has-dropdown .navbar-dropdown {
-        display: none;
-      }
+  .navbar-item.has-dropdown .navbar-dropdown {
+    display: none;
+  }
 
-      /* Show nested dropdowns only when the parent is active */
-      .navbar-item.has-dropdown.is-active .navbar-dropdown {
-        display: block;
-      }
+  .navbar-item.has-dropdown.is-active .navbar-dropdown {
+    display: block;
+  }
 
-      /* Add a down-arrow icon to dropdown titles */
-      .navbar-link::after {
-        content: ' ▼';
-        font-size: 0.7em;
-      }
+  .navbar-link::after {
+    content: ' ▼';
+    font-size: 0.7em;
+  }
 
-      .navbar-item.has-dropdown {
-        pointer-events: auto;
-      }
-    }
+  .navbar-item.has-dropdown {
+    pointer-events: auto;
+  }
+}
 
-    /* ---------- DESKTOP STYLES ---------- */
-    @media screen and (min-width: 1024px) {
-      /* Show dropdowns on hover for desktop */
-      .navbar-item.has-dropdown:hover .navbar-dropdown {
-        display: block;
-      }
-    }
+@media screen and (min-width: 1024px) {
+  .navbar-item.has-dropdown:hover .navbar-dropdown {
+    display: block;
+  }
+}
