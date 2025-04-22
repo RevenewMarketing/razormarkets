@@ -14,87 +14,97 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
+    })();
+  </script>
+  <script src="../scripts/pages/contact-page/email-form-handler.js"></script> <!-- Your logic file -->
+
+
 </head>
 
 <body>
   <div class="fourgound-loader"></div>
-    <div class="gradient-background__wrapper">
-        <div class="gradient-background">
-            <div class="gradient-background__shape gradient-background__shape--1"></div>
-            <div class="gradient-background__shape gradient-background__shape--2"></div>
-        </div>
-        <div class="gradient-background__noise"></div>
+  <div class="gradient-background__wrapper">
+    <div class="gradient-background">
+      <div class="gradient-background__shape gradient-background__shape--1"></div>
+      <div class="gradient-background__shape gradient-background__shape--2"></div>
     </div>
+    <div class="gradient-background__noise"></div>
+  </div>
   <header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-          <a class="navbar-item navbar-item-logo" href="#">
-              <img src="../assets/svg/logo.svg" alt="Razor Markets Logo">
-          </a>
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-          </a>
+        <a class="navbar-item navbar-item-logo" href="#">
+          <img src="../assets/svg/logo.svg" alt="Razor Markets Logo">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
       <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-              <a class="navbar-item" href="../index.html">Home</a>
-              <a class="navbar-item" href="/pages/about.html">About</a>
-  
-              <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link">Markets</a>
-                  <div class="navbar-dropdown">
-                    <a class="navbar-item" href="/pages/forex.html">Forex</a>
-                    <a class="navbar-item" href="/pages/indices.html">Indices</a>
-                    <a class="navbar-item" href="/pages/metals.html">Metals</a>
-                    <a class="navbar-item" href="/pages/energies.html">Energies</a>
-                  </div>
-              </div>
-  
-              <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link">Trading</a>
-                  <div class="navbar-dropdown">
-                      <a class="navbar-item" href="/pages/deposits-and-withdrawals.html">Deposits & Withdrawals</a>
-                      <a class="navbar-item" href="/pages/accountTypes.html">Account Types</a>
-                  </div>
-              </div>
-  
-              <a class="navbar-item" href="/pages/partners.html">Partners</a>
+        <div class="navbar-start">
+          <a class="navbar-item" href="../index.html">Home</a>
+          <a class="navbar-item" href="/pages/about.html">About</a>
 
-              <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">Knowledge Hub</a>
-                <div class="navbar-dropdown">
-                  <a class="navbar-item" href="/pages/blogs.html">Blogs</a>
-                  <a class="navbar-item" href="/pages/risk.html">Risk Management</a>
-                  <a class="navbar-item" href="/pages/glossary.html">Trading Glossary</a>
-                </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Markets</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="/pages/forex.html">Forex</a>
+              <a class="navbar-item" href="/pages/indices.html">Indices</a>
+              <a class="navbar-item" href="/pages/metals.html">Metals</a>
+              <a class="navbar-item" href="/pages/energies.html">Energies</a>
             </div>
-  
-              <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link">Support</a>
-                  <div class="navbar-dropdown">
-                      <a class="navbar-item" href="/pages/faqs.html">FAQs</a>
-                      <a class="navbar-item" href="/pages/legalDocs.html">Legal Documents</a>
-                      <a class="navbar-item active" href="/pages/contact.html">Contact</a>
-                  </div>
-              </div>
-  
-              
-  
           </div>
-          <div class="navbar-end">
-              <div class="navbar-item">
-                  <div class="buttons">
-                      <div class="auth-buttons">
-                          <a href="#signup"><button class="button is-info signup">Sign Up</button></a>
-                          <a href="#login"><button class="button is-success login">Login</button></a>
-                      </div>
-                  </div>
-              </div>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Trading</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="/pages/deposits-and-withdrawals.html">Deposits & Withdrawals</a>
+              <a class="navbar-item" href="/pages/accountTypes.html">Account Types</a>
+            </div>
           </div>
+
+          <a class="navbar-item" href="/pages/partners.html">Partners</a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Knowledge Hub</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="/pages/blogs.html">Blogs</a>
+              <a class="navbar-item" href="/pages/risk.html">Risk Management</a>
+              <a class="navbar-item" href="/pages/glossary.html">Trading Glossary</a>
+            </div>
+          </div>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Support</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="/pages/faqs.html">FAQs</a>
+              <a class="navbar-item" href="/pages/legalDocs.html">Legal Documents</a>
+              <a class="navbar-item active" href="/pages/contact.html">Contact</a>
+            </div>
+          </div>
+
+
+
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <div class="auth-buttons">
+                <a href="#signup"><button class="button is-info signup">Sign Up</button></a>
+                <a href="#login"><button class="button is-success login">Login</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-  </nav>
+    </nav>
   </header>
 
   <main>
@@ -111,82 +121,82 @@
         <button class="button is-info signup">Start Trading</button>
       </div>
     </section>
-<!-- TradingView Widget BEGIN -->
+    <!-- TradingView Widget BEGIN -->
 
-<div id="featured-cards-section"  class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow"
-      target="_blank">
-      <span class="white-text">Track all markets on TradingView</span>
-    </a></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
-    async>
-
-      {
-
-        "symbols": [
+    <div id="featured-cards-section" class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow"
+          target="_blank">
+          <span class="white-text">Track all markets on TradingView</span>
+        </a></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async>
 
           {
 
-            "proName": "FOREXCOM:SPXUSD",
+            "symbols": [
 
-            "title": "S&P 500 Index"
+              {
 
-          },
+                "proName": "FOREXCOM:SPXUSD",
 
-          {
+                "title": "S&P 500 Index"
 
-            "proName": "FOREXCOM:NSXUSD",
+              },
 
-            "title": "US 100 Cash CFD"
+              {
 
-          },
+                "proName": "FOREXCOM:NSXUSD",
 
-          {
+                "title": "US 100 Cash CFD"
 
-            "proName": "FX_IDC:EURUSD",
+              },
 
-            "title": "EUR to USD"
+              {
 
-          },
+                "proName": "FX_IDC:EURUSD",
 
-          {
+                "title": "EUR to USD"
 
-            "description": "USD to Zar",
+              },
 
-            "proName": "FX:USDZAR"
+              {
 
-          },
+                "description": "USD to Zar",
 
-          {
+                "proName": "FX:USDZAR"
 
-            "description": "EUR/ USD",
+              },
 
-            "proName": "FX:EURUSD"
+              {
 
-          },
+                "description": "EUR/ USD",
 
-          {
+                "proName": "FX:EURUSD"
 
-            "description": "USD to JPY",
+              },
 
-            "proName": "FX:USDJPY"
+              {
+
+                "description": "USD to JPY",
+
+                "proName": "FX:USDJPY"
+
+              }
+
+            ],
+
+              "showSymbolLogo": true,
+                "isTransparent": false,
+                  "displayMode": "adaptive",
+                    "colorTheme": "dark",
+                      "locale": "en"
 
           }
+        </script>
+    </div>
 
-        ],
-
-          "showSymbolLogo": true,
-            "isTransparent": false,
-              "displayMode": "adaptive",
-                "colorTheme": "dark",
-                  "locale": "en"
-
-      }
-    </script>
-</div>
-
-<!-- TradingView Widget END -->
+    <!-- TradingView Widget END -->
 
     <!-- <section class="svg-section section-2">
       <div class="wave-svg">
@@ -416,28 +426,28 @@
           </div>
 
           <!-- Quick Links Section -->
-        <div class="column is-3">
-          <p class="footer-section-title">Quick Links</p>
-          <ul>
-            <li><a href="#">Start Trading</a></li>
-            <li><a href="/pages/about.html">About Us</a></li>
-            <li><a href="/pages/deposits-and-withdrawals.html" >Deposits and Withdrawals</a>
-            </li>
-            <li><a href="/pages/partners.html">Partners</a></li>
-            <li><a href="/pages/legalDocs.html">Legal Documents</a></li>
-          </ul>
-        </div>
+          <div class="column is-3">
+            <p class="footer-section-title">Quick Links</p>
+            <ul>
+              <li><a href="#">Start Trading</a></li>
+              <li><a href="/pages/about.html">About Us</a></li>
+              <li><a href="/pages/deposits-and-withdrawals.html">Deposits and Withdrawals</a>
+              </li>
+              <li><a href="/pages/partners.html">Partners</a></li>
+              <li><a href="/pages/legalDocs.html">Legal Documents</a></li>
+            </ul>
+          </div>
 
-        <div class="column is-3">
-          <ul>
-            <li><a href="/pages/blogs.html">Blog</a></li>
-            <li><a href="/pages/risk.html">Risk Management</a></li>
-            <li><a href="/pages/glossary.html">Trading Glossary</a></li>
-            <li><a href="/pages/faqs.html">FAQs</a></li>
-            <li><a href="/pages/accountTypes.html">Account Types</a></li>
-            <li><a href="/pages/contact.html">Support</a></li>
-          </ul>
-        </div>
+          <div class="column is-3">
+            <ul>
+              <li><a href="/pages/blogs.html">Blog</a></li>
+              <li><a href="/pages/risk.html">Risk Management</a></li>
+              <li><a href="/pages/glossary.html">Trading Glossary</a></li>
+              <li><a href="/pages/faqs.html">FAQs</a></li>
+              <li><a href="/pages/accountTypes.html">Account Types</a></li>
+              <li><a href="/pages/contact.html">Support</a></li>
+            </ul>
+          </div>
 
           <!-- Contact Information Section -->
           <div class="column is-3">
