@@ -30,7 +30,7 @@ const cards = [
     link: `/assets/legalDocs/logalDocs-PSFs/Razor-Privacy-24.pdf`,
   },
   { 
-    title: "Read our Risky Policy",
+    title: "Read our Risk Policy",
     action: "Read",
     link: `/assets/legalDocs/logalDocs-PSFs/Razor-Risky-Policy-24.pdf`,
   },
