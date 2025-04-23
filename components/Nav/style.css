@@ -39,7 +39,7 @@
 /* Base Header Styles */
 .navbar {
   align-items: center;
-  height: 75px;
+  /* height: 75px; */
   position: fixed;
   width: 100%;
   z-index: 9999;
@@ -51,6 +51,7 @@
 
 .navbar-start {
   margin: auto;
+  height: 75px;
 
 }
 
@@ -117,7 +118,6 @@ nav a {
 .navbar-dropdown{
 
   background-color: #30313a79;
-  top: 60px;
 }
 .navbar-item {
   background: #00000000;
