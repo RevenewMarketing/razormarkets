@@ -1,9 +1,12 @@
+const image = './ImportantNotice.png';
+
+// path to image file
 const modalEL = `
 <div class="modal">
   <div class="modal-background"></div>
   <div class="modal-content">
     <p class="image is-4by3">
-      <img src="https://bulma.io/assets/images/placeholders/1280x960.png" alt="">
+      <img src="${image}" alt="important notice">
     </p>
   </div>
   <button class="modal-close is-large" aria-label="close"></button>
@@ -20,9 +23,9 @@ document.querySelector('body').insertAdjacentHTML('beforeend', modalEL)
 function openModal() {
 
   // check if modal is already open, if true, return
-  if (sessionStorage.getItem('modalOpen') === 'true') {
-    return;
-  }
+  // if (sessionStorage.getItem('modalOpen') === 'true') {
+  //   return;
+  // }
 
     // save modal open state to session storage
     sessionStorage.setItem('modalOpen', 'true');
