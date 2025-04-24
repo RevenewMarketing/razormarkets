@@ -1,0 +1,31 @@
+.image.is-4by3 img {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    border-radius:13px;
+}
+
+.modal-content figure {
+
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    left: 94%;
+  top: 6px;
+}
+
+.modal-close::after {
+    height: 75%;
+    width: 3px;
+  }
+
+  .modal-close::before {
+    height: 3px;
+    width: 75%;
+  }
