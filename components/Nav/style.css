@@ -49,11 +49,21 @@
   font-size: larger;
 }
 
-.navbar-start {
-  margin: auto;
-  height: 75px;
 
+
+@media screen and (max-width: 1023px) {
+  .navbar-start {
+    margin: auto;
+  }
 }
+
+@media screen and (min-width: 1023px) {
+  .navbar-start {
+    margin: auto;
+    height: 75px;
+  }
+}
+
 
 .navbar-item {
   padding: 0rem 0.75rem;
