@@ -11,7 +11,23 @@ const section1 = {
 // ========= DO NOT EDIT BELOW THIS LINE =========
 
 // Section 1
-const sectionH1 = document.querySelector('.account-types-content > h1').textContent = section1.heading;
-document.querySelector('.account-types-content > p').textContent = section1.subheading;
-document.querySelector('.account-types-content > .buttons > button ').textContent = section1.button1;
-document.querySelector('.account-types-content > .buttons > button:last-child').textContent = section1.button2;
+const heading = document.querySelector('.account-types-content > h1')
+const subheading = document.querySelector('.account-types-content > p')
+const button1 = document.querySelector('.account-types-content > .buttons > button ')
+const button2 = document.querySelector('.account-types-content > .buttons > button:last-child')
+
+if (heading) {
+  heading.textContent = section1.heading;
+}
+
+if (subheading) {
+  subheading.textContent = section1.subheading;
+}
+
+if (button1) {
+  button1.textContent = section1.button1;
+}
+
+if (button2) {
+  button2.textContent = section1.button2;
+}
