@@ -66,8 +66,8 @@ let navigation = `
  
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
-          <a href="#signup"><button class="button is-info">Sign Up</button></a>
+        <div class="nav-buttons">
+          <a href="#signup"><button class="signup-button">Sign Up</button></a>
           <a href="#login"><button class="button is-success">Login</button></a>
         </div>
       </div>

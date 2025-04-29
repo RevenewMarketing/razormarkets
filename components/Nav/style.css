@@ -125,15 +125,16 @@ nav a {
   /* Blue-ish color for hover and active */
 }
 
-.navbar-dropdown{
+.navbar-dropdown {
 
   background-color: #30313a79;
 }
+
 .navbar-item {
   background: #00000000;
 }
 
-.navbar-dropdown a.navbar-item:not(.is-active,.is-selected) {
+.navbar-dropdown a.navbar-item:not(.is-active, .is-selected) {
   color: #FFFFFF;
   background-color: #30313a00;
 }
@@ -141,10 +142,11 @@ nav a {
 
 @media screen and (max-width: 768px) {
   .navbar-item.has-dropdown .navbar-dropdown {
-      display: none;
+    display: none;
   }
+
   .navbar-item.has-dropdown.is-active .navbar-dropdown {
-      display: block;
+    display: block;
   }
 }
 
@@ -154,3 +156,49 @@ nav a {
   margin-top: -.375em;
 }
 
+/* CTA buttons */
+.nav-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-buttons button {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 1rem;
+  max-height: 35px;
+}
+
+.nav-buttons button:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.signup-button {
+  background-size: 200% auto;
+  filter: drop-shadow(0px 0px 10px #487cf74b);
+  -webkit-filter: drop-shadow(0px 0px 10px #487cf74b);
+  color: #fff;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 51%, #1FA2FF 100%)
+}
+
+.login-button {
+  background-size: 200% auto;
+  color: #fff;
+  filter: drop-shadow(0px 0px 10px #48f7884b);
+  -webkit-filter: drop-shadow(0px 0px 10px #48f7884b);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  background-image: linear-gradient(to right, #1FD176 0%, #12fa5b 51%, #1FD176 100%);
+}
