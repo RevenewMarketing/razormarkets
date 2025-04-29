@@ -1,33 +1,101 @@
-// Initialize EmailJS with your public key
-document.addEventListener('DOMContentLoaded', function () {
-  emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your actual EmailJS public key
+document.addEventListener("DOMContentLoaded", function () {
 
-  // Get all forms you want to hook EmailJS into
-  const forms = document.querySelectorAll('form');
+  // disable complaints form  submit button
+  const submitButton = document.getElementById("complaints-form-button")
+  submitButton.title = 'This form is currently disabled';
+  submitButton.disabled = true;
 
-  forms.forEach((form) => {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault(); // Prevent default form submission
+  // Common function to handle form submission
+  function handleFormSubmit(formId, templateId, serviceId) {
+    const form = document.getElementById(formId);
 
-      // Optional: Show loading or disable button
-      const submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
 
-      // Send form using EmailJS
-      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
-        .then(function () {
-          alert('Message sent successfully!');
-          form.reset();
+      const toEmail = this.to_email.value;
+      const descriptionField = this.querySelector('[name="formDescription"]');
+
+      if (toEmail === 'partners@razormarkets.co.za') {
+        descriptionField.value = `
+Hello,
+
+We have received a new partner from submission.
+
+Name: ${this.name.value}
+Email: ${this.email.value}
+Phone: ${this.phone.value}
+Country: ${this.country.value}
+Number of clients: ${this.numberOfClients.value}
+Social Media handle or website: ${this.social.value}
+Years of experience: ${this.yearsOfXp.value}
+
+Please review the details and get back to them as soon as possible.
+
+Best regards,
+
+Razor Markets
+              `.trim();
+      }
+
+      if (toEmail === 'support@razormarkets.co.za') {
+        descriptionField.value = `
+Hello,
+
+We have received a new client support form submission.
+
+First Name: ${this.name.value}
+Surname: ${this.surname.value}
+Email: ${this.email.value}
+Phone: ${this.phone.value}
+Description: ${this.description.value}
+
+Please review the details and get back to them as soon as possible.
+
+Best regards,
+
+Razor Markets
+                `.trim();
+      }
+
+      if (toEmail === 'complaints@razormarkets.co.za') {
+        descriptionField.value = `
+Hello,
+
+We have received a new complaint form submission.
+
+First Name: ${this.name.value}
+Surname: ${this.surname.value}
+Email: ${this.email.value}
+Phone: ${this.phone.value}
+Description: ${this.description.value}
+
+Please review the details and get back to them as soon as possible.
+
+Best regards,
+
+Razor Markets
+                `.trim();
+      }
+
+      emailjs.sendForm(serviceId, templateId, this)
+        .then(function (response) {
+          alert('Your message has been sent successfully!');
         }, function (error) {
-          alert('Failed to send message. Please try again.');
-          console.error('EmailJS error:', error);
-        })
-        .finally(() => {
-          // Restore button state
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Submit';
+          console.log(error);
         });
     });
-  });
+  }
+
+
+  // Client Support Form
+  handleFormSubmit("client-support", "template_adzahza", "default_service");
+
+  // Partners Form
+  handleFormSubmit("partners", "template_adzahza", "default_service");
+
+  // Complaints Form
+  handleFormSubmit("complaints", "template_adzahza", "default_service");
+
+  // Other Form
+  handleFormSubmit("other", "template_adzahza", "default_service");
 });

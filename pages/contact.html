@@ -7,25 +7,22 @@
   <title>Razor Markets</title>
   <link rel="icon" type="image/png" href="../assets/favicon-01.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-  <link rel="stylesheet" href="../styles/contact.css">
+
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="stylesheet" href="../styles/backgroundCSS.css">
   <link rel="stylesheet" href="../components/Nav/style.css">
   <link rel="stylesheet" href="../components/modal/style.css">
+    <link rel="stylesheet" href="../styles/contact.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
-
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    (function () {
-      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("WCgd_Ie7gwZYQVm4e");  // Replace YOUR_USER_ID with your EmailJS user ID
     })();
   </script>
-  <script src="../scripts/pages/contact-page/email-form-handler.js"></script> <!-- Your logic file -->
-
-
 </head>
 
 <body>
@@ -38,75 +35,7 @@
     <div class="gradient-background__noise"></div>
   </div>
   <header>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item navbar-item-logo" href="#">
-          <img src="../assets/svg/logo.svg" alt="Razor Markets Logo">
-        </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="../index.html">Home</a>
-          <a class="navbar-item" href="/pages/about.html">About</a>
 
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">Markets</a>
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="/pages/forex.html">Forex</a>
-              <a class="navbar-item" href="/pages/indices.html">Indices</a>
-              <a class="navbar-item" href="/pages/metals.html">Metals</a>
-              <a class="navbar-item" href="/pages/energies.html">Energies</a>
-            </div>
-          </div>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">Trading</a>
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="/pages/deposits-and-withdrawals.html">Deposits & Withdrawals</a>
-              <a class="navbar-item" href="/pages/accountTypes.html">Account Types</a>
-            </div>
-          </div>
-
-          <a class="navbar-item" href="/pages/partners.html">Partners</a>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">Knowledge Hub</a>
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="/pages/blogs.html">Blogs</a>
-              <a class="navbar-item" href="/pages/risk.html">Risk Management</a>
-              <a class="navbar-item" href="/pages/glossary.html">Trading Glossary</a>
-            </div>
-          </div>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">Support</a>
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="/pages/faqs.html">FAQs</a>
-              <a class="navbar-item" href="/pages/legalDocs.html">Legal Documents</a>
-              <a class="navbar-item active" href="/pages/contact.html">Contact</a>
-            </div>
-          </div>
-
-
-
-        </div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <div class="auth-buttons">
-                <a href="#signup"><button class="button is-info signup">Sign Up</button></a>
-                <a href="#login"><button class="button is-success login">Login</button></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
   </header>
 
   <main>
@@ -214,7 +143,7 @@
             <li class="is-active" data-tab="client-support"><a>Client Support</a></li>
             <li data-tab="partners"><a>Partners</a></li>
             <li data-tab="complaints"><a>Complaints</a></li>
-            <li data-tab="other"><a>Other</a></li>
+            <!-- <li data-tab="other"><a>Other</a></li> -->
           </ul>
         </div>
 
@@ -222,49 +151,70 @@
           <!-- Client Support Form -->
           <form id="client-support" class="tab-content">
             <div class="form-inputs">
+              
+                <input 
+                style="display: none;"
+                type="text" 
+                placeholder="First Name" 
+                value="support@razormarkets.co.za" 
+                name="to_email" 
+                id="to_email">
+                <input type="hidden" name="formDescription" />
+            
               <div class="field">
-                <label class="label">First Name <span style="color:rgb(253, 52, 52)">*</span></label>
+                <label for="name" class="label">First Name <span style="color:rgb(253, 52, 52)">*</span></label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="First Name" required>
+                  <input class="input" type="text" placeholder="First Name" required name="name" id="name">
                 </div>
               </div>
               <div class="field">
-                <label class="label">Surname</label>
+                <label for="surname" class="label">Surname</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Surname">
+                  <input class="input" type="text" placeholder="Surname" name="Surname" id="surname" >
                 </div>
               </div>
               <div class="field">
                 <label class="label">Phone</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Phone">
+                  <input class="input" type="text" placeholder="Phone" name="phone" id="phone">
                 </div>
               </div>
               <div class="field">
-                <label class="label">Email <span style="color:rgb(253, 52, 52)">*</span></label>
+                <label for="email" class="label">Email <span style="color:rgb(253, 52, 52)">*</span></label>
                 <div class="control">
-                  <input class="input" type="email" placeholder="Email" required>
+                  <input class="input" type="email" placeholder="Email" required name="email" id="email">
                 </div>
               </div>
             </div>
             <div class="field">
-              <label class="label">Description <span style="color:rgb(253, 52, 52)">*</span></label>
+              <label for="description" class="label">Description <span style="color:rgb(253, 52, 52)">*</span></label>
               <div class="control">
-                <textarea class="textarea" placeholder="Description" required></textarea>
+                <textarea class="textarea" placeholder="Description" required name="description" id="description"></textarea>
               </div>
             </div>
             <div class="control">
-              <button class="button is-info">Submit</button>
+              <button type="submit" id="button" class="button is-info" >Submit</button>
             </div>
           </form>
+
+
 
           <!-- Partners Form -->
           <form id="partners" class="tab-content" style="display: none;">
             <div class="form-inputs">
+            
+                <input 
+                style="display: none;"
+                type="text" 
+                value="partners@razormarkets.co.za" 
+                name="to_email" 
+                id="to_email">
+                <input type="hidden" name="formDescription" />
+           
               <div class="field">
-                <label class="label">First Name <span style="color:rgb(253, 52, 52)">*</span></label>
+                <label for="name" class="label">First Name <span style="color:rgb(253, 52, 52)">*</span></label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="First Name" required>
+                  <input id="name" name="name" class="input" type="text" placeholder="First Name" required>
                 </div>
               </div>
               <div class="field">
@@ -276,123 +226,95 @@
               <div class="field">
                 <label class="label">Phone</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Phone">
+                  <input id="phone" name="phone" class="input" type="text" placeholder="Phone">
                 </div>
               </div>
               <div class="field">
-                <label class="label">Email <span style="color:rgb(253, 52, 52)">*</span></label>
+                <label for="email" class="label">Email <span style="color:rgb(253, 52, 52)">*</span></label>
                 <div class="control">
-                  <input class="input" type="email" placeholder="Email" required>
+                  <input id="email" name="email" class="input" type="email" placeholder="Email" required>
                 </div>
               </div>
               <div class="field">
                 <label class="label">Country</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Country">
+                  <input id="country" name="country" class="input" type="text" placeholder="Country">
                 </div>
               </div>
               <div class="field">
                 <label class="label">Number of clients</label>
                 <div class="control">
-                  <input class="input" type="number" placeholder="Number of clients">
+                  <input id="numberOfClients" name="numberOfClients" class="input" type="number" placeholder="Number of clients">
                 </div>
               </div>
               <div class="field">
                 <label class="label">Social Media handle or website</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Social Media handle or website">
+                  <input  id="social" name="social" class="input" type="text" placeholder="Social Media handle or website">
                 </div>
               </div>
               <div class="field">
                 <label class="label">Years of experience</label>
                 <div class="control">
-                  <input class="input" type="number" placeholder="Years of experience">
+                  <input id="yearsOfXp" name="yearsOfXp" class="input" type="number" placeholder="Years of experience">
                 </div>
               </div>
             </div>
             <div class="control">
-              <button class="button is-info">Submit</button>
+              <button id="button" class="button is-info">Submit</button>
             </div>
           </form>
 
           <!-- Complaints Form -->
           <form id="complaints" class="tab-content" style="display: none;">
             <div class="form-inputs">
+              <input 
+              style="display: none;"
+              type="text" 
+              value="complaints@razormarkets.co.za" 
+              name="to_email" 
+              id="to_email">
+              <input type="hidden" name="formDescription" />
+
+
               <div class="field">
                 <label class="label">First Name <span style="color:rgb(253, 52, 52)">*</span></label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="First Name" required>
+                  <input class="input" type="text" placeholder="First Name" name="name" required>
                 </div>
               </div>
               <div class="field">
                 <label class="label">Surname</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Surname">
+                  <input class="input" name="surname" type="text" placeholder="Surname">
                 </div>
               </div>
               <div class="field">
                 <label class="label">Phone</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Phone">
+                  <input class="input" name="phone" type="text" placeholder="Phone">
                 </div>
               </div>
               <div class="field">
                 <label class="label">Email <span style="color:rgb(253, 52, 52)">*</span></label>
                 <div class="control">
-                  <input class="input" type="email" placeholder="Email" required>
+                  <input class="input" type="email" name="email" placeholder="Email" required>
                 </div>
               </div>
             </div>
             <div class="field">
               <label class="label">Description</label>
               <div class="control">
-                <textarea class="textarea" placeholder="Description"></textarea>
+                <textarea class="textarea" name="description" placeholder="Description"></textarea>
               </div>
             </div>
 
             <div class="control">
-              <button class="button is-info">Submit</button>
+              <button id="complaints-form-button" class="button is-info">Submit</button>
             </div>
           </form>
 
-          <!-- Other Form -->
-          <form id="other" class="tab-content" style="display: none;">
-            <div class="form-inputs">
-              <div class="field">
-                <label class="label">First Name <span style="color:rgb(253, 52, 52)">*</span></label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="First Name" required>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Surname</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Surname">
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Phone</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Phone">
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Email <span style="color:rgb(253, 52, 52)">*</span></label>
-                <div class="control">
-                  <input class="input" type="email" placeholder="Email" required>
-                </div>
-              </div>
-            </div>
-            <div class="field">
-              <label class="label">Description <span style="color:rgb(253, 52, 52)">*</span></label>
-              <div class="control">
-                <textarea class="textarea" placeholder="Description" required></textarea>
-              </div>
-            </div>
-            <div class="control">
-              <button class="button is-info">Submit</button>
-            </div>
-          </form>
+    
         </div>
       </div>
     </section>
@@ -513,6 +435,7 @@
   <script src="../scripts/pages/button-links.js"></script>
   <script src="../scripts/pages/all/socialMediaLinks.js"></script>
   <script src="../components/modal/script.js"></script>
+  <script src="../scripts/pages/contact-page/email-form-handler.js"></script> 
 </body>
 
 </html>
