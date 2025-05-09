@@ -1,4 +1,4 @@
-const image = '../assets/about-page/Untitled-2.jpg';
+// const image = '../assets/about-page/Untitled-2.jpg';
 
 // path to image file
 const modalEL = `
