@@ -49,6 +49,16 @@ const cards = [
     action: "Read",
     link: `/assets/legalDocs/logalDocs-PSFs/Razor-PAIA-Manual-24.pdf`,
   },
+  { 
+    title: "Read our Complaints Policy",
+    action: "Read",
+    link: `/assets/legalDocs/logalDocs-PSFs/Razor-Complaints-Policy-25.pdf`,
+  },
+  { 
+    title: "Read our Giveaway Terms and Conditions",
+    action: "Read",
+    link: `/assets/legalDocs/logalDocs-PSFs/Razor-Giveaway-Terms-and-Conditions-25.pdf`,
+  },
   // { 
   //   title: "Download our Complaints Policy",
   //   action: "Download",
