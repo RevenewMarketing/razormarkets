@@ -78,6 +78,26 @@ const accountCards = [
     buttonLink: "https://crm.razormarkets.co.za/register/",
     icon: "../assets/accountTypes/account-surge.svg",
     order: 1,
+  },
+  {
+    name: "Razor Blaze",
+    type: "200% Bonus Account",
+    platform: "MT 5",
+    markets: "Forex, Metals, Indices",
+    minDeposit: "R100",
+    spreads: "from 1 pip",
+    bonus: "Yes",
+    swapFees: "Yes",
+    leverage: "1:500",
+    miniTradeSize: "0.01",
+    stopOut: "30%",
+    accountBaseCurrencies: ["USD", "ZAR"],
+    withdrawals: "Instant",
+    orderExecution: "Market Execution",
+    buttonText: "Sign Up",
+    buttonLink: "https://crm.razormarkets.co.za/register/",
+    icon: "../assets/accountTypes/account-blaze.svg",
+    order: 2,
   }
 ];
 
