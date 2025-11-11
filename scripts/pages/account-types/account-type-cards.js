@@ -57,7 +57,7 @@ const accountCards = [
     buttonText: "Sign Up",
     buttonLink: "https://crm.razormarkets.co.za/register/",
     icon: "../assets/accountTypes/account-classic.svg",
-    order: 4,
+    order: 5,
   },
   {
     name: "Razor Surge",
@@ -98,6 +98,26 @@ const accountCards = [
     buttonLink: "https://crm.razormarkets.co.za/register/",
     icon: "../assets/accountTypes/account-blaze.svg",
     order: 2,
+  },
+  {
+    name: "Razor Ignite",
+    type: "100% Micro Bonus",
+    platform: "MT 5",
+    markets: "Forex, Metals, Energies, Indices",
+    minDeposit: "R50",
+    spreads: "from 1 pip",
+    bonus: "Yes",
+    swapFees: "Yes",
+    leverage: "1:500",
+    miniTradeSize: "0.01",
+    stopOut: "30%",
+    accountBaseCurrencies: ["USD", "ZAR"],
+    withdrawals: "Instant",
+    orderExecution: "Market Execution",
+    buttonText: "Sign Up",
+    buttonLink: "https://crm.razormarkets.co.za/register/",
+    icon: "../assets/accountTypes/account-ignite.svg",
+    order: 4,
   }
 ];
 
