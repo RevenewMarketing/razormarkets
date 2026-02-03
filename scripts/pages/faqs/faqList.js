@@ -51,11 +51,27 @@ const faqs = [
                       <li>Maximum Leverage: 1:500</li>
                       <li>Base Currencies: USD, ZAR</li>
                   </ul>
+                  <p><b>Razor Blaze (200% Bonus Account)</b></p>
+                  <ul>
+                      <li>Minimum Deposit: R200</li>
+                      <li>Spreads from 1 pip</li>
+                      <li>Bonus: Yes (200% on deposits)</li>
+                      <li>Maximum Leverage: 1:500</li>
+                      <li>Base Currencies: USD, ZAR</li>
+                  </ul>
                   <p><b>Razor Spark (Micro Account)</b></p>
                   <ul>
                       <li>Minimum Deposit: R50</li>
                       <li>Spreads from 1 pip</li>
                       <li>Bonus: No</li>
+                      <li>Maximum Leverage: 1:500</li>
+                      <li>Base Currencies: USD, ZAR</li>
+                  </ul>
+                  <p><b>Razor Ignite (100% Micro Bonus Account)</b></p>
+                  <ul>
+                      <li>Minimum Deposit: R50</li>
+                      <li>Spreads from 1 pip</li>
+                      <li>Bonus: Yes (100% on deposits)</li>
                       <li>Maximum Leverage: 1:500</li>
                       <li>Base Currencies: USD, ZAR</li>
                   </ul>
@@ -67,14 +83,16 @@ const faqs = [
                       <li>Maximum Leverage: 1:500</li>
                       <li>Base Currencies: USD, ZAR</li>
                   </ul>
-                  <p><b>Razor Edge (Zero Spread Account)</b></p>
-                  <ul>
-                      <li>Minimum Deposit: R100</li>
-                      <li>Spreads from 0 pips</li>
-                      <li>Bonus: No</li>
-                      <li>Maximum Leverage: 1:500</li>
-                      <li>Base Currencies: USD, ZAR</li>
-                  </ul>
+                    <script>
+                //   <p><b>Razor Edge (Zero Spread Account)</b></p>
+                //   <ul>
+                //       <li>Minimum Deposit: R100</li>
+                //       <li>Spreads from 0 pips</li>
+                //       <li>Bonus: No</li>
+                //       <li>Maximum Leverage: 1:500</li>
+                //       <li>Base Currencies: USD, ZAR</li>
+                //   </ul>
+                    </script>
                   <p>All accounts offer trading in Forex, Metals, Indices, and (for some) Energies on the MT5 platform, with a 30% stop-out level. Swap fees are applicable, and withdrawals are processed instantly once approved.</p>
               `
             },
@@ -128,9 +146,11 @@ const faqs = [
                 question: "Is there a minimum deposit for each account?",
                 answer: `
                   <p>Razor Surge: R100</p>
+                  <p>Razor Blaze: R200</p>
                   <p>Razor Spark (Micro Account): R50</p>
+                  <p>Razor Ignite: R50</p>
                   <p>Razor Classic (Standard Account): R100</p>
-                  <p>Razor Edge (Zero Spread Account): R100</p>
+                  <script> // <p>Razor Edge (Zero Spread Account): R100</p> </script>
               `
             },
             {
