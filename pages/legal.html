@@ -189,7 +189,18 @@
     rel="apple-touch-icon" />
   <script
     type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = { "currencyCode": "USD", "symbol": "$", "decimal": ".", "fractionDigits": 2, "group": ",", "template": "{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}", "hideDecimalForWholeNumbers": false };</script>
- <link href="../style/custom-styles.css?v=4" rel="stylesheet" type="text/css"><link href="../style/padelthon-navbar.css" rel="stylesheet" type="text/css"></head>
+ <link href="../style/custom-styles.css?v=4" rel="stylesheet" type="text/css"><link href="../style/padelthon-navbar.css" rel="stylesheet" type="text/css"><script>
+function initFreshdesk() {
+  window.fdWidget.init({
+    token: "01KD4Z797NXVXF5G44P53RQ81X",
+    host: "https://razormarkerssa.freshdesk.com",
+    widgetId: "01KD4Z7BJ7EMRED3YRT37ZJFST"
+  });
+}
+
+function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://razormarkerssa.freshdesk.com/webchat/js/widget.js",e.onload=initFreshdesk,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshdesk-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+</script>
+</head>
 
 <body class="body">
    <div id="starfield" class="starfield-container">
