@@ -2,7 +2,17 @@
 <!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Wed Sep 03 2025 09:46:34 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="dyxor.webflow.io" data-wf-page="687b1e181baaf79fcff18ce2" data-wf-site="687b1e181baaf79fcff18cdc"
   lang="en">
+<script>
+function initFreshdesk() {
+  window.fdWidget.init({
+    token: "01KD4Z797NXVXF5G44P53RQ81X",
+    host: "https://razormarkerssa.freshdesk.com",
+    widgetId: "01KD4Z7BJ7EMRED3YRT37ZJFST"
+  });
+}
 
+function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://razormarkerssa.freshdesk.com/webchat/js/widget.js",e.onload=initFreshdesk,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshdesk-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+</script>
 <head>
   <meta charset="utf-8" />
   <title>Razor Markets - Precision Trading Platform | Forex, CFDs & Indices</title>
