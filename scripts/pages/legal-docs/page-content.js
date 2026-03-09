@@ -55,9 +55,9 @@ const cards = [
     link: `/assets/legalDocs/logalDocs-PSFs/Razor-Complaints-Policy-25.pdf`,
   },
   { 
-    title: "Read our Giveaway Terms and Conditions",
+    title: "Read our Iphone Giveaway Terms and Conditions",
     action: "Read",
-    link: `/assets/legalDocs/logalDocs-PSFs/Razor-Giveaway-Terms-and-Conditions-25.pdf`,
+    link: `/assets/legalDocs/logalDocs-PSFs/Razor-Iphone-Giveaway-26.pdf`,
   },
   // { 
   //   title: "Download our Complaints Policy",
