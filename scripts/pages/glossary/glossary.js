@@ -1,19 +1,59 @@
-// const glossary = [
-//     { term: "Ask Price", definition: "The price at which a trader can buy a currency pair. It is the higher of the two prices in a quote." },
-//     { term: "Base Currency", definition: "The first currency in a currency pair, against which the value of the second currency is determined." },
-//     { term: "Bid Price", definition: "The price at which a trader can sell a currency pair. It is the lower of the two prices in a quote." },
-//     { term: "Broker", definition: "A company that provides traders with access to the Forex market by executing buy and sell orders." },
-//     { term: "Bull Market", definition: "A market condition where prices are rising or expected to rise." },
-//     { term: "Bear Market", definition: "A market condition where prices are falling or expected to fall." },
-//     { term: "Leverage", definition: "The ability to control a large position with a small amount of capital, expressed as a ratio (e.g., 1:100)." },
-//     { term: "Pip", definition: "The smallest price movement in Forex, usually the fourth decimal place in most currency pairs (0.0001)." },
-//     { term: "Spread", definition: "The difference between the bid and ask price of a currency pair, representing the broker’s commission." },
-//     { term: "Trend", definition: "The general direction in which a currency pair’s price is moving (upward, downward, or sideways)." }
-// ];
-
 const glossaryContainer = document.getElementById("glossary-list");
 const alphabetNav = document.querySelectorAll(".alphabet-nav");
 const groupedGlossary = {};
+
+function getCurrentTheme() {
+    const root = document.documentElement;
+    if (!root) return "light";
+
+    const attrTheme = root.getAttribute("data-theme");
+    if (attrTheme) return attrTheme;
+
+    const body = document.body;
+    if (body && body.classList.contains("dark")) return "dark";
+    if (root.classList.contains("dark")) return "dark";
+
+    return "light";
+}
+
+function applyGlossaryThemeColors() {
+    if (!glossaryContainer) return;
+
+    const theme = getCurrentTheme();
+    const termElements = glossaryContainer.querySelectorAll(".glossary-item strong");
+    const definitionElements = glossaryContainer.querySelectorAll(".glossary-item .definition");
+
+    if (theme === "dark") {
+        termElements.forEach((el) => {
+            el.style.color = "#ffffff";
+        });
+        definitionElements.forEach((el) => {
+            el.style.color = "rgba(255, 255, 255, 0.85)";
+        });
+    } else {
+        termElements.forEach((el) => {
+            el.style.color = "";
+        });
+        definitionElements.forEach((el) => {
+            el.style.color = "";
+        });
+    }
+}
+
+function initGlossaryThemeObserver() {
+    const root = document.documentElement;
+    if (!root || typeof MutationObserver === "undefined") return;
+
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === "attributes" && mutation.attributeName === "data-theme") {
+                applyGlossaryThemeColors();
+            }
+        });
+    });
+
+    observer.observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+}
 
 glossary.forEach(({ term, definition }) => {
     const firstLetter = term.charAt(0).toUpperCase();
@@ -27,28 +67,57 @@ Object.keys(groupedGlossary).sort().forEach((letter, index) => {
     const section = document.createElement("div");
     section.classList.add("glossary-section");
     section.id = `section-${index}`;
-    section.innerHTML = `<h3>${letter}</h3>`;
-
+    section.innerHTML = `<h3 class="h3" style="color: #00D9A3; margin-bottom: 20px;">${letter}</h3>`;
 
     groupedGlossary[letter].forEach(({ term, definition }) => {
         const item = document.createElement("div");
         item.classList.add("glossary-item");
-        item.innerHTML = `<strong>${term}</strong><div class='definition' style='display: none;'>${definition}</div>`;
+        item.style.cssText = "padding: 20px; margin-bottom: 15px; background: rgba(0, 217, 163, 0.05); border: 1px solid rgba(0, 217, 163, 0.2); border-radius: 12px; cursor: pointer; transition: all 0.3s ease;";
+        item.innerHTML = `
+            <strong style="color: #fff; font-size: 1.2em; display: block; margin-bottom: 10px;">${term}</strong>
+            <div class='definition' style='display: none; color: rgba(255, 255, 255, 0.8); line-height: 1.6; padding-top: 10px; border-top: 1px solid rgba(0, 217, 163, 0.1);'>${definition}</div>
+        `;
       
         item.addEventListener("click", (e) => {
             e.stopPropagation();
             const definitionElement = item.querySelector(".definition");
-            definitionElement.style.display = definitionElement.style.display === "none" ? "block" : "none";
+            const isVisible = definitionElement.style.display === "block";
+            definitionElement.style.display = isVisible ? "none" : "block";
+            item.style.background = isVisible ? "rgba(0, 217, 163, 0.05)" : "rgba(0, 217, 163, 0.1)";
         });
+        
+        item.addEventListener("mouseenter", () => {
+            if (item.querySelector(".definition").style.display !== "block") {
+                item.style.background = "rgba(0, 217, 163, 0.08)";
+            }
+        });
+        
+        item.addEventListener("mouseleave", () => {
+            if (item.querySelector(".definition").style.display !== "block") {
+                item.style.background = "rgba(0, 217, 163, 0.05)";
+            }
+        });
+        
         section.appendChild(item);
     });
 
     glossaryContainer.appendChild(section);
 });
+applyGlossaryThemeColors();
+initGlossaryThemeObserver();
 
 function createNavLink(letter, index) {
     const link = document.createElement("a");
     link.textContent = letter;
+    link.style.cssText = "padding: 8px 12px; color: #00D9A3; text-decoration: none; border-radius: 6px; transition: all 0.3s ease; cursor: pointer;";
+
+    link.addEventListener("mouseenter", () => {
+        link.style.background = "rgba(0, 217, 163, 0.2)";
+    });
+    
+    link.addEventListener("mouseleave", () => {
+        link.style.background = "transparent";
+    });
 
     link.addEventListener("click", (e) => {
         e.preventDefault();
@@ -56,80 +125,61 @@ function createNavLink(letter, index) {
         const section = document.getElementById(`section-${index}`);
         if (!section) return;
     
-        const rect = section.getBoundingClientRect(); // position relative to viewport
-        //console.log('rect', rect)
-        const scrollY = window.scrollY || window.pageYOffset; // current scroll position
-        // console.log('scrollY', scrollY)
-        const adjust = 170; // this will reposition the element to the top of the viewport
-        // console.log('adjust', adjust)
-        const targetY = scrollY + rect.top ; // scroll so the element is at the top of the viewport
-        //console.log('targetY', targetY)
-        // console.log('targetY - adjust', (targetY - adjust).toFixed(0))
-        // console.log('Math.max(targetY - adjust, 0)', Math.max(targetY - adjust, 0))
+        const rect = section.getBoundingClientRect();
+        const scrollY = window.scrollY || window.pageYOffset;
+        const adjust = 170;
+        const targetY = scrollY + rect.top;
 
-        // window.scrollTo({
-        //     top:(targetY - adjust).toFixed(0),
-        //     behavior: "smooth"
-        // });
-
-        // scroll to section for both desktop and mobile
         if (window.innerWidth < 332) {
-            console.log('332');
             window.scrollTo({
                 top: Math.floor(targetY - (adjust + 150)),
                 behavior: "smooth"
             });
-        } else
-        if (window.innerWidth < 432) {
-            console.log('432', 432);
+        } else if (window.innerWidth < 432) {
             window.scrollTo({
                 top: Math.floor(targetY - (adjust + 110)),
                 behavior: "smooth"
             });
         } else if (window.innerWidth < 581) {
-            console.log('581', 581);
             window.scrollTo({
                 top: Math.floor(targetY - (adjust + 70)),
                 behavior: "smooth"
             });
         } else if (window.innerWidth < 1132) {
-            console.log('1132', 1132);
             window.scrollTo({
                 top: Math.floor(targetY - (adjust + 30)),
                 behavior: "smooth"
             });
         } else {
-            console.log('Desktop >', 1132);
             window.scrollTo({
                 top: Math.floor(targetY - adjust),
                 behavior: "smooth"
             });
         }
-        
-
-
     });
 
     return link;
 }
 
-
 Object.keys(groupedGlossary).sort().forEach((letter, index) => {
     const link1 = createNavLink(letter, index);
-    const link2 = createNavLink(letter, index); // brand new with listener
+    const link2 = createNavLink(letter, index);
 
     alphabetNav[0].appendChild(link1);
-    alphabetNav[1].appendChild(link2);
+    if (alphabetNav[1]) {
+        alphabetNav[1].appendChild(link2);
+    }
 });
 
-//log the scroll position
 window.addEventListener("scroll", () => {
-
+    const scrollAlphabet = document.querySelector(".scroll-alphabet");
+    const innerAlphabet = document.querySelector(".inner-alphabet");
+    
     if (window.scrollY > 460) {
-        document.querySelector(".scroll-alphabet").style.display = "flex";
-        document.querySelector(".inner-alphabet").style.opacity = "0";
-    }else if (window.scrollY < 460) {
-        document.querySelector(".scroll-alphabet").style.display = "none";
-        document.querySelector(".inner-alphabet").style.opacity = "1";
+        if (scrollAlphabet) scrollAlphabet.style.display = "flex";
+        if (innerAlphabet) innerAlphabet.style.opacity = "0";
+    } else if (window.scrollY < 460) {
+        if (scrollAlphabet) scrollAlphabet.style.display = "none";
+        if (innerAlphabet) innerAlphabet.style.opacity = "1";
     }
 });

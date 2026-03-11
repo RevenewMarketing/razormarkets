@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Indices Trading - Razor Markets</title>
+  <title>Risk Management - Razor Markets</title>
   <meta content="About - Dyxor- Webflow Ecommerce Website Template" property="og:title" />
   <meta content="About - Dyxor- Webflow Ecommerce Website Template" property="twitter:title" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -13,55 +13,48 @@
   <link href="../style/base-style.css" rel="stylesheet" type="text/css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   <style>
-    /* ================== INDICES HERO BACKGROUND ================== */
-    .indices-hero-section {
-      position: relative;
-      background-image: url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') !important;
-      background-size: cover !important;
-      background-position: center !important;
-      background-repeat: no-repeat !important;
-      padding: 120px 0 100px;
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     
-    .indices-hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6) !important;
-      z-index: 1;
+    .animate-on-scroll {
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    .indices-hero-section .container {
-      position: relative;
-      z-index: 2;
+    .animate-on-scroll.animated:nth-child(1) { animation: fadeInUp 0.6s ease-out 0.1s forwards; }
+    .animate-on-scroll.animated:nth-child(2) { animation: fadeInUp 0.6s ease-out 0.2s forwards; }
+    .animate-on-scroll.animated:nth-child(3) { animation: fadeInUp 0.6s ease-out 0.3s forwards; }
+    .animate-on-scroll.animated:nth-child(4) { animation: fadeInUp 0.6s ease-out 0.4s forwards; }
+    .animate-on-scroll.animated:nth-child(5) { animation: fadeInUp 0.6s ease-out 0.5s forwards; }
+    .animate-on-scroll.animated:nth-child(6) { animation: fadeInUp 0.6s ease-out 0.6s forwards; }
+    
+    .core-features-card.animate-on-scroll {
+      cursor: pointer;
     }
     
-    .indices-hero-section .about-experiences-layout {
-      position: relative;
-      z-index: 2;
+    .core-features-card.animate-on-scroll:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 217, 163, 0.3);
+      border-color: rgba(0, 217, 163, 0.6) !important;
     }
     
-    /* Force white text in both light and dark modes */
-    .indices-hero-section h1,
-    .indices-hero-section .h1,
-    .indices-hero-section .tag-text,
-    .indices-hero-section .paragraph-large,
-    .indices-hero-section .paragraph-small {
-      color: #ffffff !important;
+    .credibility-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
     }
     
-    .indices-hero-section .text-grey {
-      color: rgba(255, 255, 255, 0.8) !important;
-    }
-    
-    .indices-hero-section .color-gradient {
-      background: linear-gradient(90deg, #0CF3B6 0%, #00B4FF 100%) !important;
-      -webkit-background-clip: text !important;
-      -webkit-text-fill-color: transparent !important;
-      background-clip: text !important;
+    .credibility-card:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 217, 163, 0.2);
+      background: rgba(255, 255, 255, 0.1) !important;
     }
     
     @media (min-width:992px) {
@@ -182,6 +175,13 @@
         transform: translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
       }
     }
+
+    /* Ensure risk management cards stay bright in light mode */
+    html[data-theme="light"] .core-features-card .h4,
+    html[data-theme="light"] .core-features-card .h3,
+    html[data-theme="light"] .core-features-card .paragraph-large {
+      color: #ffffff !important;
+    }
   </style>
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
@@ -210,14 +210,14 @@ function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createE
 </head>
 
 <body class="body">
-  <div id="starfield" class="starfield-container">
+   <div id="starfield" class="starfield-container">
     <div class="stars-layer stars-small"></div>
     <div class="stars-layer stars-medium"></div>
     <div class="stars-layer stars-large"></div>
     <div class="shooting-stars-container"></div>
   </div>
   <div class="page-wrapper gradient">
-  <div class="navbar-wrapper">
+    <div class="navbar-wrapper">
       <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
         data-doc-height="1" role="banner" class="nav-component w-nav">
         <div class="navbar">
@@ -495,101 +495,160 @@ function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createE
       </div>
     </div>
     <!-- ===== END CUSTOM MOBILE NAV ===== -->
-    <section data-w-id="0bc31651-0886-d527-3180-11d122b339a5" class="section indices-hero-section">
+    <section data-w-id="0bc31651-0886-d527-3180-11d122b339a5" class="section">
       <div class="container">
         <div class="about-experiences-layout">
           <div data-w-id="525adcb5-127e-7534-c399-69c289b1cce8" style="opacity:0" class="about-heading-wrap">
             <div class="tag-icon-wrap"><img
                 src="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688202f2e7811f6f509d1cdf_Simplification%20(1).svg"
                 loading="lazy" alt="" class="tag-icon" />
-              <p class="tag-text">Markets</p>
+              <p class="tag-text">Management</p>
             </div>
             <div class="about-heading-box">
-              <h1 class="h1 text-center">Trade Global <span class="color-gradient">Indices?</span></h1>
-              <div class="paragraph-large text-center">Gain exposure to leading global economies by trading indices like the S&P 500, FTSE 100, and DAX 30. Razor Markets offers competitive spreads and seamless execution on a variety of indices.</div>
+              <h1 class="h1 text-center">Risk <span class="color-gradient">Management</span></h1>
+              <div class="paragraph-large text-center">At Razor Markets, we understand that trading financial instruments, especially Contracts for Difference (CFDs), carries inherent risks. While market opportunities can be rewarding, it is crucial to approach trading with a well-defined risk management strategy. Our goal is to empower traders with the knowledge, tools, and support needed to navigate market volatility responsibly.</div>
+           
             </div>
           </div>
-          <div class="about-dyxor-logo-wrap" style="display: flex; justify-content: center; align-items: center;">
+          <!-- <div class="about-dyxor-logo-wrap" style="display: flex; justify-content: center; align-items: center;">
             <div data-w-id="55f4147f-5d65-f89c-a9c3-8124ed24fbb8" id="forex-lottie" style="width: 100%; max-width: 260px; height: 260px; position: relative; z-index: 10; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
-    <section data-w-id="c6198221-3535-25b2-7774-e49f202557e1" class="section">
+  
+    <!-- Deposits & Withdrawals Features Section -->
+    <section class="section">
       <div class="container">
-        <div class="credibility-page-layout">
-          <div class="credibility-page-wrap">
-            <div data-w-id="20fca441-13db-93ba-971d-e3e46298fb79" style="opacity:0" class="volumes-heading-tag">
-              <div class="tag-icon-wrap"><img
+        <div class="core-features-layout">
+          <div class="core-features-top-wrap">
+            <div class="tag-icon-box land-tag-center">
+              <!-- <div class="tag-icon-wrap"><img
                   src="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688202f2e7811f6f509d1cdf_Simplification%20(1).svg"
                   loading="lazy" alt="" class="tag-icon" />
-                <p class="tag-text">Credibility</p>
-              </div>
-              <h2 class="h2 text-center">Why trade indices with <span class="span-text">Razor Markets?</span></h2>
-              <div class="paragraph-large text-center">We provide a superior trading environment built on ultra-low spreads, rapid execution, and access to advanced platforms. 1 Our commitment to comprehensive market analysis and educational resources empowers traders of all levels to navigate the forex market confidently. Experience the Razor Markets advantage and unlock your trading potential.</div>
+                <p class="tag-text">WHY CHOOSE US</p>
+              </div> -->
             </div>
-            <div data-w-id="4cef49aa-c4a6-8f67-36d2-06d976e2b8cb" style="opacity:0" class="credibility-card-wrap">
-              <div class="credibility-content-left-wrap">
-                <div class="client-satisfaction-tag">
-                  <div class="credibility-card-top-wrap">
-                    <h3 class="h3 center-align">Diverse Global Access</h3>
-                    <p class="paragraph-large text-grey center-align">Gain exposure to a wide array of major indices, including the S&P 500, FTSE 100, and DAX 30, diversifying your portfolio.</p>
-                  </div>
-                  <div class="credibility-card-bottom-wrap">
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="60" cy="60" r="55" fill="url(#indicesGradient)" opacity="0.2"/>
-                      <path d="M35 75L45 60L55 70L65 50L75 65L85 45" stroke="url(#indicesGradient2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                      <circle cx="45" cy="60" r="4" fill="url(#indicesGradient2)"/>
-                      <circle cx="55" cy="70" r="4" fill="url(#indicesGradient2)"/>
-                      <circle cx="65" cy="50" r="4" fill="url(#indicesGradient2)"/>
-                      <circle cx="75" cy="65" r="4" fill="url(#indicesGradient2)"/>
-                      <circle cx="85" cy="45" r="4" fill="url(#indicesGradient2)"/>
-                      <defs>
-                        <linearGradient id="indicesGradient" x1="5" y1="5" x2="115" y2="115" gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#00FF94"/>
-                          <stop offset="1" stop-color="#00CC75"/>
-                        </linearGradient>
-                        <linearGradient id="indicesGradient2" x1="35" y1="45" x2="85" y2="75" gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#00FF94"/>
-                          <stop offset="1" stop-color="#00CC75"/>
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  </div>
+            <h2 class="h2 text-center">Understanding Trading <span class="span-text">Risks</span></h2>
+          <div class="paragraph-large text-center">Trading CFDs involves speculation on price movements without owning the underlying asset. This means:</div>
+             
+        </div>
+          <div class="core-features-box-wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <!-- Leverage Amplifies Risk -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/risk/leverage-amplifies-risk.webp') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">Leverage Amplifies Risk</h3>
+                  <h3 class="h3"><span class="span-text">01</span></h3>
                 </div>
+                <p class="paragraph-large text-white">While leverage can increase potential profits, it also magnifies losses.</p>
               </div>
-              <div class="credibility-content-center-wrap">
-                <div class="credibility-center-card">
-                  <div class="credibility-card-heading">
-                    <h2 class="h2 mobile-text-center">Advanced Platforms</h2>
-                    <p class="paragraph-large text-grey center-align">Access a range of powerful platforms, including MetaTrader 5, each offering advanced tools and features to suit your trading style.</p>
-                  </div>
+            </div>
+            
+            <!-- Market Volatility -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/risk/market-volatility.webp') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">Market Volatility</h3>
+                  <h3 class="h3 span-text">02</h3>
                 </div>
-                <div class="credibility-green-box">
-                  <div class="credibility-heading-box">
-                    <h2 class="h3">Fast Execution</h2>
-                    <p class="paragraph-large text-grey center-align">Experience swift and reliable trade execution, minimizing slippage and ensuring your orders are filled precisely when you need them.</p>
-                  </div>
-                </div>
+                <p class="paragraph-large text-white">Rapid price fluctuations can result in unexpected losses.</p>
               </div>
-              <div class="credibility-content-right-wrap">
-                <div class="integrated-box-wrap">
-                  <div class="integrated-text-box">
-                    <h2 class="h2 mobile-text-center">Market Analysis</h2>
-                    <p class="paragraph-large text-grey text-horizontal">Empower your trading decisions with in-depth market analysis and extensive educational resources, designed to keep you informed and ahead of market trends.</p>
-                  </div>
-                </div><img
-                  src="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/68970abf5cd1d71625b1bf37_30660c11354866048d6a9e47914c1eec_circle%20one.svg"
-                  loading="lazy" data-w-id="385fd1e9-6cd6-95d3-fc5d-12bb9304e28b" alt="" class="circle-one" /><img
-                  src="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/68970abfc258f310ece99beb_d250a177c7e95dc10aa3e8c2e73c4e74_circle%20two.svg"
-                  loading="lazy" data-w-id="f646c5c4-ac27-a707-e5d2-2eac85d434b5" alt="" class="circle-two" />
+            </div>
+            
+            <!-- Liquidity Risks -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/risk/education-support.webp') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">Liquidity Risks</h3>
+                  <h3 class="h3 span-text">03</h3>
+                </div>
+                <p class="paragraph-large text-white">Some assets may have lower liquidity, leading to price gaps and potential slippage.</p>
+              </div>
+            </div>
+            
+            <!-- Emotional Trading -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/risk/emotional-trading.webp') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">Emotional Trading</h3>
+                  <h3 class="h3 span-text">04</h3>
+                </div>
+                <p class="paragraph-large text-white">Fear and greed can impact decision-making, leading to impulsive trades.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Second Section: How Razor Markets Helps You Manage Risk -->
+    <section class="section">
+      <div class="container">
+        <div class="core-features-layout">
+          <div class="core-features-top-wrap">
+            <h2 class="h2 text-center">How Razor Markets Helps You <span class="span-text">Manage Risk</span></h2>
+          <div class="paragraph-large text-center">We prioritize risk awareness and responsible trading by offering:</div>
+        </div>
+          <div class="core-features-box-wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <!-- Risk Management Tools -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/risk/risk-management-tools.webp') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">Risk Management Tools</h3>
+                  <h3 class="h3 span-text">01</h3>
+                </div>
+                <p class="paragraph-large text-white">Stop-Loss & Take-Profit Orders – Automatically close positions at predefined price levels to minimize potential losses and secure profits.</p>
+              </div>
+            </div>
+            
+            <!-- Education & Support -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/risk/education-support.webp') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">Education & Support</h3>
+                  <h3 class="h3 span-text">02</h3>
+                </div>
+                <p class="paragraph-large text-white">Trading Guides & Webinars – Learn about risk management strategies through our in-depth resources.</p>
+              </div>
+            </div>
+            
+            <!-- Transparent Trading Environment -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/risk/transparent-trading-environment.webp') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">Transparent Trading Environment</h3>
+                  <h3 class="h3 span-text">03</h3>
+                </div>
+                <p class="paragraph-large text-white">Real-Time Market Data – Access up-to-date information to make informed trading decisions.</p>
+              </div>
+            </div>
+            
+            <!-- Forex Trading -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/risk/forex-trading.webp') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">Forex Trading</h3>
+                  <h3 class="h3 span-text">04</h3>
+                </div>
+                <p class="paragraph-large text-white">Currency Pairs – Trade major, minor, and exotic currency pairs with competitive spreads.</p>
+              </div>
+            </div>
+            
+            <!-- <div class="features-center-image-wrap" style="grid-column: 1 / -1; display: flex; justify-content: center; margin-top: 40px;"><img
+                src="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688f1fd69052b142b789df03_Soup%20Image.webp"
+                loading="lazy" sizes="100vw"
+                srcset="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688f1fd69052b142b789df03_Soup%20Image-p-500.webp 500w, https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688f1fd69052b142b789df03_Soup%20Image-p-800.webp 800w, https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688f1fd69052b142b789df03_Soup%20Image-p-1080.webp 1080w, https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688f1fd69052b142b789df03_Soup%20Image-p-1600.webp 1600w, https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688f1fd69052b142b789df03_Soup%20Image.webp 1680w"
+                alt="" class="features-center-image" /></div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+ 
+
+    
     <section class="section">
       <div class="container">
         <div data-w-id="92d0c528-00cd-f1f3-05e9-42624c4b2b07" class="blockchain-box-layout">
@@ -692,7 +751,7 @@ function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createE
    
    
    
-   <section class="section">
+    <section class="section">
       <div class="container">
         <div class="footer-layout">
           <div class="footer-box-wrap">
@@ -768,6 +827,30 @@ function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createE
   <script src="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/js/webflow.76e11310.cb10ebba24476d6a.js"
     type="text/javascript"></script>
 
+  <!-- Scroll Animation Script -->
+  <script>
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all animated cards
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.animate-on-scroll').forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
+
   <!-- Lottie Animation Script -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -780,7 +863,7 @@ function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createE
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: 'assets/indices.json'
+            path: 'assets/Green energy.json'
           });
           
           animation.addEventListener('DOMLoaded', function() {

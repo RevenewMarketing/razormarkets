@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Indices Trading - Razor Markets</title>
+  <title>Widthrawals - Razor Markets</title>
   <meta content="About - Dyxor- Webflow Ecommerce Website Template" property="og:title" />
   <meta content="About - Dyxor- Webflow Ecommerce Website Template" property="twitter:title" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -13,55 +13,48 @@
   <link href="../style/base-style.css" rel="stylesheet" type="text/css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   <style>
-    /* ================== INDICES HERO BACKGROUND ================== */
-    .indices-hero-section {
-      position: relative;
-      background-image: url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') !important;
-      background-size: cover !important;
-      background-position: center !important;
-      background-repeat: no-repeat !important;
-      padding: 120px 0 100px;
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     
-    .indices-hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6) !important;
-      z-index: 1;
+    .animate-on-scroll {
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    .indices-hero-section .container {
-      position: relative;
-      z-index: 2;
+    .animate-on-scroll.animated:nth-child(1) { animation: fadeInUp 0.6s ease-out 0.1s forwards; }
+    .animate-on-scroll.animated:nth-child(2) { animation: fadeInUp 0.6s ease-out 0.2s forwards; }
+    .animate-on-scroll.animated:nth-child(3) { animation: fadeInUp 0.6s ease-out 0.3s forwards; }
+    .animate-on-scroll.animated:nth-child(4) { animation: fadeInUp 0.6s ease-out 0.4s forwards; }
+    .animate-on-scroll.animated:nth-child(5) { animation: fadeInUp 0.6s ease-out 0.5s forwards; }
+    .animate-on-scroll.animated:nth-child(6) { animation: fadeInUp 0.6s ease-out 0.6s forwards; }
+    
+    .core-features-card.animate-on-scroll {
+      cursor: pointer;
     }
     
-    .indices-hero-section .about-experiences-layout {
-      position: relative;
-      z-index: 2;
+    .core-features-card.animate-on-scroll:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 217, 163, 0.3);
+      border-color: rgba(0, 217, 163, 0.6) !important;
     }
     
-    /* Force white text in both light and dark modes */
-    .indices-hero-section h1,
-    .indices-hero-section .h1,
-    .indices-hero-section .tag-text,
-    .indices-hero-section .paragraph-large,
-    .indices-hero-section .paragraph-small {
-      color: #ffffff !important;
+    .credibility-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
     }
     
-    .indices-hero-section .text-grey {
-      color: rgba(255, 255, 255, 0.8) !important;
-    }
-    
-    .indices-hero-section .color-gradient {
-      background: linear-gradient(90deg, #0CF3B6 0%, #00B4FF 100%) !important;
-      -webkit-background-clip: text !important;
-      -webkit-text-fill-color: transparent !important;
-      background-clip: text !important;
+    .credibility-card:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 217, 163, 0.2);
+      background: rgba(255, 255, 255, 0.1) !important;
     }
     
     @media (min-width:992px) {
@@ -182,6 +175,13 @@
         transform: translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
       }
     }
+    
+    /* Ensure Deposits & Withdrawals cards stay bright in light mode */
+    html[data-theme="light"] .core-features-card .h4,
+    html[data-theme="light"] .core-features-card .h3,
+    html[data-theme="light"] .core-features-card .paragraph-large {
+      color: #ffffff !important;
+    }
   </style>
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
@@ -210,14 +210,14 @@ function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createE
 </head>
 
 <body class="body">
-  <div id="starfield" class="starfield-container">
+   <div id="starfield" class="starfield-container">
     <div class="stars-layer stars-small"></div>
     <div class="stars-layer stars-medium"></div>
     <div class="stars-layer stars-large"></div>
     <div class="shooting-stars-container"></div>
   </div>
   <div class="page-wrapper gradient">
-  <div class="navbar-wrapper">
+   <div class="navbar-wrapper">
       <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
         data-doc-height="1" role="banner" class="nav-component w-nav">
         <div class="navbar">
@@ -495,101 +495,192 @@ function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createE
       </div>
     </div>
     <!-- ===== END CUSTOM MOBILE NAV ===== -->
-    <section data-w-id="0bc31651-0886-d527-3180-11d122b339a5" class="section indices-hero-section">
+    <section data-w-id="0bc31651-0886-d527-3180-11d122b339a5" class="section">
       <div class="container">
         <div class="about-experiences-layout">
           <div data-w-id="525adcb5-127e-7534-c399-69c289b1cce8" style="opacity:0" class="about-heading-wrap">
             <div class="tag-icon-wrap"><img
                 src="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688202f2e7811f6f509d1cdf_Simplification%20(1).svg"
                 loading="lazy" alt="" class="tag-icon" />
-              <p class="tag-text">Markets</p>
+              <p class="tag-text">Accounts</p>
             </div>
             <div class="about-heading-box">
-              <h1 class="h1 text-center">Trade Global <span class="color-gradient">Indices?</span></h1>
-              <div class="paragraph-large text-center">Gain exposure to leading global economies by trading indices like the S&P 500, FTSE 100, and DAX 30. Razor Markets offers competitive spreads and seamless execution on a variety of indices.</div>
+              <h1 class="h1 text-center">Deposits and <span class="color-gradient">Withdrawals</span></h1>
+              <div class="paragraph-large text-center">At Razor Markets, we pride ourselves on providing clients with seamless, secure, and efficient payment methods for smooth deposits and withdrawals.</div>
             </div>
           </div>
-          <div class="about-dyxor-logo-wrap" style="display: flex; justify-content: center; align-items: center;">
+          <!-- <div class="about-dyxor-logo-wrap" style="display: flex; justify-content: center; align-items: center;">
             <div data-w-id="55f4147f-5d65-f89c-a9c3-8124ed24fbb8" id="forex-lottie" style="width: 100%; max-width: 260px; height: 260px; position: relative; z-index: 10; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
-    <section data-w-id="c6198221-3535-25b2-7774-e49f202557e1" class="section">
+  
+    <!-- Deposits & Withdrawals Features Section -->
+    <section class="section">
       <div class="container">
-        <div class="credibility-page-layout">
-          <div class="credibility-page-wrap">
-            <div data-w-id="20fca441-13db-93ba-971d-e3e46298fb79" style="opacity:0" class="volumes-heading-tag">
+        <div class="core-features-layout">
+          <div class="core-features-top-wrap">
+            <div class="tag-icon-box land-tag-center">
               <div class="tag-icon-wrap"><img
                   src="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688202f2e7811f6f509d1cdf_Simplification%20(1).svg"
                   loading="lazy" alt="" class="tag-icon" />
-                <p class="tag-text">Credibility</p>
-              </div>
-              <h2 class="h2 text-center">Why trade indices with <span class="span-text">Razor Markets?</span></h2>
-              <div class="paragraph-large text-center">We provide a superior trading environment built on ultra-low spreads, rapid execution, and access to advanced platforms. 1 Our commitment to comprehensive market analysis and educational resources empowers traders of all levels to navigate the forex market confidently. Experience the Razor Markets advantage and unlock your trading potential.</div>
-            </div>
-            <div data-w-id="4cef49aa-c4a6-8f67-36d2-06d976e2b8cb" style="opacity:0" class="credibility-card-wrap">
-              <div class="credibility-content-left-wrap">
-                <div class="client-satisfaction-tag">
-                  <div class="credibility-card-top-wrap">
-                    <h3 class="h3 center-align">Diverse Global Access</h3>
-                    <p class="paragraph-large text-grey center-align">Gain exposure to a wide array of major indices, including the S&P 500, FTSE 100, and DAX 30, diversifying your portfolio.</p>
-                  </div>
-                  <div class="credibility-card-bottom-wrap">
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="60" cy="60" r="55" fill="url(#indicesGradient)" opacity="0.2"/>
-                      <path d="M35 75L45 60L55 70L65 50L75 65L85 45" stroke="url(#indicesGradient2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                      <circle cx="45" cy="60" r="4" fill="url(#indicesGradient2)"/>
-                      <circle cx="55" cy="70" r="4" fill="url(#indicesGradient2)"/>
-                      <circle cx="65" cy="50" r="4" fill="url(#indicesGradient2)"/>
-                      <circle cx="75" cy="65" r="4" fill="url(#indicesGradient2)"/>
-                      <circle cx="85" cy="45" r="4" fill="url(#indicesGradient2)"/>
-                      <defs>
-                        <linearGradient id="indicesGradient" x1="5" y1="5" x2="115" y2="115" gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#00FF94"/>
-                          <stop offset="1" stop-color="#00CC75"/>
-                        </linearGradient>
-                        <linearGradient id="indicesGradient2" x1="35" y1="45" x2="85" y2="75" gradientUnits="userSpaceOnUse">
-                          <stop stop-color="#00FF94"/>
-                          <stop offset="1" stop-color="#00CC75"/>
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="credibility-content-center-wrap">
-                <div class="credibility-center-card">
-                  <div class="credibility-card-heading">
-                    <h2 class="h2 mobile-text-center">Advanced Platforms</h2>
-                    <p class="paragraph-large text-grey center-align">Access a range of powerful platforms, including MetaTrader 5, each offering advanced tools and features to suit your trading style.</p>
-                  </div>
-                </div>
-                <div class="credibility-green-box">
-                  <div class="credibility-heading-box">
-                    <h2 class="h3">Fast Execution</h2>
-                    <p class="paragraph-large text-grey center-align">Experience swift and reliable trade execution, minimizing slippage and ensuring your orders are filled precisely when you need them.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="credibility-content-right-wrap">
-                <div class="integrated-box-wrap">
-                  <div class="integrated-text-box">
-                    <h2 class="h2 mobile-text-center">Market Analysis</h2>
-                    <p class="paragraph-large text-grey text-horizontal">Empower your trading decisions with in-depth market analysis and extensive educational resources, designed to keep you informed and ahead of market trends.</p>
-                  </div>
-                </div><img
-                  src="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/68970abf5cd1d71625b1bf37_30660c11354866048d6a9e47914c1eec_circle%20one.svg"
-                  loading="lazy" data-w-id="385fd1e9-6cd6-95d3-fc5d-12bb9304e28b" alt="" class="circle-one" /><img
-                  src="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/68970abfc258f310ece99beb_d250a177c7e95dc10aa3e8c2e73c4e74_circle%20two.svg"
-                  loading="lazy" data-w-id="f646c5c4-ac27-a707-e5d2-2eac85d434b5" alt="" class="circle-two" />
+                <p class="tag-text">WHY CHOOSE US</p>
               </div>
             </div>
+            <h2 class="h2 text-center">Seamless Deposits &amp; <span class="span-text">Withdrawals</span></h2>
+          </div>
+          <div class="core-features-box-wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <!-- Safe and Secure -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/deposits-and-withdrawals/safe-and-secure.jpg') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">Safe and Secure</h3>
+                  <h3 class="h3"><span class="span-text">01</span></h3>
+                </div>
+                <p class="paragraph-large text-white">We prioritize your security – your money is stored in segregated accounts at trusted banking institutions.</p>
+              </div>
+            </div>
+            
+            <!-- Simplified Withdrawals & Deposits -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/deposits-and-withdrawals/simplified-withdrawals.jpg') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">Simplified Withdrawals & Deposits</h3>
+                  <h3 class="h3 span-text">02</h3>
+                </div>
+                <p class="paragraph-large text-white">Access a diverse selection of safe and convenient payment methods, including banking, e-wallets, and local payment options.</p>
+              </div>
+            </div>
+            
+            <!-- Regulatory Oversight -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/deposits-and-withdrawals/regulatory-oversight.jpg') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">Regulatory Oversight</h3>
+                  <h3 class="h3 span-text">03</h3>
+                </div>
+                <p class="paragraph-large text-white">Your safety is our priority – we operate under strict global regulations and protect your funds in leading banks.</p>
+              </div>
+            </div>
+            
+            <!-- 24/7 Processing -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/deposits-and-withdrawals/seamless-desposits-and-withdrawals.jpg') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">24/7 Processing</h3>
+                  <h3 class="h3 span-text">04</h3>
+                </div>
+                <p class="paragraph-large text-white">Enjoy seamless 24/7 deposits and withdrawals, processed in just a few hours.</p>
+              </div>
+            </div>
+            
+            <!-- Tailored Payment Options -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/deposits-and-withdrawals/tailored-payments.jpg') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">Tailored Payment Options</h3>
+                  <h3 class="h3 span-text">05</h3>
+                </div>
+                <p class="paragraph-large text-white">Find the perfect payment solution for you – our methods are designed to meet the unique needs of every client for efficient fund management.</p>
+              </div>
+            </div>
+            
+            <!-- Comprehensive Solutions -->
+            <div class="core-features-card animate-on-scroll" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/deposits-and-withdrawals/payment-solutions.jpg') center/cover; border-radius: 16px; padding: 40px; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0, 217, 163, 0.2);">
+              <div>
+                <div class="core-features-title-box" style="margin-bottom: 20px;">
+                  <h3 class="h4">Comprehensive Solutions</h3>
+                  <h3 class="h3 span-text">06</h3>
+                </div>
+                <p class="paragraph-large text-white">Discover our easy-to-use payment options, crafted for seamless and efficient transactions.</p>
+              </div>
+            </div>
+            
+            <!-- <div class="features-center-image-wrap" style="grid-column: 1 / -1; display: flex; justify-content: center; margin-top: 40px;"><img
+                src="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688f1fd69052b142b789df03_Soup%20Image.webp"
+                loading="lazy" sizes="100vw"
+                srcset="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688f1fd69052b142b789df03_Soup%20Image-p-500.webp 500w, https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688f1fd69052b142b789df03_Soup%20Image-p-800.webp 800w, https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688f1fd69052b142b789df03_Soup%20Image-p-1080.webp 1080w, https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688f1fd69052b142b789df03_Soup%20Image-p-1600.webp 1600w, https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688f1fd69052b142b789df03_Soup%20Image.webp 1680w"
+                alt="" class="features-center-image" /></div> -->
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Payment Service Providers Section -->
+    <section class="section">
+      <div class="container">
+        <div class="about-experiences-layout">
+          <div class="about-heading-wrap">
+            <div class="tag-icon-wrap"><img
+                src="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/688202f2e7811f6f509d1cdf_Simplification%20(1).svg"
+                loading="lazy" alt="" class="tag-icon" />
+              <p class="tag-text">PAYMENT PROVIDERS</p>
+            </div>
+            <div class="about-heading-box">
+              <h2 class="h2 text-center">Our Trusted <span class="color-gradient">Payment Partners</span></h2>
+              <div class="paragraph-large text-center">Our Payment Service Providers offer secure, reliable transactions through trusted platforms. Using advanced encryption and fraud prevention, they support multiple payment methods, ensuring your financial information is protected.</div>
+            </div>
+          </div>
+          
+          <!-- Payment Providers Grid -->
+          <div class="credibility-card-box-wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px; margin-top: 50px;">
+            <div class="credibility-card" style="display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <img src="../assets/deposits-and-withdrawals/visa.png" alt="Visa" style="max-width: 100%; height: auto;" />
+            </div>
+            <div class="credibility-card" style="display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <img src="../assets/deposits-and-withdrawals/mastercard.png" alt="Mastercard" style="max-width: 100%; height: auto;" />
+            </div>
+            <div class="credibility-card" style="display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <img src="../assets/deposits-and-withdrawals/ozow.png" alt="Ozow" style="max-width: 100%; height: auto;" />
+            </div>
+            <div class="credibility-card" style="display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <img src="../assets/deposits-and-withdrawals/capitecpay.png" alt="Capitec Pay" style="max-width: 100%; height: auto;" />
+            </div>
+            <div class="credibility-card" style="display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <img src="../assets/deposits-and-withdrawals/applepay.png" alt="Apple Pay" style="max-width: 100%; height: auto;" />
+            </div>
+            <div class="credibility-card" style="display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <img src="../assets/deposits-and-withdrawals/samsungpay.png" alt="Samsung Pay" style="max-width: 100%; height: auto;" />
+            </div>
+            <div class="credibility-card" style="display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <img src="../assets/deposits-and-withdrawals/airtel.png" alt="Airtel" style="max-width: 100%; height: auto;" />
+            </div>
+            <div class="credibility-card" style="display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <img src="../assets/deposits-and-withdrawals/orange.png" alt="Orange" style="max-width: 100%; height: auto;" />
+            </div>
+            <div class="credibility-card" style="display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <img src="../assets/deposits-and-withdrawals/cryptopay.png" alt="Crypto Pay" style="max-width: 100%; height: auto;" />
+            </div>
+            <div class="credibility-card" style="display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <img src="../assets/deposits-and-withdrawals/mobilemoney.png" alt="Mobile Money" style="max-width: 100%; height: auto;" />
+            </div>
+            <div class="credibility-card" style="display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <img src="../assets/deposits-and-withdrawals/m-pesa.png" alt="M-Pesa" style="max-width: 100%; height: auto;" />
+            </div>
+            <div class="credibility-card" style="display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <img src="../assets/deposits-and-withdrawals/tigopesa.png" alt="Tigo Pesa" style="max-width: 100%; height: auto;" />
+            </div>
+            <div class="credibility-card" style="display: flex; align-items: center; justify-content: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+              <img src="../assets/deposits-and-withdrawals/paystack.png" alt="Paystack" style="max-width: 100%; height: auto;" />
+            </div>
+          </div>
+
+          <div class="primary-button-wrap" style="margin-top: 50px; display: flex; justify-content: center;"><a
+              href="#" class="primary-button w-inline-block">
+              <p class="button-text">Start Trading</p>
+              <div class="button-icon w-embed"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12.1484 3.43744C12.488 3.70963 12.7898 4.03373 13.0972 4.34094C13.1524 4.39597 13.2077 4.451 13.2629 4.50602C13.4118 4.65441 13.5606 4.80294 13.7093 4.9515C13.8024 5.04443 13.8954 5.13734 13.9885 5.23024C14.2801 5.52129 14.5716 5.81242 14.863 6.10366C15.1987 6.43925 15.5348 6.77457 15.871 7.10968C16.1315 7.36934 16.3918 7.62922 16.6519 7.88927C16.807 8.04436 16.9622 8.19935 17.1177 8.35412C17.2637 8.49949 17.4094 8.64514 17.555 8.791C17.6083 8.84441 17.6618 8.89771 17.7154 8.95091C17.7886 9.02365 17.8615 9.09675 17.9343 9.16994C17.9555 9.19079 17.9766 9.21164 17.9984 9.23313C18.2167 9.45428 18.3482 9.67685 18.3691 9.99018C18.3548 10.5869 17.7312 11.0246 17.3386 11.4175C17.2836 11.4728 17.2286 11.528 17.1736 11.5832C17.0252 11.7321 16.8766 11.8809 16.7281 12.0296C16.6351 12.1227 16.5422 12.2157 16.4493 12.3088C16.1583 12.6004 15.8672 12.8919 15.5759 13.1833C15.2403 13.5191 14.905 13.8551 14.5699 14.1913C14.3102 14.4518 14.0504 14.7121 13.7903 14.9722C13.6352 15.1273 13.4802 15.2825 13.3255 15.438C13.1801 15.584 13.0344 15.7298 12.8886 15.8753C12.8352 15.9287 12.7819 15.9821 12.7287 16.0357C12.6559 16.109 12.5828 16.1818 12.5096 16.2546C12.4784 16.2864 12.4784 16.2864 12.4464 16.3187C12.226 16.5364 11.9896 16.6792 11.6747 16.6943C11.451 16.6902 11.273 16.6165 11.0937 16.4843C10.8997 16.2601 10.8063 16.0535 10.8125 15.7574C10.8553 15.2438 11.36 14.8842 11.7018 14.5436C11.7419 14.5035 11.782 14.4635 11.8221 14.4234C11.9296 14.3158 12.0373 14.2084 12.145 14.1009C12.258 13.9882 12.3709 13.8753 12.4837 13.7625C12.697 13.5494 12.9103 13.3364 13.1237 13.1234C13.3668 12.8807 13.6099 12.6379 13.8529 12.395C14.3523 11.896 14.8519 11.3972 15.3515 10.8984C15.3241 10.8983 15.2967 10.8983 15.2685 10.8983C13.6443 10.896 12.0202 10.8931 10.3961 10.8894C10.2011 10.889 10.0061 10.8886 9.81113 10.8881C9.7529 10.888 9.7529 10.888 9.6935 10.8879C9.06486 10.8865 8.43623 10.8855 7.8076 10.8847C7.1626 10.8838 6.51761 10.8826 5.87262 10.8809C5.4746 10.8798 5.07658 10.8791 4.67855 10.8789C4.40565 10.8787 4.13275 10.878 3.85984 10.8771C3.70237 10.8765 3.5449 10.8762 3.38743 10.8763C3.24318 10.8764 3.09894 10.876 2.9547 10.8752C2.87796 10.8749 2.80122 10.8752 2.72448 10.8755C2.38119 10.8727 2.09047 10.8405 1.83588 10.5859C1.67043 10.3467 1.61108 10.1338 1.64056 9.84369C1.69586 9.6229 1.78697 9.42374 1.97931 9.29072C2.18194 9.16948 2.33335 9.13577 2.56606 9.13515C2.61169 9.13494 2.65731 9.13473 2.70431 9.1345C2.75447 9.13447 2.80463 9.13443 2.85631 9.13439C2.9101 9.13421 2.96388 9.13402 3.01767 9.1338C3.16563 9.13327 3.31359 9.13298 3.46154 9.13273C3.62104 9.13242 3.78054 9.13189 3.94004 9.13138C4.21642 9.13053 4.49281 9.12982 4.7692 9.12921C5.16882 9.12832 5.56843 9.12722 5.96805 9.12607C6.61637 9.12421 7.26469 9.12252 7.91301 9.12093C8.54286 9.1194 9.1727 9.11778 9.80255 9.11605C9.84136 9.11594 9.88017 9.11584 9.92016 9.11573C10.1149 9.11519 10.3096 9.11466 10.5043 9.11412C12.12 9.10967 13.7358 9.1055 15.3515 9.10151C15.3293 9.07941 15.3071 9.05732 15.2842 9.03455C14.7437 8.4966 14.2035 7.95831 13.6636 7.41967C13.4025 7.15919 13.1413 6.89882 12.8799 6.63871C12.6519 6.41196 12.4242 6.18501 12.1968 5.95781C12.0764 5.83755 11.9558 5.71739 11.8351 5.59748C11.7213 5.48452 11.6079 5.37129 11.4946 5.25785C11.4531 5.21635 11.4114 5.17495 11.3697 5.13366C10.8258 4.59534 10.8258 4.59534 10.8056 4.17475C10.8097 3.95093 10.8835 3.77324 11.0156 3.59369C11.3426 3.3062 11.7546 3.21041 12.1484 3.43744Z"
+                    fill="white" />
+                </svg></div>
+            </a></div>
+        </div>
+      </div>
+    </section>
+
+    
     <section class="section">
       <div class="container">
         <div data-w-id="92d0c528-00cd-f1f3-05e9-42624c4b2b07" class="blockchain-box-layout">
@@ -692,7 +783,7 @@ function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createE
    
    
    
-   <section class="section">
+ <section class="section">
       <div class="container">
         <div class="footer-layout">
           <div class="footer-box-wrap">
@@ -768,6 +859,30 @@ function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createE
   <script src="https://cdn.prod.website-files.com/687b1e181baaf79fcff18cdc/js/webflow.76e11310.cb10ebba24476d6a.js"
     type="text/javascript"></script>
 
+  <!-- Scroll Animation Script -->
+  <script>
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all animated cards
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.animate-on-scroll').forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
+
   <!-- Lottie Animation Script -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -780,7 +895,7 @@ function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createE
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: 'assets/indices.json'
+            path: 'assets/Green energy.json'
           });
           
           animation.addEventListener('DOMLoaded', function() {
