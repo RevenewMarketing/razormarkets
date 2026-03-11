@@ -54,13 +54,13 @@ const glossary = [
 
     { term: "Scalping", definition: "A trading strategy that involves making numerous small profits throughout the day." },
     { term: "Slippage", definition: "The difference between the expected price of a trade and the actual price executed." },
-    { term: "Spread", definition: "The difference between the bid and ask price of a currency pair, representing the broker’s commission." },
+    { term: "Spread", definition: "The difference between the bid and ask price of a currency pair, representing the broker's commission." },
     { term: "Stop-Loss Order", definition: "An order placed to automatically close a trade when it reaches a certain price level to limit losses." },
     { term: "Support", definition: "A price level where buying pressure prevents further price declines." },
     { term: "Swap", definition: "The interest paid or earned for holding a position overnight in Forex trading." },
 
     { term: "Technical Analysis", definition: "Analyzing historical price movements and patterns to predict future price movements." },
-    { term: "Trend", definition: "The general direction in which a currency pair’s price is moving (upward, downward, or sideways)." },
+    { term: "Trend", definition: "The general direction in which a currency pair's price is moving (upward, downward, or sideways)." },
 
     { term: "Volatility", definition: "A statistical measure of the dispersion of returns for a given security or market index." },
 
@@ -70,5 +70,3 @@ const glossary = [
 
     { term: "Zero-Coupon Bond", definition: "A bond that does not pay periodic interest payments but is traded at a discount to its face value." }
 ];
-
-
