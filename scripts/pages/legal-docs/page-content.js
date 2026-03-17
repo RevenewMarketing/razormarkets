@@ -37,7 +37,7 @@ const cards = [
   { 
     title: "Read our Client Agreement Terms",
     action: "Read",
-    link: `/assets/legalDocs/logalDocs-PSFs/Razor-Client-Agreement-24.pdf`,
+    link: `/assets/legalDocs/logalDocs-PSFs/UPDATED CLIENT-AGREEMENT-RocketX-16-03-2026.pdf`,
   },
   { 
     title: "Read our Terms and Conditions",
